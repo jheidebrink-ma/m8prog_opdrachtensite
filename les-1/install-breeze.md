@@ -11,11 +11,7 @@ nav_exclude: true
 [Laravel Breeze](https://laravel.com/docs/9.x/starter-kits#laravel-breeze){: target="_blank" %} is een starter kit van Laravel die
 allerlei handige authenticatie features toevoegt aan je Laravel project.
 
-Als je dit installeert krijg je o.a. registratie, inlog, uitlog, wachtwoord vergeten e.d. tot je beschikking. 
-
-Kijk de video voor uitleg hoe je dit installeert:
-
-{% include youtube.md video="wOThzwG-oQI" %}
+Als je dit installeert krijg je o.a. registratie, inlog, uitlog, wachtwoord vergeten e.d. tot je beschikking.
 
 ---
 

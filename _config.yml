@@ -1,11 +1,11 @@
-title: F3M8PROG - Laravel
-description: "F3M8PROG - Werken voor opdrachtgevers"
-email: h.braun@ma-web.nl
+title: M10PROG - Laravel
+description: "M10PROG - Werken voor opdrachtgevers"
+email: j.heidebrink@ma-web.nl
 
-github_username:  hiddebraun-ma
+github_username:  jheidebrink-ma
 
 # Build settings
-baseurl: "/F3M8PROG-Site"
+baseurl: "/M10PROG-Site"
 remote_theme: "pmarsceill/just-the-docs"
 
 #plugins:
@@ -21,6 +21,6 @@ heading_anchors: false
 
 logo: "/assets/images/logo.png"
 
-bap:
-  assignment_url: https://classroom.github.com/a/a3oV1MzV
-  skip_date_check: false
+#bap:
+#  assignment_url: https://classroom.github.com/a/a3oV1MzV
+#  skip_date_check: false

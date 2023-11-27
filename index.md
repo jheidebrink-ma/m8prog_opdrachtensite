@@ -1,13 +1,13 @@
 ---
 layout: home
-title: F3M8PROG - Laravel
+title: M10PROG - Laravel
 nav_order: 0
 has_toc: false
 ---
 
 # Laravel - {{ page.title }}
 
-Op deze website vind je de opdrachten en hulp-video's voor de unit F3M8PROG (Laravel) van de module Werken voor opdrachtgevers (F3M8 Werken voor opdrachtgevers).
+Op deze website vind je de opdrachten en hulp-video's voor de unit M10PROG (Laravel).
 
 Je krijgt jouw persoonlijke (lege) repository door op de blauwe knop te klikken.  
 **Dit hoef je maar één keer te doen!**. Je maakt alle opdrachten en oefeningen in deze repository.
