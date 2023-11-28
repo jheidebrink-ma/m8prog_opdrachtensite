@@ -1,8 +1,8 @@
 ---
 layout: home
-title: M10PROG - Laravel
+title: Home
 nav_order: 0
-has_toc: false
+has_toc: true
 ---
 
 # Laravel - {{ page.title }}

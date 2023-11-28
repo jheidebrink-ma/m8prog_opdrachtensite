@@ -34,3 +34,4 @@ gem "just-the-docs"
 gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 
 gem 'eventmachine', '1.2.7', git: 'git@github.com:eventmachine/eventmachine', tag: 'v1.2.7'
+gem "webrick", "~> 1.8"
