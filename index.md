@@ -7,20 +7,11 @@ has_toc: false
 
 # Laravel - {{ page.title }}
 
-Op deze website vind je de opdrachten en hulp-video's voor de unit M10PROG (Laravel).
-
-Je krijgt jouw persoonlijke (lege) repository door op de blauwe knop te klikken.  
-**Dit hoef je maar één keer te doen!**. Je maakt alle opdrachten en oefeningen in deze repository.
-
-- Kies vervolgens je eigen naam. 
-- Er wordt een repository gemaakt waar jij toegang tot krijgt.
-- Deze repository clone je naar jouw computer.
-
-[Jouw Laravel repository ophalen]({{ site.bap.assignment_url }}){: .btn .btn-blue }
+Op deze website vind je de opdrachten voor de unit M10PROG (Laravel).
 
 ---
 
-## Opdrachten en ondersteunende video's
+## Opdrachten en uitleg
 
 {% for lesson in site.data.lessons %}
 {% assign today = "now"|date:"%Y%m%d" %}
@@ -37,7 +28,8 @@ Je krijgt jouw persoonlijke (lege) repository door op de blauwe knop te klikken.
 ## Les {{ lesson.number }}:  {{ lesson.title }}
 {: .text-grey-dk-000 :}
 
-Deze les komt binnenkort online.
+Deze les komt binnenkort online. 
+<small>Vanaf {{ lesson.datum|date:"%d-%m-%Y" }} online </small>
 {% endif %}
 ---
 
