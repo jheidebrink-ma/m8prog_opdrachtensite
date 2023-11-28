@@ -5,10 +5,10 @@ email: j.heidebrink@ma-web.nl
 github_username:  jheidebrink-ma
 
 # Build settings
-baseurl: "/m10prog_opdrachtensite"
+baseurl: "/m10prog_opdrachtensite/"
 url: "https://jheidebrink-ma.github.io"
-#remote_theme: "pmarsceill/just-the-docs"
-theme: minima
+remote_theme: "pmarsceill/just-the-docs"
+#theme: minima
 plugins:
   - jekyll-feed
 
