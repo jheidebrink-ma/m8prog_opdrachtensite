@@ -26,7 +26,7 @@ Hier vind je de documentatie van de Tailwind configuratie:
 
 ---
 
-Zorg dat je na deze video de juiste configuratie hebt ingesteld en dat de Tailwind CSS in je `app.css` wordt gegenereerd met JOUW kleuren en lettertypen.
+Zorg dat je de juiste configuratie hebt ingesteld en dat de Tailwind CSS in je `app.css` wordt gegenereerd met JOUW kleuren en lettertypen.
 {: .text-blue-100 .fs-4 }
 
 ---

@@ -27,7 +27,7 @@ Zorg dat je na deze video jouw website layout in Laravel werkend hebt en dat je 
 
 Meer over layouts in Laravel vind je in de documentatie:
 
-- [https://laravel.com/docs/9.x/blade#building-layouts](https://laravel.com/docs/9.x/blade#building-layouts)
+- [https://laravel.com/docs/10.x/blade#building-layouts](https://laravel.com/docs/10.x/blade#building-layouts)
 
 ---
 
