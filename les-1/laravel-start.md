@@ -8,20 +8,20 @@ nav_exclude: true
 ## Laravel project starten
 {: .text-green-100 .fs-6 }
 
-Maak een nieuwe repository aan voor m10prog-laravel
-Navigeer op je compouter naar de folder waar binnen je project straks komt te staan.
-Wij werken nu volgens de setup van [laravel.com](https://laravel.com/docs/10.x)
-Je kunt Laravel installeren voor docker met het volgende commando:
+Maak een nieuwe repository aan voor m10prog-laravel<br>
+Navigeer op je compouter naar de folder waar binnen je project straks komt te staan.<br>
+Wij werken nu volgens de setup van [laravel.com](https://laravel.com/docs/10.x)<br>
+Je kunt Laravel installeren voor docker met het volgende commando:<br>
 ```curl -s "https://laravel.build/m10prog-laravel" | bash```
-Als alternatief kun je ook Laravel installeren via Composer.
-Hiervoor dien je composer op je computer geïnstalleerd te hebben, dit controleer je met dit commando:
+Als alternatief kun je ook Laravel installeren via Composer.<br>
+Hiervoor dien je composer op je computer geïnstalleerd te hebben, dit controleer je met dit commando:<br>
 ```composer -V```
-Zie je nu een error, dan kun je composer installeren via: https://getcomposer.org/doc/00-intro.md
-Vervolgens ga je naar je project folder en installeer je laravel met dit commando
+Zie je nu een error, dan kun je composer installeren via: https://getcomposer.org/doc/00-intro.md<br>
+Vervolgens ga je naar je project folder en installeer je laravel met dit commando<br>
 ```composer create-project laravel/laravel m10prog-laravel```
-
-Navigeer nu naar de folder m10prog-laravel
-Na deze installatie kun je Laravel sail starten:
+<br>
+Navigeer nu naar de folder m10prog-laravel<br>
+Na deze installatie kun je Laravel sail starten:<br>
 ```./vendor/bin/sail up```
 
 ---
