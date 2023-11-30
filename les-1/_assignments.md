@@ -4,4 +4,3 @@
 1. [Nieuw Laravel project maken met Composer](laravel-start)
 2. [Configureer je Laravel project](laravel-config)
 3. [Installeer Laravel Breeze starter kit](install-breeze)
-4. [Trello bord - backlog en user stories](trello-stories)
