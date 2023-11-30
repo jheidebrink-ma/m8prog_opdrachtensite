@@ -27,7 +27,7 @@ In de terminal kun je de css compile met dit commando:<Br>
 
 ---
 
-Bekijk de website en zie dat je nu een complete site hebt.
+Bekijk de website en zie dat je nu een complete site hebt met een responsive design.
 
 {: .text-blue-100 .fs-4 }
 
