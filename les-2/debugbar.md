@@ -21,10 +21,10 @@ Stap voor stap uitleg kun je hier vidnen:<Br>
 3. Controleer of je op de juiste instance zit met het volgende commando: ```php -v`
 4. Installeer de debuigbar via composer: ```composer require barryvdh/laravel-debugbar --dev```
 5. Stel in je .env in dat de site in debug modes zit door deze regel in de .env te plaatsen: ```APP_DEBUG=true```
-6. Mogelijk laad het systeem niet automatisch de debug bar, daarom moet je in de ``providers array`` in de ``config/app.php`` aangeven dat de debug bar geladen meot worde. Voeg daarom deze regel toe:
-   - Barryvdh\Debugbar\ServiceProvider::class,
-7.Als je binnen laravel gebruik wilt maken van de debug functie om bijvoorbeeld een extra regel weer te geven dan moet je de volgende regel aan het ``facades`` onderdeel toevoegen:
-   - 'Debugbar' => Barryvdh\Debugbar\Facades\Debugbar::class,
+6. Mogelijk laad het systeem niet automatisch de debug bar, daarom moet je in de ``providers array`` in de ``config/app.php`` aangeven dat de debug bar geladen moet worde. Voeg daarom deze regel toe:
+   - ```Barryvdh\Debugbar\ServiceProvider::class,```
+7. Als je binnen laravel gebruik wilt maken van de debug functie om bijvoorbeeld een extra regel weer te geven dan moet je de volgende regel aan het ``facades`` onderdeel toevoegen:
+   - ```'Debugbar' => Barryvdh\Debugbar\Facades\Debugbar::class,```
 8. Ga nu weer naar je website en zie dat je onderaan de pagina een debug bar hebt.
 
 {: .text-blue-100 .fs-5 }
