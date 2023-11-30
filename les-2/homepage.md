@@ -10,7 +10,8 @@ nav_exclude: true
 
 Je hebt nu een eigen Laravel layout voor jouw website  (werk daar rustig aan door de komende tijd)
 
-De volgende stap is de layout gaan gebruiken in je views (de pagina's van je website).  Dat is nu best wel simpel (als je weet hoe dat werkt)
+De volgende stap is de layout gaan gebruiken in je views (de pagina's van je website).  
+Dat is nu best wel simpel in vergelijking met de andere php projecten.
 
 ---
 

@@ -16,16 +16,20 @@ Stap voor stap uitleg kun je hier vidnen:<Br>
 
 ## Installatie
 1. Login op de php docker container zodat je geen problemen hebt met php en composer.
-    - Open hiervoor docker en zoek de juiste container op
-    - Klik op de drie puntjes achter de naam en open de terminal
-3. Controleer of je op de juiste instance zit met het volgende commando: ```php -v`
-4. Installeer de debuigbar via composer: ```composer require barryvdh/laravel-debugbar --dev```
-5. Stel in je .env in dat de site in debug modes zit door deze regel in de .env te plaatsen: ```APP_DEBUG=true```
-6. Mogelijk laad het systeem niet automatisch de debug bar, daarom moet je in de ``providers array`` in de ``config/app.php`` aangeven dat de debug bar geladen moet worde. Voeg daarom deze regel toe:
-   - ```Barryvdh\Debugbar\ServiceProvider::class,```
-7. Als je binnen laravel gebruik wilt maken van de debug functie om bijvoorbeeld een extra regel weer te geven dan moet je de volgende regel aan het ``facades`` onderdeel toevoegen:
-   - ```'Debugbar' => Barryvdh\Debugbar\Facades\Debugbar::class,```
-8. Ga nu weer naar je website en zie dat je onderaan de pagina een debug bar hebt.
+    - Open hiervoor docker-desktop en zoek de juiste php container op
+    - Klik op de drie puntjes achter de naam en daarna op **open terminal**
+2. Controleer of je op de juiste instance zit met het volgende commando: ```php -v`
+3. Installeer de debugbar via composer: <br>
+	```composer require barryvdh/laravel-debugbar --dev```
+4. Om de debug bar aan of uit te zetten kun je in de **.env** file aangeven of je applicatie in debug mode zit: ```APP_DEBUG=true```
+5. Mogelijk laad het systeem niet automatisch de debug bar, daarom moet je in de<br>
+	**providers array** in de **config/app.php** aangeven dat de debug bar geladen moet worden. <br>
+	Voeg daarom deze regel toe:<br>
+   ```Barryvdh\Debugbar\ServiceProvider::class,```
+6. Als je binnen laravel gebruik wilt maken van de debug functie om bijvoorbeeld een debug regel weer te geven dan moet je in de <Br>
+	**config/app.php** de volgende regel aan het **facades** onderdeel toevoegen:<br>
+	`'Debugbar' => Barryvdh\Debugbar\Facades\Debugbar::class,`
+7. Ga nu weer naar je website en zie dat je onderaan de pagina een debug bar hebt.
 
 {: .text-blue-100 .fs-5 }
 

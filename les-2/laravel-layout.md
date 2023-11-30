@@ -14,7 +14,7 @@ Het belangrijkste is het maken van de layout. De layout bepaalt de algemene look
 
 Alle pagina's maken vervolgens gebruik van die layout (zodat je geen dubbele code hoeft te maken)
 
-Je kunt gebruik maken van de voorbeeld layout die al in Laravel zit.
+Je kunt gebruik maken van de voorbeeld layout die al in Laravel zit, bekijk eens de bestanden in de view folder in de resources folder.
 
 ---
 
@@ -22,8 +22,18 @@ Zorg dat je nu aan de slag gaat met de layout in Laravel werkend hebt en dat je 
 {: .text-blue-100 .fs-4 }
 
 Meer over layouts in Laravel vind je in de documentatie:
-
 - [https://laravel.com/docs/10.x/blade#building-layouts](https://laravel.com/docs/10.x/blade#building-layouts)
+
+---
+
+## Indeling van website
+Voor deze les beginnen wij met een basis structuur van een pagina met de volgende items:
+- layout
+- navigatie
+- header
+- footer
+- content element met voorbeeld tekst <br>
+Je kunt als voorbeeld van de structuur naar de bestanden kijken in de views en layout folder.
 
 ---
 
