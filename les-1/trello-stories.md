@@ -34,8 +34,7 @@ Bijvoorbeeld
 
 ---
 
-Zet een duidelijke link naar jouw Trello bord in het `website.md` document wat je eerder hebt gemaakt
-{: .text-blue-100 .fs-5 }
+
 
 ---
 

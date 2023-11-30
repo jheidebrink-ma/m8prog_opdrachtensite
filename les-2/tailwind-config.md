@@ -15,10 +15,6 @@ Als je Les 1 hebt gemaakt en Laravel Breeze hebt geïnstalleerd staat hier al wa
 
 Pak de kleuren en lettertypen uit de vorige stap er bij en pas de configuratie aan.
 
-Kijk de video voor uitleg:
-
-{% include youtube.md video="Qv5CV-AZc9g" %}
-
 ---
 
 Je kunt alle onderdelen van het default theme *extenden* (uitbreiden) of onderdelen helemaal opnieuw instellen (zoals de kleuren, lettertypen e.d.)
