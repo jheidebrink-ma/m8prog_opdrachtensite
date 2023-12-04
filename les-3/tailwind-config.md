@@ -13,8 +13,6 @@ nav_exclude: true
 Dit doe je in het bestand `tailwind.config.js` dat in de root van je Laravel project staat.
 Als je Les 1 hebt gemaakt en Laravel Breeze hebt geïnstalleerd staat hier al wat configuratie in.
 
-Pak de kleuren en lettertypen uit de vorige stap er bij en pas de configuratie aan.
-
 ---
 
 Je kunt alle onderdelen van het default theme *extenden* (uitbreiden) of onderdelen helemaal opnieuw instellen (zoals de kleuren, lettertypen e.d.)
@@ -25,9 +23,13 @@ Hier vind je de documentatie van de Tailwind configuratie:
 - En hier [het basis Tailwind configuratie bestand](https://unpkg.com/browse/tailwindcss@3.0.24/stubs/defaultConfig.stub.js) met ALLES wat je kunt aanpassen of overschrijven.
 
 ---
-
-Zorg dat je de juiste configuratie hebt ingesteld en dat de Tailwind CSS in je `app.css` wordt gegenereerd met JOUW kleuren en lettertypen.
-{: .text-blue-100 .fs-4 }
+Tailwind werkt anders dan bijvoorbeeld bootstrap. 
+Tailwind kijkt naar jouw view bestanden ( templates ) om te zien welke styles en andere codes jij gebruikt in je bestanden. Alleen noodzakelijke css wordt gecompiled. 
+Zo blijft de grote van je css minimaal.   
+Hiervoor moet je wel in een terminal scherm Tailwind watch aan laten staan, met dit commando:
+```shell
+npx tailwindcss -i ./resources/css/app.css -o ./public/dist/app.css --watch
+```
 
 ---
 
