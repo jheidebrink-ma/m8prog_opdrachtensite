@@ -18,7 +18,7 @@ Stap voor stap uitleg kun je hier vidnen:<Br>
 1. Login op de php docker container zodat je geen problemen hebt met php en composer.
     - Open hiervoor docker-desktop en zoek de juiste php container op
     - Klik op de drie puntjes achter de naam en daarna op **open terminal**
-2. Controleer of je op de juiste instance zit met het volgende commando: ```php -v`
+2. Controleer of je op de juiste instance zit met het volgende commando: ```php -v```
 3. Installeer de debugbar via composer: <br>
 	```composer require barryvdh/laravel-debugbar --dev```
 4. Om de debug bar aan of uit te zetten kun je in de **.env** file aangeven of je applicatie in debug mode zit: ```APP_DEBUG=true```
