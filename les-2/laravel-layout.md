@@ -28,11 +28,11 @@ Meer over layouts in Laravel vind je in de documentatie:
 
 ## Indeling van website
 Voor deze les beginnen wij met een basis structuur van een pagina met de volgende items:
-- layout container
-- header met een logo en het menu
-- navigatie menu met minimaal 3 items
-- footer met copyright
-- content element met voorbeeld tekst
+-  layout container
+-  header met een logo en het menu
+-  navigatie menu met minimaal 3 items
+-  footer met copyright
+-  content element met voorbeeld tekst
   _Je kunt als voorbeeld van de structuur naar de bestanden kijken in de views en layout folder._
   Zie voor meer informatie: https://laravel.com/docs/10.x/views
 ---
