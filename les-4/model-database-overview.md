@@ -60,8 +60,7 @@ public function insertUser(){
 }
 ```
 
-Uiteraard kun je ook gegevens verwijderen en updaten. Lees hoe je dat doet in [de QueryBuilder documentatie](https://laravel.com/docs/9.x/queries).
-Of kijk hier voor [een eerdere video opdracht](http://bap.mediadeveloper.amsterdam/md2/laravel/database-queries-in-laravel/) die ik heb gemaakt over de QueryBuilder voor MD2
+Uiteraard kun je ook gegevens verwijderen en updaten. Lees hoe je dat doet in [de QueryBuilder documentatie](https://laravel.com/docs/10.x/queries).
 
 ---
 
@@ -105,7 +104,7 @@ Houd goed in gedachten: **De PHP CLASS IS GEKOPPELD AAN EEN DATABASE TABLE**.
 
 ![Eloquent en database](images/eloquent-overview.png)
 
-[Alles over Eloquent staat in de documentatie](https://laravel.com/docs/9.x/eloquent)
+[Alles over Eloquent staat in de documentatie](https://laravel.com/docs/10.x/eloquent)
 
 ---
 
