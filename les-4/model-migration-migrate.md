@@ -32,9 +32,11 @@ INFO  Migration [database/migrations/2023_12_05_151958_create_projects_table.php
 `
 
 Open nu het bestand: `app/Models/Project.php` en bekijk eens welke functies er al beschikbaar zijn doordat hij een uitbereiding is op de Model class.<br>
+Dit bestend kun je nu weer sluiten omdat wij verder gaan met de migraties.
 
 ## Migratie
-Open nu het migratie bestand dat net is aangemaakt en voeg daar de elementen toe die noodzakelijk zijn.<br> 
+Open nu het migratie bestand dat net is aangemaakt en voeg daar de elementen toe die noodzakelijk zijn.<br>
+Dit bestand is te vinden in de folder `/database/migrations/` Meestal is dit het laatste bestand.<br> 
 Je ziet nu al een stukje code klaar staan dat ervoor zorgt dat er een nieuwe tabel aangemaakt wordt. Ook zie je dat Laravel alvast twee kolommen toe wilt voegen.
 WIj maken nu een paar extra elementen aan, bijvoorbeeld voor een titel en een omschrijving:
 ```php
