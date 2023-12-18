@@ -1,5 +1,5 @@
 ---
-title: Les 5
+title: Les 6
 layout: page
 permalink: :path/:basename
 nav_exclude: true
@@ -8,10 +8,10 @@ nav_exclude: true
 ## Overzicht: Forms en validatie
 {: .text-green-100 .fs-6 }
 
-In deze les leer je hoe je formulieren kunt maken waar bezoekers (of jij zelf) gegevens mee kunnen invoeren en opsturen.
+In deze les en de volgende leer je hoe je formulieren kunt maken waar bezoekers (of jij zelf) gegevens mee kunnen invoeren en opsturen.
 Jij als developer kunt de gegevens vervolgen in een controller gaan verwerken.
 
-In de opdracht-video's zie je hoe je een simpel CMS kunt maken onder de url `/admin` op je website en hoe je formulieren en CRUD operaties (Create, Read, Update en Delete) kunt gebruiken om de gegeven sin je database te beheren.
+In de opdracht-video's zie je hoe je een simpel CMS kunt maken onder de url `/dashboard` op je website en hoe je formulieren en CRUD operaties (Create, Read, Update en Delete) kunt gebruiken om de gegeven in je database te beheren.
 
 Een aantal dingen zijn belangrijk hierbij:
 
@@ -22,6 +22,7 @@ Een aantal dingen zijn belangrijk hierbij:
 
 ---
 
+### Optionele video:
 Kijk de video voor een overzicht van wat je aan het einde van de opdrachten (ongeveer) werkend kan hebben.
 
 {% include youtube.md video="7fb_Xfb5VAU" %}

@@ -14,21 +14,15 @@ Alle beheers pagina kunt je bijvoorbeeld allemaal onder `/admin` plaatsen in je 
 Je krijgt dan bijvoorbeeld de routes:
 
 `/admin` = Admin dashboard  
-`/admin/blogs` = Overzicht alle blog artikelen  
-`/admin/blogs/new` = Voor aanmaken nieuwe blog artikelen  
-`/admin/blogs/1/edit` = Voor bewerken van blog met id 1  
-`/admin/blogs/2/edit` = Voor bewerken van blog met id 2  
+`/admin/projects` = Overzicht alle projecten  
+`/admin/projects/new` = Voor aanmaken een nieuw project   
+`/admin/projects/1/edit` = Voor bewerken van project met id 1  
+`/admin/projects/2/edit` = Voor bewerken van project met id 2  
 `/admin/users`  = Overzicht van alle gebruikers  
 `/admin/.....` - Enzovoort. 
 
 Alles begint dus met de *prefix* `/admin`
 Je kunt daarom makkelijk in één keer alle routes met de prefix `/admin` afschermen zodat alleen admin gebruikers er nog bij kunnen.
-
----
-
-**Kijk de video om te zien hoe dit werkt.**
-
-{% include youtube.md video="2UtpkqmhmJc" %}
 
 ---
 
@@ -38,12 +32,103 @@ Dan heb je al standaard een menu en uitlog functionaliteit. [Hier vind je die de
 
 ---
 
+## Aan de slag
+
+### 1- Resource maken
+Wij hebben al een Project model, dus wij hoeven niet een compleet nieuwe resource te maken. Je moet wel een controller maken. 
+
+Meer info: [Lees meer over resource controllers](https://laravel.com/docs/10.x/controllers#resource-controllers)
+
+Wij gaan een `ProjectAdminController` aanmaken voor je model. Bij `ModelNaam` geef je de naam op van je model, bijvoorbeeld Project. 
+
+```shell
+  php artisan make:controller MijnControler --model=ModelNaam
+```
+
+Je hebt nu neen complete controller, bekijk `app/Http/Controllers/ProjectAdminController.php` maar even.
+
+### 2- Routes aanmaken
+In de routes gaan wij nu routes aanmaken voor alle CRUD handelingen, hiervoor kun je de route-groups gebruiken:
+[Lees meer over Route groups](https://laravel.com/docs/10.x/routing#route-groups)
+
+Maak eerst een Resource route aan:
+{% raw %}
+```shell
+    Route::resources(
+        [
+            'url' => MyController::class,
+        ]
+    );
+```
+{% endraw %}
+
+Op de plek van de url komt de url te staan en op de plek van MyController verwijs je naar de controller die je net hebt aangemaakt.
+
+Let wel op dat je er ook voor zorgt dat deze boven in je pagina onder 'use' toegevoegd is.
+
+Voeg nu deze route prefix toe aan het dashboard, plaats deze code om het vorige blok heen:
+{% raw %}
+```shell
+Route::prefix('/dashboard')->group( function() {
+    
+});
+```
+{% endraw %}
+
+Verplaats nu de de oude dashboard route ook binnen deze prefix.
+
+En tenslotte verplaats je de middleware naar de prefix zodat je zeker weet dat iemand is ingelogd als hij naar het dashboard toe gaat.
+
+{% raw %}
+```shell
+Route::prefix('/dashboard')
+     ->middleware(['auth', 'verified'])
+     ->group(function () {
+         Route::get(
+             '/',
+             function () {
+                 return view('dashboard');
+             })->name('dashboard');
+
+         Route::resources(
+             [
+                 'project' => ProjectAdminController::class,
+             ]
+         );
+     });
+```
+{% endraw %}
+
+### 3- Controller instellen
+Plaats nu in de controller die je gemaakt hebt verschillende teksten om zo zeker te weten dat het werkt, bijvoorbeeld zo iets:
+{% raw %}
+```php
+    public function index()
+    {
+        return 'Dit is mijn index';
+    }
+```
+{% endraw %}
+
+Als je nu je project gaat testen dan zie je nu welke pagina / functionaliteit je bekijkt.
+
+
+---
+
+### Optionele video
+
+**Kijk de video om te zien hoe dit werkt.**
+
+{% include youtube.md video="2UtpkqmhmJc" %}
+
+---
+
 ### Links
 
-- [Lees meer over resource controllers](https://laravel.com/docs/9.x/controllers#resource-controllers)
-- [Lees meer over Route groups](https://laravel.com/docs/9.x/routing#route-groups)
-- [Meer over route prefixes](https://laravel.com/docs/9.x/routing#route-groups)
-- [Meer over authenticatie en routes afschermen](https://laravel.com/docs/9.x/authentication#protecting-routes)
+- [Lees meer over resource controllers](https://laravel.com/docs/10.x/controllers#resource-controllers)
+- [Lees meer over Route groups](https://laravel.com/docs/10.x/routing#route-groups)
+- [Meer over route prefixes](https://laravel.com/docs/10.x/routing#route-groups)
+- [Meer over authenticatie en routes afschermen](https://laravel.com/docs/10.x/authentication#protecting-routes)
 
 {% include commit_push.md %}
 

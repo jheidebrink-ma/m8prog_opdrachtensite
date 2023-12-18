@@ -54,7 +54,7 @@ Nu kun je in de database zien dat je een project is aangemaakt.
 
 ---
 
-### Optioneel
+### Optionele video
 
 In de video laat kun zien hoe je deze model class kunt gebruiken om alle gegevens in de table op te halen via de model class en hoe je die gegevens vervolgens aan de view kunt geven om ze te tonen.
 
