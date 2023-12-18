@@ -42,15 +42,15 @@ Dit zelfde systeem  kunnen wij ook met bijvoorbeeld JavaScript gebruiken door bi
 ```
 
 In de `footer.blade.php` kun je in de deze scripts ophalen met deze code:  
-``
+```php
     @yield( 'scripts' )
-``
-
+```
 
 ---
 ## Voorbeeld
 
 ```html
+{% raw %}
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
 <head>
@@ -72,6 +72,7 @@ In de `footer.blade.php` kun je in de deze scripts ophalen met deze code:
 @include('layouts.partials.scripts')
 </body>
 </html>
+{% endraw %}
 ```
 
 ---
