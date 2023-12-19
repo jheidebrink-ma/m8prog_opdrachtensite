@@ -1,5 +1,5 @@
 ---
-title: Les 6
+title: Les 7
 layout: page
 permalink: :path/:basename
 nav_exclude: true
@@ -48,7 +48,7 @@ In je tailwind.conf in de root van je project moet je hiervoor aangeven fat je g
 
 Je kunt nu het voorbeeld formulier van Tailwind kopieren of je maakt een nieuw HTML formulier aan.  
 Denk hierbij aan de volgende elementen:
-- form action="{{route('project.store'))}}" ( de route om het formulier op te slaan )
+- form action="{% raw %}{{route('project.store')}}{% endraw %}" ( de route om het formulier op te slaan )
 - form method="post" 
 - input fields waarbij de name gelijk is aan de naam van je database veld
 - submit button

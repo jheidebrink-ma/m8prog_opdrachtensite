@@ -11,7 +11,7 @@ Na [installatie](https://jekyllrb.com/docs/installation/) kan de Jekyll server e
 - Run `bundle install`
 
 ```bash
-bundle exec jekyll serve --config config.yml,_config_local.yml
+bundle exec jekyll serve
 ```
 
 De website is dan te zien op:

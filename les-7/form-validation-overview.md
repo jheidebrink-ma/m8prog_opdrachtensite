@@ -1,5 +1,5 @@
 ---
-title: Les 6
+title: Les 7
 layout: page
 permalink: :path/:basename
 nav_exclude: true
