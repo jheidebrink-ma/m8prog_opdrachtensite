@@ -18,6 +18,10 @@ Wij beginnen met het aanmaken van een route met daarin een referentie naar het p
 Open `/routes/web.php` en voeg daar een nieuwe route toe waarbij je in het url gedeelte op de laatste plek aangeeft dat er een verplichte variabele is.  
 Dat doe je door de model naam tussen brackets te plaatsen:  
 ```php
+Route::get('URL/{variabele}', [Controller::class, 'functie'])->name('routenaam');
+```
+Voorbeeld:
+```php
 Route::get('/project/{project}', [ProjectController::class, 'show'])->name('project.show');
 ```
 
@@ -48,7 +52,7 @@ Verwijder de loop en laat bijvoorbeeld de titel zien van het project:
 ---
 ### 4- stuur het project door naar de view
 Ga nu weer terug naar de **show** functie in de **ProjectController**.  
-Geef daar nu het project door aan de view zoels in dit voorbeeld met een model. Dit zal voor jullie een project zijn.  
+Geef daar nu het project door aan de view zoals in dit voorbeeld met een model. Dit zal voor jullie een project zijn.  
 ```php
     /**
      * Show a single item
