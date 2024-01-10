@@ -1,5 +1,5 @@
 ---
-title: Les 5
+title: Les 8
 layout: page
 permalink: :path/:basename
 nav_exclude: true
@@ -12,6 +12,10 @@ Nu wordt het tijd om de ingevulde gegevens te valideren, zodat er geen lege arti
 Je doet dit door validatie regels per invoerveld te bedenken en je gebruikt de `validate()` method van de `$request` om de validatie uit te voeren.
 
 Is een veld niet goed ingevuld dan stuurt Laravel je automatisch terug naar het formulier, zodat je de foutmelding(en) kunt tonen. Ook kun je de oude invoer weer in het veld zetten zodat je het niet opnieuw hoeft in te vullen.
+
+### Meer informatie
+Ga naar de Laravel website en bekijk welke validatie regels er beschikbaar zijn: [Alle validatie regels](https://laravel.com/docs/10.x/validation#available-validation-rules)
+
 
 ---
 ### 1- Request data controleren
@@ -87,8 +91,7 @@ Dit doe je door een value toe te voegen, in dit geval voor het veld titel:
 <input name="title" type="text" value="{{old('title')}}" />
 ```
 
-
-
+---
 
 ### Optionele video:
 
@@ -98,11 +101,11 @@ Zorg dat je een formulier hebt met validatie regels en foutmeldingen en dat de "
 {: .text-blue-100 .fs-4 }
 
 ### Links
-- [Documentatie over requests](https://laravel.com/docs/9.x/requests)
-- [Documentatie over form validatie](https://laravel.com/docs/9.x/validation)
-- [Alle validatie regels](https://laravel.com/docs/9.x/validation#available-validation-rules)
-- [Documentatie over foutmeldingen tonen ](https://laravel.com/docs/9.x/validation#quick-displaying-the-validation-errors)
-- [Documentatie over tonen van eerdere invoer](https://laravel.com/docs/9.x/requests#old-input)
+- [Documentatie over requests](https://laravel.com/docs/10.x/requests)
+- [Documentatie over form validatie](https://laravel.com/docs/10.x/validation)
+- [Alle validatie regels](https://laravel.com/docs/10.x/validation#available-validation-rules)
+- [Documentatie over foutmeldingen tonen ](https://laravel.com/docs/10.x/validation#quick-displaying-the-validation-errors)
+- [Documentatie over tonen van eerdere invoer](https://laravel.com/docs/10.x/requests#old-input)
 
 ---
 

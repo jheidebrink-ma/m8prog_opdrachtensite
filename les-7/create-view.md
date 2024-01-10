@@ -46,7 +46,7 @@ In je tailwind.conf in de root van je project moet je hiervoor aangeven fat je g
     plugins: [forms],
 ```
 
-Je kunt nu het voorbeeld formulier van Tailwind kopieren of je maakt een nieuw HTML formulier aan.  
+Je kunt nu het voorbeeld formulier van Tailwind kopiëren of je maakt een nieuw HTML formulier aan.  
 Denk hierbij aan de volgende elementen:
 - form action="{% raw %}{{route('project.store')}}{% endraw %}" ( de route om het formulier op te slaan )
 - form method="post" 
@@ -74,6 +74,17 @@ public function store(Request $request)
 }
 ```
 
+
+---
+### 6- Link naar nieuwe pagina
+Het is natuurlijk handig om ergens een knop te hebben om een nieuw project aan te maken. 
+Dan is het wel zo netjes als je ervoor zorgt dat deze knop alleen toegankelijk is voor ingelogde gebruikers.  
+Dat kun je als volgt doen:  
+```html
+@auth
+    <a href="{{route('ROUTE-NAAR-CREATE')}}" class="bg-blue hover:bg-green text-white font-bold py-2 px-4 rounded">Nieuw Project</a>
+@endauth
+```
 
 
 ---

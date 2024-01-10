@@ -1,9 +1,10 @@
 ---
-title: Les 8
+title: Les 8temp
 layout: page
 permalink: :path/:basename
-nav_order: 8
-nav_exclude: false
+nav_order: 10
+nav_exclude: true
+---
 
 {% include classroom-assignment.md les="8" %}
 
