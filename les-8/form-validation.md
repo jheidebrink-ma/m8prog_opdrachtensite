@@ -14,7 +14,7 @@ Je doet dit door validatie regels per invoerveld te bedenken en je gebruikt de `
 Is een veld niet goed ingevuld dan stuurt Laravel je automatisch terug naar het formulier, zodat je de foutmelding(en) kunt tonen. Ook kun je de oude invoer weer in het veld zetten zodat je het niet opnieuw hoeft in te vullen.
 
 ---
-### 2- Request data controleren
+### 1- Request data controleren
 We gaan nu verstuurde informatie weergeven.   
 Open de controller waar je de CRUD functionaliteit in hebt staan, waarschijnlijk is dat `ProjectAdminController`.. 
 Wij gaan nu werken in de `store` functie.  
@@ -44,7 +44,7 @@ Probeer nu één veld weer te geven, bijvoorbeeld zo:
  ```
 
 ---
-### 3- Validatie instellen
+### 2- Validatie instellen
 Je weet nu hoe je de data kunt ophalen, nu gaan wij aan de slag met de validatie.  
 Dit kan op twee manieren, of je plaatst het resultaat in een variabele óf je stopt het script als het niet goed is.  
 De eerste optie is voor straks makkelijker omdat we dan gelijk de valide data hebben.  
@@ -80,7 +80,7 @@ Dat doe je door deze code op de plek te plaatsen waar je de errors wilt zien, bi
 
 
 ---
-### 4- Weergeven van oude data
+### 3- Weergeven van oude data
 Het is prettig als je een formulier invult je nog wel de oude data ziet, hiervoor moet je de oude values toevoegen aan de invul velden.  
 Dit doe je door een value toe te voegen, in dit geval voor het veld titel:
 ```html

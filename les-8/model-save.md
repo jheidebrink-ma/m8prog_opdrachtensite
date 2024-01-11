@@ -1,5 +1,5 @@
 ---
-title: Les 5
+title: Les 8
 layout: page
 permalink: :path/:basename
 nav_exclude: true
@@ -10,6 +10,13 @@ nav_exclude: true
 
 Nu de gegevens zijn gevalideerd kun je alle gegevens via je model class op gaan slaan.
 Ook stuur je de gebruiker door naar een andere pagina het opslaan, zodat je niet per ongeluk als je op reload drukt een dubbele rij in je table krijgt.
+
+---
+### 1- De valide data verwerken
+We gaan nu verstuurde informatie weergeven.
+
+
+### Optionele video:
 
 {% include youtube.md video="lsSiB1MG9o0" %}
 
