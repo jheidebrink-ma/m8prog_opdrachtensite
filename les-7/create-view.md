@@ -15,13 +15,13 @@ Je zorgt ook dat het formulier veilig wordt opgestuurd en dat de gegevens aankom
 ### 1- Knop maken naar create
 Zoek via het `php artisan route:list` op wat de naam van de route voor het aanmaken van een project.
 Kopieer die naam en maak in de `dashboard/projects/index.blade.php` een link naar deze route.
-{% raw %}
 ```php
+{% raw %}
 <a href="{{route('ROUTE-NAAR-CREATE')}}" class="bg-green hover:bg-green text-white font-bold py-2 px-4 rounded float-right">
     {{ __('New project') }}
 </a>
-```
 {% endraw %}
+```
 
 
 ---
@@ -81,9 +81,11 @@ Het is natuurlijk handig om ergens een knop te hebben om een nieuw project aan t
 Dan is het wel zo netjes als je ervoor zorgt dat deze knop alleen toegankelijk is voor ingelogde gebruikers.  
 Dat kun je als volgt doen:  
 ```html
+{% raw %}
 @auth
-    <a href="{{route('ROUTE-NAAR-CREATE')}}" class="bg-blue hover:bg-green text-white font-bold py-2 px-4 rounded">Nieuw Project</a>
+    <a href="{{ route('ROUTE-NAAR-CREATE') }}" class="bg-blue hover:bg-green text-white font-bold py-2 px-4 rounded">Nieuw Project</a>
 @endauth
+{% endraw %}
 ```
 
 

@@ -40,7 +40,7 @@ Probeer nu één veld weer te geven, bijvoorbeeld zo:
 ```php
     public function store(Request $request)
     {
-        $validated = $request->validate([
+        $valid = $request->validate([
             'title' => 'required|unique:posts|max:255',
             'body' => 'required',
         ]);
@@ -57,7 +57,7 @@ Als de titel bijvoorbeeld verplicht is, uniek moet zijn in de posts tabel én hi
 ```php
     public function store(Request $request)
     {
-        $valid = $request->validate([
+        $valid_data = $request->validate([
             'title'      => 'required|unique:posts|max:255',
             'onderdeel'  => 'required',
         ]);
@@ -68,6 +68,7 @@ Als de titel bijvoorbeeld verplicht is, uniek moet zijn in de posts tabel én hi
 Nu weet je alleen nog niet of het goed is gegaan, daarom moet je in de view bij het formulier ook de error weergeven als die er is.  
 Dat doe je door deze code op de plek te plaatsen waar je de errors wilt zien, bijvoorbeeld in views/dashboard/create.blade.php:
 ```php
+{% raw %}
 @if ($errors->any())
     <div class="p-2 bg-yellow border-2 rounded">
         <ul>
@@ -77,6 +78,7 @@ Dat doe je door deze code op de plek te plaatsen waar je de errors wilt zien, bi
         </ul>
     </div>
 @endif
+{% endraw %}
 ```
 1. Hierbij controleer ik eerst of er errors zijn.
 2. Als dat het geval is dan laat ik een list zien.
@@ -88,7 +90,9 @@ Dat doe je door deze code op de plek te plaatsen waar je de errors wilt zien, bi
 Het is prettig als je een formulier invult je nog wel de oude data ziet, hiervoor moet je de oude values toevoegen aan de invul velden.  
 Dit doe je door een value toe te voegen, in dit geval voor het veld titel:
 ```html
+{% raw %}
 <input name="title" type="text" value="{{old('title')}}" />
+{% endraw %}
 ```
 
 ---
