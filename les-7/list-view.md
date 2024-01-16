@@ -40,10 +40,12 @@ Let op, er is ook een hamburger menu, onderaan, daar is het ook handig om het me
 ---
 
 ### 2- Dashboard view folder
-Maak in de **views** folder een mapje `dashboard` plaats daarin een map met de naam `projects` 
+Maak in de **views** folder een mapje `dashboard` plaats daarin een nieuwe map met de naam `projects` 
 
-Kopieer de `dashboard.blade.php` naar deze nieuwe folder en noem hem `index.blade.php`  
-Pas in dit bestand de titel aan zodat je weet naar welke view je kijkt.
+Kopieer het bestand `dashboard.blade.php` naar deze nieuwe folder en noem hem `index.blade.php`  
+Je hebt nu twee dezelfde bestanden.  
+Pas in dit bestand een tekst aan zodat je weet naar welke view je kijkt en je niet per ongeluk naar de dashboard view andere bestand kijkt. 
+Bijvoorbeeld het tekstje: `You're logged in!` kun je veranderen in `Projecten overzicht`
 
 Geef aan in de index functie van je controller aan dat je een view wilt weergeven.
 Bijvoorbeeld met deze functie:
