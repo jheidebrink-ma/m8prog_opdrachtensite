@@ -55,8 +55,8 @@ return view('dashboard.projects.index');
 ---
 ### 3- Overzicht in je view 
 In de view ga je nu een weergaven maken van je projecten.  
-Haal eerst in de index functie de artikelen op en geef aan dat je gebruik wilt maken van paginering.  
-Geef de 
+Haal eerst in de index functie in je controller ( `ProjectenAdminController.php` ) de artikelen op.  
+En geef aan dat je gebruik wilt maken van paginering. Dit doe je door de inhoud van de index function aan te passen in deze code:
 {% raw %}
 ```php
 $projects = Project::paginate(2);
