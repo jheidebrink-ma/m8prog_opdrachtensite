@@ -64,7 +64,7 @@ return view('dashboard.projects.index', ['projects'=>$projects]);
 ```
 {% endraw %}
 
-In de view kun je nu alle projecten weergeven zoals je al eerder hebt gedaan.  
+In het view bestand `/dashboard/projects/index.blade.php` kun je nu alle projecten weergeven zoals je al eerder hebt gedaan.  
 Daaronder kun je nu de paginering weergeven met deze code {% raw %}{{$projects->links()}}{% endraw %}
 Dan krijg je bijvoorbeeld zo'n stuk code:
 {% raw %}
@@ -75,8 +75,18 @@ Dan krijg je bijvoorbeeld zo'n stuk code:
 {{$items->links()}}
 ```
 {% endraw %}
-                    
+Let wel op dat jullie waarschijnlijk niet `$items` meegeven aan deze view, maar dat de variabele anders heet.              
 
+---
+### 4- Controleren
+Om dit te bekijken ga je nu naar de dashboard projects index pagina.  
+Bekijk eerst even welke routes er allemaal zijn door dit php artisan commando uit te voeren:
+```shell
+php artisan route:list
+```
+Hier zie je als het goed is een route staan voor je projecten index in het dashboard.  
+Die url kun je gebruiken om dit overzicht te zien.
+Bij mij is dat: 
 
 ---
 
