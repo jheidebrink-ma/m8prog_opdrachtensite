@@ -1,5 +1,5 @@
 ---
-title: Les 7
+title: Les 9
 layout: page
 permalink: :path/:basename
 nav_exclude: true
@@ -10,6 +10,14 @@ nav_exclude: true
 
 Je moet eerst een veld toevoegen oim straks de bestandsnaam in op te slaan.  Dat doe je door een nieuwe database wijziging (migration) te maken en het veld toe te voegen.  
 Daarna gebruik je `php artisan migrate` om de wijziging door te voeren in de database.
+
+---
+### 1- De upload folder
+
+
+---
+
+### Optionele video:
 
 {% include youtube.md video="6vnKESFnyk0" %}
 

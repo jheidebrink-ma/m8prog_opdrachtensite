@@ -1,5 +1,5 @@
 ---
-title: Les 7
+title: Les 9
 layout: page
 permalink: :path/:basename
 nav_exclude: true
@@ -9,6 +9,14 @@ nav_exclude: true
 {: .text-green-100 .fs-6 }
 
 Overzicht hoe de file storage werkt in Laravel.
+
+---
+### 1- De upload folder
+
+
+---
+
+### Optionele video:
 
 {% include youtube.md video="Dyie1Yw9HzE" %}
 
