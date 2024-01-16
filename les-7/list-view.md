@@ -40,7 +40,7 @@ Let op, er is ook een hamburger menu, onderaan, daar is het ook handig om het me
 ---
 
 ### 2- Dashboard view folder
-Maak in de **views** folder een mapje `dashboard` plaats daarin een mak met de naam `projects` 
+Maak in de **views** folder een mapje `dashboard` plaats daarin een map met de naam `projects` 
 
 Kopieer de `dashboard.blade.php` naar deze nieuwe folder en noem hem `index.blade.php`  
 Pas in dit bestand de titel aan zodat je weet naar welke view je kijkt.
