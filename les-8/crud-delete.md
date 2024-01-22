@@ -55,11 +55,11 @@ Aan de achterkant kun je een melding meegeven bij de redirect:
 ```
 In de view kun je vervolgens deze melding ophalen als volgt:
 ```php
-    @if (session('alert'))
+    {% raw %}@if (session('alert'))
         <div class="p-2 bg-yellow border-2 rounded">
             {{ session('alert') }}
         </div>
-    @endif
+    @endif{% endraw %}
 ```
 
 ---
