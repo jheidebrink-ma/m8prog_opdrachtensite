@@ -11,7 +11,37 @@ nav_exclude: true
 Je gaat een file upload veld toevoegen en het form aanpassen zodat het bestand ook goed wordt meegestuurd.
 
 ---
-### 1- De upload folder
+### 1- multipart/form-data
+Om bestanden via een html formulier te versturen moet je twee eerst in het formulier dat deze ook verschillende data kunt toevoegen.
+Wij zijn nu bezig in dit formulier:
+```html
+/resources/views/dashboard/projects/form.blade.php
+```
+Voeg deze attribute toe aan je form tag:
+```html
+ enctype="multipart/form-data"
+```
+
+---
+### 2- Image field
+Nu kun je een image veld toevoegen aan je formulier. Dat kan bijvoorbeeld zo'n veld zijn:
+
+```html
+    <input type="file" name="image">
+```
+
+---
+### 3- Image verwerken in de controller
+Als het formulier verstuurd is dan moet ook dit veld verwerkt worden.  
+Open daarom de controller die de verwerking van het formulier verwerkt.  
+```app/Http/Controllers/ProjectAdminController.php```
+Op twee plakken verwerk je het formulier: `store` en `update`. Wij beginnen met het aanpassen van de store, dan kunnen wij daarna de code kopiëren naar de andere functie.
+Onthoud hoe je de naam van het veld hebt ingesteld, bij mij is dat `image` waardoor ik nu het bestand via de request zo opvangen:
+```php
+    $image = $request->file('image');
+    dd($image);
+```
+Als je het formulier nu test dan zie je diverse informatie en kun je aan de slag met het opslaan van de afbeelding.
 
 
 ---
@@ -22,7 +52,7 @@ Je gaat een file upload veld toevoegen en het form aanpassen zodat het bestand o
 
 ### Links
 
-- [Storage in Laravel](https://laravel.com/docs/9.x/filesystem)
+- [Storage in Laravel](https://laravel.com/docs/10.x/filesystem)
 
 Zorg dat je file upload veld werkt en dat je het bestand kunt opvragen in je controller met de `dd()` functie.
 {: .text-blue-100 .fs-4 }
