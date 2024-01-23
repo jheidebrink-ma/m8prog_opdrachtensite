@@ -52,7 +52,7 @@ Omdat je volgens de browser alleen GET en POST methodes hebt moet ik een omweg g
 
 ---
 ### 3- De edit view
-Kopieer nu het add.blade.php bestand naar `edit.blade.php` en pas daar onder andere de titel aan zodat het duidelijk is dat je een project gaat aanpassen.  
+Kopieer nu het `add.blade.php` of als je die niet hebt, `create.blade.php` bestand naar `edit.blade.php` en pas daar onder andere de titel aan zodat het duidelijk is dat je een project gaat aanpassen.  
 Ik heb bijvoorbeeld deze titel geplaatst: 
 ```php
 {% raw %}Je gaat nu dit project bewerken: {{$project->title}}{% endraw %}
