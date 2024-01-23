@@ -14,8 +14,10 @@ Ook stuur je de gebruiker door naar een andere pagina het opslaan, zodat je niet
 ---
 ### 1- De valide data verwerken
 Nu wij zeker weten dat de data goed is kunnen wij aan de slag met opslaan.  
-Hiervoor ga je verder in de `store` functie.  
-Hiervoor zijn weer drie manieren mogelijk.
+Hiervoor ga je verder in de `store` functie in de `ProjectAdminController`.  
+De dd _( `debug die() `)_ functie heb je nu niet meer nodig, die regel kun je uit deze functie verwijderen.
+
+Voor het aanmaken van een nieuw model weer drie manieren mogelijk:
 ### Optie 1:
 ```php
     $product = new Product::create($request->all());

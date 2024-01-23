@@ -30,9 +30,9 @@ Open bijvoorbeeld: `resources/views/projects/show.blade.php`
 Voeg daar ergens de controle toe of een project wel een image heeft:
 En geef binnen die if de afbeelding weer:
 ```php
-@if($project->image)
+{% raw %}@if($project->image)
     <img src="{{Storage::url($project->image)}}">
-@endif
+@endif{% endraw %}
 ```
 
 

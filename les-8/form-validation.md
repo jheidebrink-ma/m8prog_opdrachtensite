@@ -26,7 +26,10 @@ Als argument zie je dat er een Request object meegegeven moet worden:
 ```php
  public function store(Request $request)
  ```
-Dit object kun je weergeven door gebruik te maken van de **debug dump()** `dump()` of **debug die()** `dd()` functie van Laravel.
+Dit object kun je weergeven door gebruik te maken van de debug functies van Laravel:
+**debug dump()** `dump()`  
+**debug die()** `dd()`
+
 Probeer dit maar eens uit:
 ```php
     public function store(Request $request)
@@ -46,6 +49,7 @@ Probeer nu één veld weer te geven, bijvoorbeeld zo:
         ]);
     }
  ```
+Je hebt nu aangegeven dat de titel binnen de `posts` tabel uniek moet zijn, waarschijnlijk is dit bij jou een andere tabelnaam.
 
 ---
 ### 2- Validatie instellen

@@ -8,7 +8,7 @@ nav_exclude: true
 ## Routes, controllers en view maken
 {: .text-green-100 .fs-6 }
 
-Pak je flowchart en user stories er bij. Als het goed is weet je welke pagina's en functionaliteiten je nodig hebt op je website.
+Wij gaan nu een aantal routes maken voor je website. In eerste instantie wil ik deze pagina maken: http://localhost/about
 
 **Schrijf per pagina/functionaliteit op:**
 

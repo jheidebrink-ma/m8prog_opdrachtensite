@@ -8,12 +8,12 @@ nav_exclude: true
 ## Overview: Wat zijn routes?
 {: .text-green-100 .fs-6 }
 
-Het bestand met de *routes*: `web/routes.php` bevat alle routes voor je website.
+Het bestand met de *routes*: `routes/web.php` bevat alle routes voor je website.
 Het is als het ware de menukaart van je website.
 
 - Voor elke pagina of URL op je website **MOET** je een route definiëren.
-- Die zet je in het bestand `routes/web.php`.
-- Alleen als het hier staat kun je naar die pagina toe op je website.
+- Die routes plaats je in het bestand `routes/web.php`.
+- We website kan alleen maar naar routes toe die hier gedefinieerd zijn.
 
 
 ### Wat heb je nodig om een route te laten werken?
@@ -22,7 +22,7 @@ Het is als het ware de menukaart van je website.
 2. Een request method (GET,POST). Meestal gebruik je GET. Voor form afhandeling meestal POST.
 3. Een controller class. 
 4. Een public function (method) in de class die de code voor jouw route bevat.
-5. Een view die de HTML bevat voor de pagina bij de route.
+5. Een view ( een blade.php bestand in de resources/views ) die de HTML bevat zoals aangegeven in een route of controller.
 
 ### Voorbeeld
 

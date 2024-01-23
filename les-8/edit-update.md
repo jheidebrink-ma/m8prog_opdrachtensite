@@ -34,7 +34,7 @@ Dit is mijn complete `update` functie in de admin controller:
     {
         $valid_data = $request->validate(
             [
-                'title'       => 'required|unique:projects|max:255',
+                'title'       => 'required|max:255|unique:projects,id,'.$project->id,
                 'intro'       => 'required',
                 'description' => 'required',
                 'active'      => 'nullable',
@@ -46,6 +46,11 @@ Dit is mijn complete `update` functie in de admin controller:
         
         return redirect( route('project.show', $project->id ) );
     }
+```
+Omdat ik nu ga bewerken wil ik wel dat de titel uniek is door te controleren of er een titel is met deze nieuwe titel **EN** dan mag het huidige project niet mee tellen.  
+Vandaar dit stukje in de validatie:
+```php
+'unique:projects,id,'.$project->id
 ```
 
 ---
