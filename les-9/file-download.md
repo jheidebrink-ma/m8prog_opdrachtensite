@@ -11,7 +11,20 @@ nav_exclude: true
 Je gaat een het bestand weergeven bij projecten.
 
 ---
-### Voeg de image toe aan de view
+### 1- Link de storage folder
+De storage folder is niet direct zichtbaar in je public folder. Daarom moet je een symlink maken om deze zichtbaar te maken in de public folder.
+Hiervoor kun je het volgende commando gebruiken:
+```shell
+[php of sail] php artisan storage:link
+```
+Bijvoorbeeld:
+```shell
+php artisan php artisan storage:link
+```
+Nu is de public folder die in de storage/app folder staat ook te benaderen door de browser. 
+
+---
+### 2- Voeg de image toe aan de view
 Ga naar de view van een project toe. 
 Open bijvoorbeeld: `resources/views/projects/show.blade.php`
 Voeg daar ergens de controle toe of een project wel een image heeft:
@@ -21,6 +34,8 @@ En geef binnen die if de afbeelding weer:
     <img src="{{Storage::url($project->image)}}">
 @endif
 ```
+
+
 
 
 ---
