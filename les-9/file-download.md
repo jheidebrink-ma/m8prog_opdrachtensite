@@ -36,8 +36,6 @@ En geef binnen die if de afbeelding weer:
 ```
 
 
-
-
 ---
 
 ### Geen optionele video.
