@@ -8,3 +8,4 @@
 7,"10.7","11-1-2024","CRUD - Forms & validatie (toevoegen gegevens)","Je gaat CRUD (Create-Read-Update-Delete) functionaliteit maken voor de gegevens op jouw website. Hiervoor maak je form(s) en leer je over het valideren van gegevens d.m.v. requests en validation rules",
 8,"10.8","12-1-2024","CRUD - Aanpassen & verwijderen","Je zorgt dat de ingevoerde gegevens ook aangepast kunnen worden.",
 9,"10.9","22-1-2024","File uploads","Je voegt een file upload mogelijkheid toe aan één van je formulieren, en zorgt dat de gegevens in de database worden opgeslagen. Het geuploade bestand toon of gebruik je vervolgens op jouw website",
+10,"10.10","30-1-2024","Export data","Exporteer geselecteerde data naar een csv bestand dat je kunt downloaden via een download link door gebruik te maken van Models en Eloquent.",
