@@ -51,7 +51,6 @@ Als het goed is zie je een witte pagina.
 Nu kun je in de database zien dat je een project is aangemaakt.
 
 
-
 ---
 
 ### Optionele video
