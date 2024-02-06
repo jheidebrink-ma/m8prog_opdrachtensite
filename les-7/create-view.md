@@ -12,8 +12,9 @@ Je gaat een formulier maken om nieuwe gegevens toe te voegen.
 Je zorgt ook dat het formulier veilig wordt opgestuurd en dat de gegevens aankomen in de juiste method in je controller.
 
 ---
-### 1- Knop maken naar create
-Zoek via het `php artisan route:list` op wat de naam van de route voor het aanmaken van een project.
+### 1- Knop maken naar de create route
+Zoek via het commando `php artisan route:list` op wat de naam van de route is voor het aanmaken ( create ) van een project.
+Mogelijk moet je dit commando uitvoeren in je docker terminal van de php of Laravel container.   
 Kopieer die naam en maak in de `dashboard/projects/index.blade.php` een link naar deze route.
 ```php
 {% raw %}

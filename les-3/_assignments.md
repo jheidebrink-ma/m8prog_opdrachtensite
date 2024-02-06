@@ -6,4 +6,3 @@
 2. [Routes, controllers en views maken voor jouw website](routes-controllers-views)
 3. [Menu maken met links (routes) naar alle pagina's](navigatie)
 4. [Actieve pagina een andere class/stijl geven](active-route)
-5. [Trello bord - backlog en user stories](trello-stories)
