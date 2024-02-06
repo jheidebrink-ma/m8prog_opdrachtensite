@@ -1,6 +1,5 @@
-# M10PROG — Backend Programming (BAP)
+# M7PROG — Backend Programming (BAP)
 
-Dit is de Github pages website voor de **M10PROG — Backend Programming** lessen in P10 van de opleiding.
 Deze site maakt gebruik van het Jekyll Theme: [Just the Docs](https://pmarsceill.github.io/just-the-docs/)
 
 Om dit op je lokale computer te draaien is [Jekyll](https://jekyllrb.com/) nodig (een static site generator in Ruby)
@@ -19,9 +18,4 @@ De website is dan te zien op:
 
 ----
 Na pushen van de master branch worden wijzigingen **automatisch** gepubliceerd op:
-[https://hiddebraun-ma.github.com/F2M3-BAP-Site-2022](https://hiddebraun-ma.github.com/F2M3-BAP-Site-2022)
-
-Via een makkelijkere URL:
-[https://bit.ly/duurzaam-huis-backend](https://bit.ly/duurzaam-huis-backend)
-
-
+[http://jheidebrink-ma.github.io/m7prog_opdrachtensite](http://jheidebrink-ma.github.io/m7prog_opdrachtensite)

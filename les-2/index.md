@@ -7,6 +7,3 @@ nav_order: 3
 
 {% include classroom-assignment.md les="2" %}
 
----
-
-{% include commit_push.md %}

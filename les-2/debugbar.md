@@ -8,31 +8,42 @@ nav_exclude: true
 ## Debug bar implementeren 
 {: .text-green-100 .fs-6 }
 
-Met de debug bar voor Laravel kun je controleren wat er goed of niet goed gaat in je project.<br>
-Stap voor stap uitleg kun je hier vidnen:<Br>
+Met de debug bar voor Laravel kun je controleren wat er goed of niet goed gaat in je project.  
+Stap voor stap uitleg kun je hier vinden:  
 [https://github.com/barryvdh/laravel-debugbar](https://github.com/barryvdh/laravel-debugbar)
 
 ---
 
-## Installatie
+### 1- Installatie
 1. Login op de php docker container zodat je geen problemen hebt met php en composer.
     - Open hiervoor docker-desktop en zoek de juiste php container op
     - Klik op de drie puntjes achter de naam en daarna op **open terminal**
-2. Controleer of je op de juiste instance zit met het volgende commando: ```php -v```
-3. Installeer de debugbar via composer: <br>
+2. Controleer of je op de juiste container zit met het volgende commando: ```php -v```
+	- Krijg je een error dan heb je niet de php container geopend, probeer het nog maar een keertje.
+3. Installeer de debug bar via composer: <br>
 	```composer require barryvdh/laravel-debugbar --dev```
-4. Om de debug bar aan of uit te zetten kun je in de **.env** file aangeven of je applicatie in debug mode zit: ```APP_DEBUG=true```
-5. Mogelijk laad het systeem niet automatisch de debug bar, daarom moet je in de<br>
-	**providers array** in de **config/app.php** aangeven dat de debug bar geladen moet worden. <br>
-	Voeg daarom deze regel toe:<br>
+4. Om de debug bar `aan` of `uit` te zetten kun je in de **.env** file aangeven of je applicatie in debug mode zit: ```APP_DEBUG=true```
+5. Mogelijk laad het systeem niet automatisch de debug bar, daarom moet je in de  
+	`providers array` in de `config/app.php` aangeven dat de debug bar geladen moet worden.   
+	Voeg daarom deze regel toe:  
    ```Barryvdh\Debugbar\ServiceProvider::class,```
-6. Als je binnen laravel gebruik wilt maken van de debug functie om bijvoorbeeld een debug regel weer te geven dan moet je in de <Br>
-	**config/app.php** de volgende regel aan het **facades** onderdeel toevoegen:<br>
+6. Als je binnen laravel gebruik wilt maken van de debug functie om bijvoorbeeld een debug regel weer te geven dan moet je in de  
+	**config/app.php** de volgende regel aan het **facades** onderdeel toevoegen:  
 	`'Debugbar' => Barryvdh\Debugbar\Facades\Debugbar::class,`
-7. Ga nu weer naar je website en zie dat je onderaan de pagina een debug bar hebt.
 
-{: .text-blue-100 .fs-5 }
+---
+### 2- Controle
+Als je nu in de browser naar je project gaat dan zie je onderaan het Laravel logo.  
+Daarnaast vind je een aantal elementen, bijvoorbeeld welke views en route er momenteel geladen worden.
+
+
+---
 
 {% include commit_push.md %}
+
+---
+### Volgende stap:
+{: .text-green-100 .fs-4 }  
+[Installeer Tailwind CSS](tailwind)
 
 

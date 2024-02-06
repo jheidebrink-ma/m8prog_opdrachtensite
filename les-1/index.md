@@ -7,7 +7,3 @@ nav_exclude: false
 ---
 
 {% include classroom-assignment.md les="1" %}
-
----
-
-{% include commit_push.md %}
