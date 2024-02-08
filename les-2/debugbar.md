@@ -19,7 +19,7 @@ Stap voor stap uitleg kun je hier vinden:
     - Open hiervoor docker-desktop en zoek de juiste php container op
     - Klik op de drie puntjes achter de naam en daarna op **open terminal**
 2. Controleer of je op de juiste container zit met het volgende commando: ```php -v```
-	- Krijg je een error dan heb je niet de php container geopend, probeer het nog maar een keertje.
+	- Krijg je een error dan heb je niet de php container geopend, probeer het nog maar een keertje maar dan nu met de correcte container.
 3. Installeer de debug bar via composer: <br>
 	```composer require barryvdh/laravel-debugbar --dev```
 4. Om de debug bar `aan` of `uit` te zetten kun je in de **.env** file aangeven of je applicatie in debug mode zit: ```APP_DEBUG=true```
