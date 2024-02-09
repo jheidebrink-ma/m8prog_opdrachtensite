@@ -17,13 +17,15 @@ Je hoeft geen ingewikkelde SQL queries meer te schrijven, maar werkt via de PHP 
 ## Data versturen via de controller.  
 Wij gaan tijdelijk via de controller extra projecten toevoegen om iets meer data weer te kunnen geven, dit doen wij in 3 stappen.
 
-### 1. Route aanmaken
+---
+### 1- Route aanmaken
 Maak een nieuwe route aan in `routes/web.php`, bijvoorbeeld:
 ```php
     Route::get('/projects/add', [ ProjectController::class, 'add' ])->name('project.add');
 ```
 
-### 2. Controller endpoint aanmaken
+---
+### 2- Controller endpoint aanmaken
 Deze nieuwe route moet natuurlijk wel ergens opgevangen worden, dat doe je in: `app/Http/Controllers/ProjectController.phpp`.  
 Daar moet nu een `add` functie komen die de data gaat toevoegen.
 ```php
@@ -32,7 +34,8 @@ Daar moet nu een `add` functie komen die de data gaat toevoegen.
     }
 ```
 
-### 3. Project aanmaken
+---
+### 3- Project aanmaken
 Met de volgende code kun je een model aanmaken en vervolgens toevoegen aan de database:
 ```php
     // Maak een model aan
@@ -43,7 +46,8 @@ Met de volgende code kun je een model aanmaken en vervolgens toevoegen aan de da
     $model->save();
 ```
 
-## Resultaat
+---
+## 4- Resultaat
 Roep de nieuwe url op in je browser.
 
 Als het goed is zie je een witte pagina.
@@ -54,8 +58,7 @@ Nu kun je in de database zien dat je een project is aangemaakt.
 ---
 
 ### Optionele video
-
-In de video laat kun zien hoe je deze model class kunt gebruiken om alle gegevens in de table op te halen via de model class en hoe je die gegevens vervolgens aan de view kunt geven om ze te tonen.
+In de video kun zien hoe je deze model class kunt gebruiken om alle gegevens in de table op te halen via de model class en hoe je die gegevens vervolgens aan de view kunt geven om ze te tonen.
 
 Meer informatie: [Crud videos](crud)
 

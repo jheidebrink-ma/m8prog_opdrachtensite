@@ -16,7 +16,7 @@ Alle pagina's maken vervolgens gebruik van die layout (zodat je geen dubbele cod
 Je kunt gebruik maken van de voorbeeld layout die al in Laravel zit, bekijk eens de bestanden in de `view` folder in de `resources` folder.  
 
 ---
-
+### 1- Layout instellen
 Zorg dat je nu de layout in Laravel werkend hebt en dat je deze kunt gebruiken voor de "views" (pagina's) die je gaat maken.
 {: .text-blue-100 .fs-4 }
 
@@ -24,8 +24,7 @@ Meer over layouts in Laravel vind je in de documentatie:
 - [https://laravel.com/docs/10.x/blade#building-layouts](https://laravel.com/docs/10.x/blade#building-layouts)
 
 ---
-
-## Indeling van website
+### 2- Indeling van website
 Voor deze les beginnen wij met een basis structuur van een pagina met de volgende items:
 -  layout container
 -  header met een logo en het menu

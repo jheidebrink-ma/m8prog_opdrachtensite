@@ -10,12 +10,15 @@ nav_exclude: true
 
 We gaan Laravel installeren in een Docker omgeving. Deze omgeving gaan wij tijdens deze gehele module gebruiken.
 
+---
+### 1- Laravel project initialiseren
 1- Maak een nieuwe repository aan in [GitHub](http://github.com/) voor **m7prog-laravel**  
 2- Navigeer op je computer naar de folder waar je project straks komt te staan.  
 3- Wij werken nu volgens de setup van [laravel.com](https://laravel.com/docs/10.x)  
 Je kunt Laravel installeren op **twee** manieren, met een nieuwe docker installatie via **curl** of via **composer**. 
 Begin met de eerste versie, gaat dit mis, dan kun je overstappen op het alternatief vanuit docker.  
-### Installatie via Curl
+
+### 1a- Installatie via Curl
 Navigeer naar je project folder en voer het volgende commando uit in de terminal. Zo initialiseer je een nieuw laravel project in de folder **m7prog-laravel**:  
 ```curl -s "https://laravel.build/m7prog-laravel" | bash```  
 Navigeer nu naar de folder m7prog-laravel  
@@ -23,9 +26,7 @@ Navigeer nu naar de folder m7prog-laravel
 Je kunt nu Laravel starten door gebruik te maken via Sail  
 ```./vendor/bin/sail up```  
 
-
-
-### Alternatief
+### 1b- Alternatief via composer
 Als alternatief kun je ook Laravel installeren via Composer.  
 Hiervoor dien je composer op je computer geïnstalleerd te hebben, dit controleer je door cmd/terminal te openen en dit commando uit te voeren:  
 ```composer -V```  
@@ -44,12 +45,12 @@ Start docker:<br>
 
 
 ---
-
+### 2- Controle
 Als het goed is heb je nu een nieuw Laravel project waar je in kunt gaan werken.
 
-- Zorg ervoor dat je een git repo gekoppeld hebt aan dit project.
-- Je kunt de url terug vinden door in docker desktop te bekijken welke docker container er aan staat. Klik dan op de NGINX of Laravel-test container
-- Wil je een php artisan commando uitvoeren dan moet je gebruik maken van de php of Laravel-test container.
+- Zorg ervoor dat je een git repo gekoppeld hebt aan dit project.  
+- Je kunt de url terug vinden door in docker desktop te bekijken welke docker container er aan staat. Klik dan op de NGINX of Laravel-test container.  
+- Wil je een `php artisan` commando uitvoeren dan moet je gebruik maken van de php of Laravel-test container.
 
 
 ---

@@ -8,7 +8,7 @@ nav_order: 1
 
 Je bouwt je Laravel website aan de hand van deze algemene en functionele eisen.
 
-**In dit voorbeeld maak ik een agenda website, maar je kunt ook een adresboek of projecten website ontwikkelen.**
+**In dit voorbeeld maak ik een portfolio website met projecten, maar je kunt ook een adresboek of agenda website ontwikkelen.**
 
 ##  Algemene eisen
 {: .text-green-200}

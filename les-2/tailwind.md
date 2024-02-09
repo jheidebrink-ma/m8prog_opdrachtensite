@@ -32,7 +32,6 @@ Draai daarvoor het volgende commando in de terminal:
 npm run dev
 ```
 
-
 ---
 ### 2- Compile nu de css
 In de terminal kun je de css compile met dit commando:  

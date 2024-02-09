@@ -14,7 +14,8 @@ In andere projecten gebruikte je daarvoor de de include en require functionalite
 
 In Laravel kun je gebruik maken van een basis template waar je variabele objecten in gaat stoppen. 
 
-## Yield
+---
+## 1- Yield
 Er zijn twee verschillende manieren om deze implementatie te gebruiken. Wij gaan aan de slag met het `@yield` commando.
 Zie voor meer informatie [https://laravel.com/docs/10.x/blade](https://laravel.com/docs/10.x/blade)
 
@@ -31,7 +32,8 @@ Wij gaan een master layout maken waar wij verschillende elementen gaan toevoegen
 `@section('content')`  
 `@endsection`
 
-## JavaScript
+---
+## 2- JavaScript
 Dit zelfde systeem  kunnen wij ook met bijvoorbeeld JavaScript gebruiken door bijvoorbeeld deze code in `project.blade.php` te plaatsen:  
 ```javascript
     @section('scripts')

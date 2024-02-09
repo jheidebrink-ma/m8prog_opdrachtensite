@@ -9,10 +9,9 @@ nav_exclude: true
 {: .text-green-100 .fs-6 }
 
 Maak een eerste ontwerp aan de hand van je wireframe.
-Zorg dat je in ieder geval in je ontwerp (en wireframe) aan het volgende hebt gedacht:
+Zorg dat je in ieder geval in je ontwerp aan het volgende hebt gedacht:
 
 **Header met:**
-
 - Logo
 - Titel van je website
 - Menu / Navigatie
@@ -22,14 +21,13 @@ Zorg dat je in ieder geval in je ontwerp (en wireframe) aan het volgende hebt ge
 - De plek in je layout waar de ECHTE inhoud van elke pagina wordt geplaatst.
 
 **Footer met wat onderdelen:**
-
 - Social icons
 - Contactgegevens
 
-Maak nu een document met alle gebruikte kleuren, lettertypes, en andere design elementen (en de gebruikte stijlen). Deze heb je zo nodig om Tailwind aan te gaan passen.
+Maak nu een document met alle gebruikte kleuren, lettertypes, en andere design elementen (en de gebruikte stijlen).  
+Deze heb je zo nodig om Tailwind aan te gaan passen.
 
 **Bijvoorbeeld**
-
 - Normale tekst: Nunito, 16px
 - Kop 1: Helvetica Bold, 22px
 - Kop 2: Helvetica, 18px

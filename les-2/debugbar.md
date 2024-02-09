@@ -13,7 +13,6 @@ Stap voor stap uitleg kun je hier vinden:
 [https://github.com/barryvdh/laravel-debugbar](https://github.com/barryvdh/laravel-debugbar)
 
 ---
-
 ### 1- Installatie
 1. Login op de php docker container zodat je geen problemen hebt met php en composer.
     - Open hiervoor docker-desktop en zoek de juiste php container op

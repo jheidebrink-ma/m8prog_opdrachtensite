@@ -3,4 +3,4 @@
 
 1. [Overview: Model / Database](model-database-overview)
 2. [Een Eloquent model class en database migration maken](model-migration-migrate)
-2. [Een database seeder maken](model-migration-seeders)
+3. [Een database seeder maken](model-migration-seeders)
