@@ -25,12 +25,10 @@ Wij gaan een master layout maken waar wij verschillende elementen gaan toevoegen
 1. Maak een `master.blade.php` bestand aan in de folder `resource/views/layout/`
 2. Plaats in deze pagina verschillende HTML onderdelen, zie een voorbeeld van een layout onderaan de pagina, deze niet gebruiken omdat hij niet werkt.    
     Belangrijk is dat je ergens aangeeft dat daar de content moet komen met deze code:    
-    `@yield( 'content' )`
-3. Open het project.blade.php view bestand en geef bovenin aan dat je de master wilt extenden door deze code te plaatsen:    
-   `@extends( 'layouts.master' )`
-4. Plaats op de plek waar je de content wilt weergeven de html tussen deze codes:  
-`@section('content')`  
-`@endsection`
+    `{{ $slot }}`
+3. Open het project.blade.php view bestand en geef buiten je content aan dat je de master wilt extenden door deze code te plaatsen:    
+   `<x-master-layout>`
+4. De content binnen dit blok zal nu in op de plek waar `{% raw %}{{ $slot }}{% endraw %}` staat komen.
 
 ---
 ## 2- JavaScript
@@ -52,29 +50,35 @@ In de `footer.blade.php` kun je in de deze scripts ophalen met deze code:
 ## Voorbeeld
 
 ```html
-{% raw %}
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
+{% raw %}<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="dinges" content="inhoud">
     <title>@yield('page_title') | {{ config('app.name', 'MA-Site') }}</title>
-    <link href="{{ asset('css/app.css?v='.config('app.version')) }}" rel="stylesheet">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
+<body class="font-sans antialiased">
+<div class="min-h-screen bg-gray-100 dark:bg-gray-900">
+    <!-- Page Heading -->
+    @if (isset($header))
+    <header class="bg-white dark:bg-gray-300 shadow">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            {{ $header }}
+        </div>
+    </header>
+    @endif
 
-<body>
-<header-tag>
-    @include('layouts.partials.header')
-</header-tag>
-<content-tag>
-    @yield( 'content' )
-</content-tag>
+    <!-- Page Content -->
+    <main class="bg-red-500">
+        {{ $slot }}
+    </main>
+</div>
 @include('layouts.partials.footer')
 @include('layouts.partials.scripts')
 </body>
-</html>
-{% endraw %}
+</html>{% endraw %}
 ```
 
 ---

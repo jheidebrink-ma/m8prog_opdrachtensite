@@ -8,8 +8,9 @@ nav_exclude: true
 ## Navigatie / menu toevoegen met alle (relevante) pagina's
 {: .text-green-100 .fs-6 }
 
-Nu je alle routes/pagina's hebt gemaakt en je er in je browser naar toe kunt navigeren, ga je een menu toevoegen.
-Uiteraard gebruik je je eigen HTML en CSS en design.
+Nu je een aantal routes/pagina's hebt gemaakt en je er in je browser naar toe kunt navigeren, ga je een menu bewerken.  
+Uiteraard gebruik je je eigen HTML en CSS en design.  
+Als je het dashboard.blade.php voorbeeld hebt gebruikt dan heb je een navigation.blade.php bestand met daarin een **desktop** én een **mobiel** menu.
 
 ---
 ## 1- a href tag
@@ -19,9 +20,9 @@ Bijvoorbeeld bij de about route:
 ```
 {% raw %}{{ route('about') :}{% endraw %}
 ```
-In de blade templates kun je php functies aanroepen door aan te geven dat je iets wilt uitvoeren. 
-  Dat doe je door een code te plaatsen tussen deze twee karakters:
-`{% raw %}{{ }}`{% endraw %}
+In de blade templates kun je php functies aanroepen door aan te geven dat je iets wilt uitvoeren.  
+Dat doe je door een code te plaatsen tussen deze twee karakters:  
+`{% raw %}{{ }}{% endraw %}`  
 Nu roepen wij een route aan die wij hebben ingesteld, een compleet voorbeeld is dit:
 ```html
     <a href="{% raw %}{{route('about')}}">About</a>{% endraw %}

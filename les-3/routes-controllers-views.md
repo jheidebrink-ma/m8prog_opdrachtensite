@@ -8,20 +8,21 @@ nav_exclude: true
 ## Routes, controllers en view maken
 {: .text-green-100 .fs-6 }
 
-Wij gaan nu een aantal routes maken voor je website. In eerste instantie wil ik deze pagina maken: http://localhost/about
+Wij gaan nu een aantal routes maken voor je website.  
+In eerste instantie wil ik deze pagina maken: http://localhost/about
 
 **Schrijf per pagina/functionaliteit op:**
 
 - De titel van de pagina
 - Een mooie url, bijvoorbeeld: `/projecten` of `/about` of `/contactformulier`.
-- De naam van de controller, bijvoorbeeld `ProjectController`, `AboutController`, `ContactController`.
+- De naam van de controller, bijvoorbeeld: `ProjectController`, `AboutController`, `ContactController`.
 
 ---
 
 ## Maak routes, controllers en views voor jouw website
 {: .text-green-100 .fs-6 }
 
-Voor alle pagina's ga je nu een route maken, een controller en een view.
+Voor alle pagina's ga je nu een route maken, een controller en een view.  
 Daarna ga je de pagina's in je navigatie zetten zodat je door de site kan klikken (met nog lege pagina's)
 
 ### PHP Artisan
@@ -29,7 +30,7 @@ Je kunt routes met de hand maken door verschillende documenten aan te maken en t
 Zie voor meer informatie:
 [https://laravel.com/docs/10.x/artisan](https://laravel.com/docs/10.x/artisan)
 Deze commando's voer je uit in de terminal, dit kan in de code editor of in docker.  
-Afhankelijk van je setup gebruik je `php artisan` of `sail artisan`, hier krijg je vanzelf een melding van te zien. 
+Afhankelijk van je setup gebruik je `php artisan` of `sail artisan`, hier krijg je vanzelf een melding van te zien als je de verkeerde manier gebruikt. 
 
 ---
 ### 1- Controller aanmaken
@@ -38,8 +39,11 @@ Om een controller aan te maken gebruik je dit commando:
 
 Bijvoorbeeld voor mijn about pagina wat wij nu gaan aanmaken:  
 `php artisan make:controller AboutController`  
+
 _Let op: dat je deze naam CammelCase is en met een kapitaal begint_  
-_Let op: gebruik engelse benamingen voor models en controllers.
+_Let op: gebruik engelse benamingen voor models en controllers._
+{: .text-red-100 .fs-4 }
+
 
 Later gaan wij models aanmaken en migraties, om een model aan te maken gebruik je dit commando:
 `php artisan make:model modelName`  
@@ -73,7 +77,7 @@ Deze functie zal een tekstje weergeven op de pagina.
 
 ---
 ## 3- Routes
-Ga nu naar het bestand: `/routes/app.php`
+Ga nu naar het bestand: `/routes/web.php`  
 Daar kun je een route aanmaken die naar deze functie verwijst. Geef hierbij aan:
 - Welke request methode je gebruikt: `GET` / `POST` / `DELETE` / `PATCH` / `PUT`
 - Wat de url is
@@ -99,7 +103,7 @@ Kijk de video om te zien hoe je dat doet:
 {%include youtube.md video="YdAnPq6hMZo" %}
 
 ---
-Zorg dat je na deze video alle routes hebt voor jouw website waarmee je jouw user stories kunt gaan uitwerken.
+Zorg dat je na deze video alle routes hebt voor jouw website.
 {: .text-blue-100 .fs-4 }
 
 ---

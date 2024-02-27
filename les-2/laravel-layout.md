@@ -15,6 +15,14 @@ Het belangrijkste is het maken van de layout. De layout bepaalt de algemene look
 Alle pagina's maken vervolgens gebruik van die layout (zodat je geen dubbele code hoeft te maken)  
 Je kunt gebruik maken van de voorbeeld layout die al in Laravel zit, bekijk eens de bestanden in de `view` folder in de `resources` folder.  
 
+
+---
+#### Advies
+{: .text-blue-100 .fs-4 }
+Gebruik de indeling van dashboard.blade.php.  
+Hierbij wordt op een dynamische manier de layout opgehaald.  
+Haal maar eens alles weg en plaats de code binnen deze tags: `<x-guest-layout>`.
+
 ---
 ### 1- Layout instellen
 Zorg dat je nu de layout in Laravel werkend hebt en dat je deze kunt gebruiken voor de "views" (pagina's) die je gaat maken.

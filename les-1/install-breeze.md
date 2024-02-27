@@ -23,12 +23,22 @@ composer require laravel/breeze --dev
 Als dit niet direct lukt, ga dan naar `Docker Desktop` en klik op de 3 puntjes achter je `php` of `Laravel.test` container en selecteer `terminal`.  
 Daar kun je hetzelfde commando uitvoeren.
 
+### 2- Breeze en Blade
+Installeer nu Breeze met Blade door deze commando's uit te voeren:
+```shell
+php artisan breeze:install
+
+php artisan migrate
+npm install
+npm run dev
+```
 
 ---
 ### 2- Controle en account
 Als het goed is heb je nu ook werkende registratie, inlog/uitlog en wachtwoord vergeten functionaliteit.  
-Ga maar naar je localhost en dan `/register`  
-Zorg dat je een account hebt gemaakt om mee in te loggen op je website.
+Ga maar naar je browser naar je project en tik vervolgens het volgende path achter de url: `register`  
+Je kunt ook rechtsboven op register klikken.  
+Zorg dat je een account hebt gemaakt om mee in te loggen op je website.  
 
 ---
 ### 3- Commit

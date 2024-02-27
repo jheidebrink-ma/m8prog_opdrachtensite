@@ -24,7 +24,7 @@ sail artisan migrate:rollback
 
 ---
 ### 2- Migratie aanpassen
-Pas nu je migratie document aan door bijvoorbeeld een image veld aan te maken:  
+Pas nu je migratie document aan door bijvoorbeeld een image veld aan te maken waar je straks de naam van een afbeelding kunt opslaan:  
 ```shell
     $table->string('image')->nullable();
 ```
@@ -44,5 +44,10 @@ sail artisan migrate
 ---
 
 {% include commit_push.md %}
+
+---
+### Volgende stap:
+{: .text-green-100 .fs-4 }  
+[CRUD operaties met je model class](crud-eloquent)
 
 

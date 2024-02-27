@@ -8,36 +8,73 @@ nav_exclude: true
 ## Gegevens ophalen in controller en weergeven in de view
 {: .text-green-100 .fs-6 }
 
-Je kunt nu (na wat oefenen) alle CRUD operaties uitvoeren met de Eloquent model class.
-
-Nu kun je een lijst pagina gaan maken door gegevens op te halen en aan een view te geven.
-
-In de view kun je met de Blade `@foreach` directive de gegevens tonen met jouw eigen HTML en CSS.
+Je kunt nu (na wat oefenen) alle CRUD operaties uitvoeren met de Eloquent model class.  
+Het doel is om een lijst met projecten op te halen en aan een view door te geven.  
+In de view kun je met de Blade `@foreach` directive de gegevens tonen met jouw eigen HTML en CSS.  
 
 ---
 ### 1- Maak een functie aan in je ProjectController
-Zoek via het `php artisan route:list` op wat de naam van de route voor het aanmaken van een project.
-Kopieer die naam en maak in de `dashboard/projects/index.blade.php` een link naar deze route.
+Maak in je ProjectController een index functie aan waar je straks alle projecten gaat ophalen.
 ```php
-{% raw %}
-<a href="{{route('ROUTE-NAAR-CREATE')}}" class="bg-green hover:bg-green text-white font-bold py-2 px-4 rounded float-right">
-    {{ __('New project') }}
-</a>
-{% endraw %}
+    public function index() {
+        
+    }
 ```
 
 ---
 ### 2- Haal alle projecten op
+Binnen deze functie haal je vervolgens alle Projecten op door het model te laden en daarbij aan te geven wat jke wilt ophalen.
+```php
+    $projects = Project::all();
+```
+Of als je alleen de actieve projecten wilt ophalen, gesorteerd op title:
+```php
+    $projects = Project::where('active', 1)
+               ->orderBy('title')
+               ->take(10)
+               ->get();
+```
+Geef vervolgens deze informatie door aan het view bestand `/resources/views/projects/index.blade.php`
+```php
+        return view(
+            'projects.index',
+            [
+                'projects' => $projects,
+            ]
+        );
+```
+
 
 ---
 ### 3- Maak een view bestand 
+Maak een nieuw views bestand aan:  
+`/resources/views/projects/index.blade.php`
+Je kunt hierbinnen de als voorbeeld een oud bestand gebruiken.  
+In het content gedeelte plaats je vervolgens de loop:  
+```php {% raw %}
+    @foreach( $projects as $project )
+        <div
+            class="max-w-sm p-2 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-center">
+                {{$project->title}}
+            </h5>
+        </div>
+    @endforeach {% endraw %}
+```
+
 
 ---
 ### 4- Maak een route aan
+De route die ik nu wil gebruiken is:
+```php
+    Route::get('/projects/index', [ ProjectController::class, 'index' ])->name('project.index');
+```
+
 
 ---
 ### 5- Test de route
-
+Bekijk deze route en geniet van het mooie overzicht dat je gemaakt hebt op dit endpoint.
+`/projects/index`
 
 ---
 
@@ -57,4 +94,7 @@ Ook leer je hoe je forms veilig maakt met CSRF en hoe je gegevens makkelijk kunt
 
 {% include commit_push.md %}
 
-
+---
+### Volgende stap:
+{: .text-green-100 .fs-4 }  
+[Templates](templates)

@@ -24,8 +24,9 @@ Het is als het ware de menukaart van je website.
 5. Een view ( een blade.php bestand in de resources/views ) die de HTML bevat zoals aangegeven in een route of controller.
 
 ### Voorbeeld
-Hier een voorbeeld hoe je **GET** een route maakt naar de url **/blog** die afgehandeld wordt door de function **index** in een **BlogController**.
-De route heeft een (interne naam) *blog.index* (hiermee kun je er makkelijker naar linken in je code).
+Hier een voorbeeld hoe je **GET** een route maakt naar de url **/blog**   
+die afgehandeld wordt door de function **index** in een **BlogController**.  
+De route heeft een (interne naam) **blog.index** (hiermee kun je er makkelijker naar linken in je code).
 
 ![Route](images/route-example.png)
 

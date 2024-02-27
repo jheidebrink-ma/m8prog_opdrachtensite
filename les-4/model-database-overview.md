@@ -8,7 +8,8 @@ nav_exclude: true
 ## Overzicht: Models en de database
 {: .text-green-100 .fs-6 }
 
-**Zorg dat je deze introductie even rustig doorleest zodat je snapt hoe de model-laag in Laravel samenwerkt met de database.**
+**Zorg dat je deze introductie even rustig doorleest zodat je snapt hoe de model-laag in Laravel samenwerkt met de database.**  
+Deze pagina geeft informatie over Eloquent, lees deze eerst door voordat je gaat bouwen.
 
 ---
 
@@ -105,7 +106,7 @@ Houd goed in gedachten: **De PHP CLASS IS GEKOPPELD AAN EEN DATABASE TABLE**.
 
 ![Eloquent en database](images/eloquent-overview.png)
 
-[Alles over Eloquent staat in de documentatie](https://laravel.com/docs/10.x/eloquent)
+[Alles over Eloquent staat in de Laravel documentatie](https://laravel.com/docs/10.x/eloquent)
 
 ---
 

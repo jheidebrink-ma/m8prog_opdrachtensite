@@ -33,6 +33,12 @@ Open terminal scherm en voer dit commando uit:
 ```shell
 npx tailwindcss -i ./resources/css/app.css -o ./public/dist/app.css --watch
 ```
+Pas maar ergens de achtergrond aan door bijvoorbeeld de background aan te passen:  
+```html {% raw %}
+    <main class="bg-red-500">
+        {{ $slot }}
+    </main> {% endraw %}
+```
 
 ---
 

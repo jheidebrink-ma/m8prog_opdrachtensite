@@ -26,17 +26,17 @@ Open maar het bestand:
 ```
 
 Hier vind je de `run` functie.  
-Deze voert het toevoegen uit.
-Je kunt nu Laravel Eloquent gebruiken om je data toe te voegen. 
+Deze voert het toevoegen uit.  
+Je kunt nu Laravel Eloquent gebruiken om je data toe te voegen.  
 Dit lijkt erg op zoals wij straks met models omgaan.  
-Het is ook mogelijk om gebruik te maken van **Model Factories** hierbij kun je een aantal items met random data zoals fake tekst toevoegen.
-Zorg ervoor dat in het `use` gedeelte bovenaan de code ook de faker geladen wordt: ```use Faker\Factory as Faker; ```
-Bovenaan in de functie geef je aan dat je een faker wilt gebruiken om fake data toe te voegen. Dit hoeft niet, je kunt ook zelf de data verzinnen.
+Het is ook mogelijk om gebruik te maken van **Model Factories** hierbij kun je een aantal items met random data zoals fake tekst toevoegen.  
+Zorg ervoor dat in het `use` gedeelte bovenaan de code ook de faker geladen wordt: ```use Faker\Factory as Faker; ```  
+Bovenaan in de functie geef je aan dat je een faker wilt gebruiken om fake data toe te voegen. Dit hoeft niet, je kunt ook zelf de data verzinnen.  
 ```shell
     $faker = Faker::create();
 ```
 
-**Elementen**
+**Elementen**  
 Velden die jij zelf hebt bedacht maar hier niet staan zul je moeten toevoegen.   
 Vul de verschillende elementen van het model via faker:   
 ```shell

@@ -13,13 +13,14 @@ Nu je een beeld hebt van hoe Laravel (PHP) via Eloquent samenwerkt met de databa
 Dit ga je doen (de video kan je extra informatie geven):
 
 1. Een Eloquent model class en een database migration maken.
-2. De database migration aanpassen (welke velden wil je in je table?).
+2. De database migration aanpassen (welke velden wil je in je tabel?).
 3. De database migration uitvoeren, zodat de table ook echt wordt aangemaakt.
 
 ---
 ## 1- Model class aanmaken
 Het Model element is een vertaling / verbinding tussen de website en de database.  
-Op onze website komen verschillende projecten. Voor deze projecten gaan wij een model aanmaken. 
+Op onze website komen verschillende projecten.  
+Voor deze projecten gaan wij een model aanmaken. 
 Ook maken wij gelijk een database migratie aan, hiervoor gebruiken wij de `-m` optie.  
 Zorg ervoor dat je model naam met een kapitaal begint.
 ```shell
@@ -33,8 +34,8 @@ INFO  Model [app/Models/Project.php] created successfully.
 INFO  Migration [database/migrations/2024_02_05_151958_create_projects_table.php] created successfully.
 ```
 
-Open nu het Model bestand: `app/Models/Project.php` en bekijk eens welke functies er al beschikbaar zijn doordat hij een uitbreiding is op de Model class.  
-Dit bestand kun je nu weer sluiten omdat wij verder gaan met de migraties.
+Open nu het Model bestand: `app/Models/Project.php` en bekijk eens welke functies er al beschikbaar zijn doordat hij een uitbreiding is op de algemene Model class.    
+_Dit bestand kun je nu weer sluiten omdat wij verder gaan met de migraties._
 
 ---
 ## 2- Migratie
@@ -54,7 +55,7 @@ Wij maken nu een paar extra elementen aan, bijvoorbeeld voor een titel en een om
 ```
 Ik heb een column voor 'titel' toegevoegd, een tekst column voor de description en een boolean om aan te geven of dit project wel of niet actief is.  
 Kun je zelf nog andere elementen voor de projecten verzinnen?  
-Zie hier een overzicht van alle mogelijke types: (available-column-types)[https://laravel.com/docs/10.x/migrations#available-column-types]  
+Zie hier een overzicht van alle mogelijke types: [available-column-types](https://laravel.com/docs/10.x/migrations#available-column-types)  
 **Let op: blijf gebruik maken van engelse benamingen, gebruik niet `titel` en `title` door elkaar**
 
 --- 

@@ -7,13 +7,13 @@ nav_exclude: true
 
 ## Beschrijf jouw project
 {: .text-green-100 .fs-6 }
-Ind eze periode gaan een Laravel project maken waarmee je een complete CRUD flow ontwikkeld.
+In deze periode gaan een Laravel project maken waarmee je een complete CRUD flow ontwikkeld.
 
 ---
 ## 1- Kies het onderwerp voor jouw Laravel website
 - Lees eerst de [algemene functionele eisen](../project_requirements) door zodat je weet wat er van je verwacht wordt.
-- Bedenk het onderwerp en doel van jouw nieuwe website.
-- Bedenk aan de hand van de eisen functionaliteiten die voor jouw website gemaakt kunnen worden.
+- Bedenk het onderwerp en doel van jouw nieuwe website, bijvoorbeeld een portfolio website.
+- Bedenk aan de hand van de eisen, functionaliteiten die voor jouw website gemaakt kunnen worden.
 
 ---
 ## 2- Beschrijf jouw website en de functionaliteiten
@@ -32,4 +32,8 @@ Belangrijkste is dat je weet **wat** je wilt gaan maken, daarna duik je in **hoe
 Uiteraard krijg je hier ook hulp bij, in de lessen
 {: .text-green-100 .fs-5 }
 
+---
+### Volgende stap:
+{: .text-green-100 .fs-4 }  
+[Nieuw Laravel project maken met Composer](laravel-start)
 
