@@ -12,25 +12,25 @@ In de volgende video's is uitgelegd hoe je CRUD binnen Laravel gebruikt.
 
 --- 
 
-### Create - Gegevens toevoegen via de model class
+### 1- Create - Gegevens toevoegen via de model class
 
 {% include youtube.md video="u2D0iXROWDg" %}
 
 ---
 
-### Read - Gegevens ophalen via de model class
+### 2- Read - Gegevens ophalen via de model class
 
 {% include youtube.md video="Nncyfs1t-oY" %}
 
 ---
 
-### Update - Gegevens aanpassen via de model class
+### 3- Update - Gegevens aanpassen via de model class
 
 {% include youtube.md video="4DJxWrsU5eM" %}
 
 ---
 
-### Delete - Gegevens verwijderen via de model class
+### 4- Delete - Gegevens verwijderen via de model class
 
 {% include youtube.md video="WXiazDP1JOA" %}
 
@@ -39,9 +39,5 @@ In de volgende video's is uitgelegd hoe je CRUD binnen Laravel gebruikt.
 
 Zorg dat je alle CRUD operaties hebt uitgeprobeerd en kan toepassen in je code.
 {: .text-blue-100 .fs-4 }
-
----
-
-{% include commit_push.md %}
 
 

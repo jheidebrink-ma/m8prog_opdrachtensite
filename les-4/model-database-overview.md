@@ -8,7 +8,8 @@ nav_exclude: true
 ## Overzicht: Models en de database
 {: .text-green-100 .fs-6 }
 
-**Zorg dat je deze introductie even rustig doorleest zodat je snapt hoe de model-laag in Laravel samenwerkt met de database.**
+**Zorg dat je deze introductie even rustig doorleest zodat je snapt hoe de model-laag in Laravel samenwerkt met de database.**  
+Deze pagina geeft informatie over Eloquent, lees deze eerst door voordat je gaat bouwen.
 
 ---
 
@@ -21,14 +22,14 @@ Laravel bevat hiervoor twee belangrijke onderdelen:
 2. **Eloquent**. Een onderdeel die het makkelijk maakt om alle CRUD-operaties (create, read, update en delete) en meer uit te
    voeren op de gegevens in je database.
 
-Je kunt zelf kiezen welke manier je het prettigste vindt (maar Eloquent heeft veel meer voordelen en mogelijkheden).
+De Eloquent oplossing heeft veel meer voordelen en mogelijkheden, het is ook veiliger om deze te gebruiken.
 
 ---
 
 ### QueryBuilder
 
-De QueryBuilder is een simpele manier om met gegevens uit je database te werken. Deze code laat zien hoe je alle
-users ophaalt uit de `users` table (bijvoorbeeld in een controller method):
+De QueryBuilder is een simpele manier om met gegevens uit je database te werken.  
+Deze code laat zien hoe je alle users ophaalt uit de `users` table (bijvoorbeeld in een controller method):
 
 ```php
 // Bovenin je PHP file moet je altijd aangeven wat je bedoelt met DB
@@ -66,13 +67,14 @@ Uiteraard kun je ook gegevens verwijderen en updaten. Lees hoe je dat doet in [d
 
 ### Eloquent
 
-Wij gaan **Eloquent** gebruiken om met gegevens uit de database te werken.
+Wij gaan **Eloquent** gebruiken om met gegevens uit de database te werken.  
 
-- In Eloquent wordt elke table uit de database gekoppeld aan een PHP (model) class.
+- In Eloquent wordt elke table uit de database gekoppeld aan een PHP (model) class.  
 - Een class bevat de eigenschappen van de table en ook functions om met de gegevens te werken uit de database.
 
 
-De PHP model classes staan altijd in: `app\Models`. Bijvoorbeeld `app\Models\User.php`:
+De PHP model classes staan altijd in: `app\Models`.  
+Bijvoorbeeld `app\Models\User.php`:
 
 ```php
 class User extends Model {
@@ -104,7 +106,7 @@ Houd goed in gedachten: **De PHP CLASS IS GEKOPPELD AAN EEN DATABASE TABLE**.
 
 ![Eloquent en database](images/eloquent-overview.png)
 
-[Alles over Eloquent staat in de documentatie](https://laravel.com/docs/10.x/eloquent)
+[Alles over Eloquent staat in de Laravel documentatie](https://laravel.com/docs/10.x/eloquent)
 
 ---
 
@@ -112,7 +114,8 @@ In de volgende opdracht ga je zelf een database migratie en een model class gene
 {: .text-blue-100 .fs-4 }
 
 ---
-
-{% include commit_push.md %}
+### Volgende stap:
+{: .text-green-100 .fs-4 }  
+[Een Eloquent model class en database migration maken](model-migration-migrate)
 
 

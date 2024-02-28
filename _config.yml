@@ -1,11 +1,11 @@
-title: M10PROG - Laravel
-description: "M10PROG - Laravel Project. Werken voor opdrachtgevers"
+title: M7PROG - Laravel
+description: "M7PROG - Laravel Project."
 email: j.heidebrink@ma-web.nl
 
 github_username:  jheidebrink-ma
 
 # Build settings
-baseurl: "/m10prog_opdrachtensite/"
+baseurl: "/m7prog_opdrachtensite"
 url: "https://jheidebrink-ma.github.io"
 remote_theme: "pmarsceill/just-the-docs"
 #theme: minima
@@ -16,6 +16,7 @@ plugins:
 #  - jekyll-feed
 
 exclude: ["code-examples", "start.sh", ".idea", "sketch"]
+ga_tracking: false
 search_enabled: false
 heading_anchors: false
 

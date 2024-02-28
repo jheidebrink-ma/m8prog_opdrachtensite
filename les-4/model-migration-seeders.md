@@ -8,39 +8,60 @@ nav_exclude: true
 ## Een seeder maken
 {: .text-green-100 .fs-6 }
 
-Op dit moment heb je een tabel gemaakt met bijbehorend model. Nu is het tijd om ook wat voorbeeld data in de tabel te plaatsen.
-Dat doe je door gebruik te maken van Seeders.
+Op dit moment heb je een tabel gemaakt met bijbehorend model.  
+Nu is het tijd om ook wat voorbeeld data in de tabel te plaatsen.  
+Dat doe je door gebruik te maken van Seeders.  
 
-## Seeder aanmaken
-Eerst gaan we een nieuw zaadje planten in de database:
+---
+## 1- Seeder aanmaken
+Eerst gaan we een nieuwe seeder maken om straks data toe te kunnen voegen:  
 ```shell
 php artisan make:seeder ProjectSeeder
 ```
 
 Er is nu een nieuwe seeder aangemaakt waarmee een project toegevoegd kan worden.
 Open maar het bestand: 
+```
 /database/seeders/ProjectSeeder.php
-
-Hier vind je de `run` functie. Deze voert het toevoegen uit.
-Je kunt nu een database query maken, Laravel Eloquent gebruiken om je data teo te voegen. 
-Dit laatste is het eenvoudigst en lijkt het meeste op zoals wij straks met models omgaan.
-Het is ook mogelijk om gebruik te maken van **Model Factories** hierbij kun je een aantal items met random data zoals fake tekst toevoegen.
-Plaats voor één project de volgende code, let op dat je deze overschrijft zodat je namespacing automatisch ingesteld word.:
-
-**Elementen**
-Vul de verschillende elementen van het model.<br>
-Velden die jij zelf hebt bedacht maar hier niet staan zul je moeten toevoegen.
-```shell
-        DB::table('projects')->insert([
-            'titel'         => 'Mijn project titel',
-            'description'   => 'Enim labore eu, sed. Sed esse incididunt aute velit. Incididunt, aute velit duis amet sint. Duis amet sint pariatur esse anim officia mollit. Sint pariatur esse anim. Esse anim officia mollit laboris aliqua, et esse.',
-            'active'        => true,
-        ]);
 ```
 
-## Migratie uitvoeren
+Hier vind je de `run` functie.  
+Deze voert het toevoegen uit.  
+Je kunt nu Laravel Eloquent gebruiken om je data toe te voegen.  
+Dit lijkt erg op zoals wij straks met models omgaan.  
+Het is ook mogelijk om gebruik te maken van **Model Factories** hierbij kun je een aantal items met random data zoals fake tekst toevoegen.  
+Zorg ervoor dat in het `use` gedeelte bovenaan de code ook de faker geladen wordt: ```use Faker\Factory as Faker; ```  
+Bovenaan in de functie geef je aan dat je een faker wilt gebruiken om fake data toe te voegen. Dit hoeft niet, je kunt ook zelf de data verzinnen.  
+```shell
+    $faker = Faker::create();
+```
+
+**Elementen**  
+Velden die jij zelf hebt bedacht maar hier niet staan zul je moeten toevoegen.   
+Vul de verschillende elementen van het model via faker:   
+```shell
+    DB::table('projects')->insert([
+        'title'       => $faker->colorName();
+        'intro'       => $faker->text(50);
+        'description' => $faker->text();
+        'active'        => true,
+    ]);
+```
+Of met de hand:
+```shell
+    DB::table('projects')->insert([
+        'titel'         => 'Mijn project titel',
+        'intro'         => 'Anim non lorem sit est.';
+        'description'   => 'Enim labore eu, sed. Sed esse incididunt aute velit. Incididunt, aute velit duis amet sint. Duis amet sint pariatur esse anim officia mollit. Sint pariatur esse anim. Esse anim officia mollit laboris aliqua, et esse.',
+        'active'        => true,
+    ]);
+```
+
+
+---
+## 2- Seeder uitvoeren
 Voor het toevoegen van de tabel en instellingen hoeven wij geen mysql te schrijven, maar kan ik Laravel de opdracht geven om dit uit te voeren. 
-Gebruik hiervoor de migratie functionaliteit van Laravel:
+Gebruik hiervoor de seed functionaliteit van Laravel:
 ```shell
 // Wanneer je gebruik maakt van de originele docker setup
 php artisan db:seed --class=ProjectSeeder
@@ -50,13 +71,10 @@ php artisan db:seed --class=ProjectSeeder
 sail artisan db:seed --class=ProjectSeeder
 ```
 
-De kans is groot dat je nu een error ziet doordat Artisan geen verbinding kan maken met de database. De oplossing hiervoor is door dit commando uit te voeren vanaf de laravel / php instance in Docker.
-Open daarvoor het terminal venster door in docker desktop op de drie puntjes achter de betreffende container te klikken.
-
 Open nu de database interface ( via een app of phpmyadmin ) en controleer of de data is toegevoegd. 
 
 ---
-Meer informatie kun je vinden in deze video:
+### Optionele video:
 {% include youtube.md video="WGYmEdzZgtM" %}
 
 ---

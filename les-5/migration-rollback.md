@@ -10,7 +10,8 @@ nav_exclude: true
 
 In mijn project database heb ik te weinig velden toegevoegd. Ik wil namelijk ook nog een images veld toevoegen.
 
-### Rollback
+---
+### 1- Rollback
 Gebruik het volgende commando om de laatste migratie terug te draaien:
 ```shell
 // Wanneer je gebruik maakt van de originele docker setup
@@ -21,13 +22,15 @@ php artisan migrate:rollback
 sail artisan migrate:rollback
 ```
 
-### Migratie aanpassen
-Pas nu je migratie document aan door bijvoorbeeld een image veld aan te maken:  
+---
+### 2- Migratie aanpassen
+Pas nu je migratie document aan door bijvoorbeeld een image veld aan te maken waar je straks de naam van een afbeelding kunt opslaan:  
 ```shell
     $table->string('image')->nullable();
 ```
 
-### Uitvoeren
+---
+### 3- Uitvoeren
 Nu kun je de migratie opnieuw uitvoeren.
 ```shell
 // Wanneer je gebruik maakt van de originele docker setup
@@ -38,9 +41,13 @@ php artisan migrate
 sail artisan migrate
 ```
 
-
 ---
 
 {% include commit_push.md %}
+
+---
+### Volgende stap:
+{: .text-green-100 .fs-4 }  
+[CRUD operaties met je model class](crud-eloquent)
 
 

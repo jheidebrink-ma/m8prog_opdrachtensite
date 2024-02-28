@@ -7,7 +7,7 @@ has_toc: true
 
 # Laravel - {{ page.title }}
 
-Op deze website vind je de opdrachten voor de unit M10PROG (Laravel).
+Op deze website vind je de opdrachten voor de unit M7PROG waarbij wij een Laravel project gaan ontwikkelen.
 
 ---
 
