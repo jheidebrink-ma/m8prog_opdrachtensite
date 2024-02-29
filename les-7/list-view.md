@@ -8,8 +8,8 @@ nav_exclude: true
 ## Lijst weergave maken met de dashboard layout
 {: .text-green-100 .fs-6 }
 
-Nu ga je eerst de lijst view maken met de dashboard layout
-Ook laat je een simpele lijst zien met de gegevens en paginering.
+Nu ga je eerst de lijst weergave maken met de dashboard layout.  
+Ook laat je een simpele lijst zien met de gegevens en een paginering.  
 
 Later ga je daar edit-linkjes aan toevoegen zodat je elke rij uit de database kunt gaan aanpassen.
 
@@ -27,7 +27,7 @@ Dit is het onderdeel van het huidige dashboard menu item:
 ```
 {% endraw %}
 
-Zoek nu via php artisan op welke view er naar het projecten overzicht in het dashboard gaat met dit commando:
+Zoek nu via artisan op welke view er naar het projecten overzicht binnen het dashboard gaat met dit commando:
 
 ```shell
 php artisan route:list
@@ -35,16 +35,16 @@ php artisan route:list
 
 Kopieer de naam en plaats deze in het nieuwe menu item dat je gemaakt hebt.
 
-Let op, er is ook een hamburger menu, onderaan, daar is het ook handig om het menu item toe te voegen.
+Let op, er is mogelijk ook een hamburger menu, onderaan, daar is het ook handig om het menu item toe te voegen.
 
 ---
 
 ### 2- Dashboard view folder
 Maak in de **views** folder een mapje `dashboard` plaats daarin een nieuwe map met de naam `projects` 
 
-Kopieer het bestand `dashboard.blade.php` naar deze nieuwe folder en noem hem `index.blade.php`  
+Kopieer het bestand `dashboard.blade.php` naar deze `projects` folder en noem hem `index.blade.php`  
 Je hebt nu twee dezelfde bestanden.  
-Pas in dit bestand een tekst aan zodat je weet naar welke view je kijkt en je niet per ongeluk naar de dashboard view andere bestand kijkt. 
+Pas in dit bestand een tekst aan zodat je weet naar welke view je kijkt en je niet per ongeluk naar de dashboard view andere bestand kijkt.   
 Bijvoorbeeld het tekstje: `You're logged in!` kun je veranderen in `Projecten overzicht`
 
 Geef aan in de index functie van je controller aan dat je een view wilt weergeven.
@@ -52,13 +52,14 @@ Bijvoorbeeld met deze functie:
 ```php
 return view('dashboard.projects.index');
 ```
+_( slashes zijn vervangen door puntjes )_
 
 
 ---
 ### 3- Overzicht in je view 
-In de view ga je nu een weergaven maken van je projecten.  
-Haal eerst in de index functie in je controller ( `ProjectenAdminController.php` ) de artikelen op.  
-En geef aan dat je gebruik wilt maken van paginering. Dit doe je door de inhoud van de index function aan te passen in deze code:
+In de view ga je nu een weergave maken van je projecten.  
+Haal eerst in de `index` functie in je controller ( `ProjectenAdminController.php` ) de producten op.    
+Geef aan dat je gebruik wilt maken van paginering. Dit doe je door de inhoud van de `index function` aan te passen in deze code:
 {% raw %}
 ```php
 $projects = Project::paginate(2);
@@ -67,12 +68,12 @@ return view('dashboard.projects.index', ['projects'=>$projects]);
 {% endraw %}
 
 In het view bestand `/dashboard/projects/index.blade.php` kun je nu alle projecten weergeven zoals je al eerder hebt gedaan.  
-Daaronder kun je nu de paginering weergeven met deze code {% raw %}{{$projects->links()}}{% endraw %}
+Daaronder kun je nu de paginering weergeven met deze code {% raw %}{{$projects->links()}}{% endraw %}  
 Dan krijg je bijvoorbeeld zo'n stuk code:
 {% raw %}
 ```php
 @foreach($items as $item)
-    <a href="{{$item->title}}">{{ $item->title }}</a><br>
+    <a href="{{route('projectadmin.show', $item)}}">{{ $item->title }}</a><br>
 @endforeach
 {{$items->links()}}
 ```
@@ -86,9 +87,10 @@ Bekijk eerst even welke routes er allemaal zijn door dit php artisan commando ui
 ```shell
 php artisan route:list
 ```
-Hier zie je als het goed is een route staan voor je projecten index in het dashboard.  
-Die url kun je gebruiken om dit overzicht te zien.
-Bij mij is dat: 
+Hier zie je als het goed is een route staan voor je projecten admin index in het dashboard.  
+Die url kun je gebruiken om dit overzicht te zien.  
+Bij mij is dat:
+`dashboard/projectadmin`
 
 ---
 
@@ -104,4 +106,7 @@ Daarna kun je de gegevens via je Model class makkelijk toevoegen aan de database
 
 {% include commit_push.md %}
 
-
+---
+### Volgende stap:
+{: .text-green-100 .fs-4 }  
+[Formulier maken en de gegevens opsturen](create-view)

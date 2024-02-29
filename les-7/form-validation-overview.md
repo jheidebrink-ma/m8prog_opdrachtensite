@@ -8,15 +8,15 @@ nav_exclude: true
 ## Overzicht: Forms en validatie
 {: .text-green-100 .fs-6 }
 
-In deze les en de volgende leer je hoe je formulieren kunt maken waar bezoekers (of jij zelf) gegevens mee kunnen invoeren en opsturen.
-Jij als developer kunt de gegevens vervolgen in een controller gaan verwerken.
+In deze les en de volgende les leer je hoe je formulieren kunt maken waar bezoekers (of jij zelf) gegevens mee kunnen invoeren en opsturen.
+Jij als developer kunt de gegevens vervolgens in een controller gaan verwerken.
 
-In de opdracht-video's zie je hoe je een simpel CMS kunt maken onder de url `/dashboard` op je website en hoe je formulieren en CRUD operaties (Create, Read, Update en Delete) kunt gebruiken om de gegeven in je database te beheren.
+In de opdracht-video's zie je hoe je een simpel CMS kunt maken onder de url `/dashboard` op je website en hoe je formulieren en CRUD operaties (Create, Read, Update en Delete) kunt gebruiken om de gegevens in je database te beheren.
 
 Een aantal dingen zijn belangrijk hierbij:
 
-- Beveiliging: Zorgen dat een script je form niet gaat spammen.
-- Authenticatie: Zorgen dat je alleen iets mag bewerken/toevoegen als je ingelogd bent als *admin* gebruiker.
+- Beveiliging: Zorg dat een script je form niet gaat spammen.
+- Authenticatie: Zorg dat je alleen iets mag bewerken/toevoegen als je ingelogd bent als *admin* gebruiker.
 - Validatie: De ingevoerde gegevens controleren en valideren.
 - Foutmeldingen tonen bij formulier velden die niet correct zijn ingevuld.
 
@@ -37,4 +37,7 @@ Daarna kun je de gegevens via je Model class makkelijk toevoegen aan de database
 
 {% include commit_push.md %}
 
-
+---
+### Volgende stap:
+{: .text-green-100 .fs-4 }  
+[Route groep maken voor admin routes - dashboard layout](admin-dashboard)

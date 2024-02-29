@@ -8,11 +8,10 @@ nav_exclude: true
 ## Admin routes maken en dashboard layout gebruiken
 {: .text-green-100 .fs-6 }
 
-Je kunt een *verzameling* routes (url's) onder een bepaalde *prefix* hangen.
-Alle beheers pagina kunt je bijvoorbeeld allemaal onder `/admin` plaatsen in je route bestand.
+Je kunt een *verzameling* routes (url's) onder een bepaalde *prefix* hangen.  
+Alle beheer pagina's kun je bijvoorbeeld onder de slug `/admin` plaatsen in je route bestand.  
 
 Je krijgt dan bijvoorbeeld de routes:
-
 `/admin` = Admin dashboard  
 `/admin/projects` = Overzicht alle projecten  
 `/admin/projects/new` = Voor aanmaken een nieuw project   
@@ -21,13 +20,14 @@ Je krijgt dan bijvoorbeeld de routes:
 `/admin/users`  = Overzicht van alle gebruikers  
 `/admin/.....` - Enzovoort. 
 
-Alles begint dus met de *prefix* `/admin`
+Alles begint dus met de *prefix* `/admin`  
 Je kunt daarom makkelijk in één keer alle routes met de prefix `/admin` afschermen zodat alleen admin gebruikers er nog bij kunnen.
 
 ---
 
 Zorg dat je een route group hebt voor jouw CMS / Admin functionaliteit en dat je hiervoor de dashboard view (met de app layout) gebruikt.  
-Dan heb je al standaard een menu en uitlog functionaliteit. [Hier vind je die default bestanden](https://github.com/laravel/breeze/tree/1.x/stubs/default/resources/views) mocht je ze kwijt zijn.
+Dan heb je al standaard een menu en uitlog functionaliteit.  
+[Hier vind je die default bestanden](https://github.com/laravel/breeze/tree/1.x/stubs/default/resources/views) mocht je ze kwijt zijn.
 {: .text-blue-100 .fs-4 }
 
 ---
@@ -39,7 +39,9 @@ Wij hebben al een Project model, dus wij hoeven niet een compleet nieuwe resourc
 
 Meer info: [Lees meer over resource controllers](https://laravel.com/docs/10.x/controllers#resource-controllers)
 
-Wij gaan een `ProjectAdminController` aanmaken voor je model. Bij `ModelNaam` geef je de naam op van je model, bijvoorbeeld Project. 
+Wij gaan een `ProjectAdminController` aanmaken voor je model.  
+Bij `MijnControler` geef je de naam op van je controller, bijvoorbeeld `ProjectAdminController`.  
+Bij `ModelNaam` geef je de naam op van je model, bijvoorbeeld `Project`.  
 
 ```shell
   php artisan make:controller MijnControler --model=ModelNaam
@@ -62,11 +64,11 @@ Maak eerst een Resource route aan:
 ```
 {% endraw %}
 
-Op de plek van de url komt de url te staan en op de plek van MyController verwijs je naar de controller die je net hebt aangemaakt.
+Op de plek van `url` komt de url van dit model / onderdeel te staan en op de plek van `MyController` verwijs je naar de controller die je net hebt aangemaakt.
 
-Let wel op dat je er ook voor zorgt dat deze boven in je pagina onder 'use' toegevoegd is.
+**Let wel op** dat je er ook voor zorgt dat deze controller boven in je pagina onder 'use' toegevoegd is.
 
-Voeg nu deze route prefix toe aan het dashboard, plaats deze code om het vorige blok heen:
+Voeg nu de `dashboard` route prefix toe, plaats deze code om het `resources` blok heen:
 {% raw %}
 ```shell
 Route::prefix('/dashboard')->group( function() {
@@ -77,7 +79,7 @@ Route::prefix('/dashboard')->group( function() {
 
 Verplaats nu de de oude dashboard route ook binnen deze prefix.
 
-En tenslotte verplaats je de middleware naar de prefix zodat je zeker weet dat iemand is ingelogd als hij naar het dashboard toe gaat.
+En tenslotte voeg je de middleware requirements to aan de prefix zodat je zeker weet dat iemand is ingelogd als hij naar het dashboard toe gaat.
 
 {% raw %}
 ```shell
@@ -92,7 +94,7 @@ Route::prefix('/dashboard')
 
          Route::resources(
              [
-                 'project' => ProjectAdminController::class,
+                 'projectadmin' => ProjectAdminController::class,
              ]
          );
      });
@@ -100,7 +102,7 @@ Route::prefix('/dashboard')
 {% endraw %}
 
 ### 3- Controller instellen
-Plaats nu in de controller die je gemaakt hebt verschillende teksten om zo zeker te weten dat het werkt, bijvoorbeeld zo iets:
+Plaats in de controller die je gemaakt hebt verschillende teksten om zo zeker te weten dat het werkt, bijvoorbeeld zo iets:
 {% raw %}
 ```php
     public function index()
@@ -116,8 +118,7 @@ Als je nu je project gaat testen dan zie je nu welke pagina / functionaliteit je
 ---
 
 ### Optionele video
-
-**Kijk de video om te zien hoe dit werkt.**
+Kijk de video om te zien hoe dit werkt.
 
 {% include youtube.md video="2UtpkqmhmJc" %}
 
@@ -132,4 +133,7 @@ Als je nu je project gaat testen dan zie je nu welke pagina / functionaliteit je
 
 {% include commit_push.md %}
 
-
+---
+### Volgende stap:
+{: .text-green-100 .fs-4 }  
+[List view maken met dashboard layout](list-view)
