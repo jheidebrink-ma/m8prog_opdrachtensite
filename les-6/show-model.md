@@ -13,9 +13,9 @@ Je hebt een overzicht van de projecten gemaakt, nu gaan wij aan de slag om één
 
 ---
 ### 1- Route aanmaken
-Wij beginnen met het aanmaken van een route met daarin een referentie naar het project Model. 
+Wij beginnen met het aanmaken van een route met daarin een referentie naar het project Model.
 
-Open `/routes/web.php` en voeg daar een nieuwe route toe waarbij je in het url gedeelte op de laatste plek aangeeft dat er een verplichte variabele is.  
+Open `/routes/web.php` en voeg daar een nieuwe route toe waarbij je in het `url` gedeelte _op de laatste plek_ aangeeft dat er een verplichte variabele is.    
 Dat doe je door de model naam tussen brackets te plaatsen:  
 ```php
 Route::get('URL/{variabele}', [Controller::class, 'functie'])->name('routenaam');
@@ -28,19 +28,20 @@ Route::get('/project/{project}', [ProjectController::class, 'show'])->name('proj
 ---
 ### 2- Functie in de controller maken
 Nu kun je deze route opvangen in de controller, je hebt aangegeven dat hij naar de `show` functie verwijst. Die maken wij nu aan.  
-Let hierbij op dat je een parameter aanmaakt met dezelfde naam als de variabele in de route. In ons geval `project`.  
+Let hierbij op dat je een parameter aanmaakt met dezelfde naam als de variabele in de route.  
+In ons geval `project`.  
 Maak ook gebruik van **type-casting** waarbij je forceert dat de variabele een Project is.  
 ```php
 public function show(Project $project): string
 {
 }
 ```
-Plaats in deze functie nu om te testen een debug code: `dump($project);`   
-Hierdoor zie je in iedergeval iets als je naar de url gaat.
+Plaats in deze functie nu om te testen een debug call: `dump($project);`   
+Hierdoor zie je in ieder geval wat informatie als je naar de url gaat.
 
 ---
 ### 3- View
-Kopieer nu de project index view en noem die sow.blade.php
+Kopieer nu de project index view en noem die show.blade.php
 Verwijder de loop en laat bijvoorbeeld de titel zien van het project:
 {% raw %}
 ```php
@@ -50,9 +51,9 @@ Verwijder de loop en laat bijvoorbeeld de titel zien van het project:
 
 
 ---
-### 4- stuur het project door naar de view
+### 4- stuur de project Model door naar de view
 Ga nu weer terug naar de **show** functie in de **ProjectController**.  
-Geef daar nu het project door aan de view zoals in dit voorbeeld met een model. Dit zal voor jullie een project zijn.  
+Geef daar nu het model door aan de view zoals in dit voorbeeld met een model.  _Dit zal voor jullie waarschijnlijk een project zijn._  
 ```php
     /**
      * Show a single item
@@ -69,10 +70,10 @@ Geef daar nu het project door aan de view zoals in dit voorbeeld met een model. 
 
 --- 
 ### 5- Link naar de show pagina
-Nu heb je de single pagina gemaakt en moeten wij alleen nog een link maken naar deze pagina.  
-Ga naar het **index** document waar je het overzicht hebt gemaakt voor de projecten.  
-In de foreach loop kun je nu bij elk item een link maken naar deze nieuwe view. Daarbij geef je het project mee aan de route.
-Bijvoorbeeld zo in het geval je Model `model` heet:
+Nu heb je de single pagina gemaakt en moeten wij alleen nog een link via de `<a href` tag maken naar deze pagina.  
+Ga naar het **index.blade.php** document waar je het overzicht hebt gemaakt voor de projecten.  
+In de foreach loop kun je nu bij elk item een link maken naar deze nieuwe view. Daarbij geef je het project mee aan de route.  
+Bijvoorbeeld op deze manier wanneer je route de naam `model.show` heeft:
 {% raw %}
 ```php
         <a href="{{route('model.show', $model)}}">Bekijk dit item</a>
