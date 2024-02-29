@@ -20,6 +20,22 @@ Deze omgeving gaan wij tijdens deze gehele module gebruiken.
 Je kunt Laravel installeren op **twee** manieren, met een nieuwe docker installatie via **curl** of via **composer**. 
 Begin met de eerste versie, gaat dit mis, dan kun je overstappen op het alternatief vanuit docker. 
 
+### Windows gebruikers
+**Let op:** Op Windows moet je een paar extra stappen doorlopen.  
+Op Windows moet je gebruik maken van WSL. Dit is een Linux laag die binnen Windows gaat draaien.  
+1. Zorg ervoor dat je wsl geïnstalleerd hebt door het volgende commando uit te voeren in command prompt:
+    ```shell
+    wsl --install
+    ```
+    Het kan zijn dat je een user moet aanmaken, hiervoor moet je een naam ingeven **zonder** _kapitalen_ en _spaties_.  
+    Bij het invullen van het wachtwoord klopt het dat je **niets** ziet.  
+2. Open nu Docker Desktop.  
+   Ga naar `instellingen` en dan `resources` en zet onder het `WSL integration` tabje `Ubuntu` aan, zie afbeelding.  
+   ![img.png](img.png)
+3. Herstart nu je computer. _( Ja, echt waar )_ 
+4. Open nu de project folder waar je straks gaat werken in jouw editor, zoals **Visual Studio Code** of **PhpStorm**  
+5. In je editor open je de terminal en selecteer daar de 'wsl' modus.  
+
 ### 2a- Installatie via Curl
 Navigeer naar je project folder en voer het volgende commando uit in de terminal. Zo initialiseer je een nieuw laravel project in de folder **m7prog-laravel**:  
 ```curl -s "https://laravel.build/m7prog-laravel" | bash```  
@@ -51,7 +67,8 @@ Start docker:<br>
 Als het goed is heb je nu een nieuw Laravel project waar je in kunt gaan werken.
 
 - Zorg ervoor dat je een git repo gekoppeld hebt aan dit project.  
-- Je kunt de url terug vinden door in docker desktop te bekijken welke docker container er aan staat. Klik dan op de `NGINX` of `Laravel-test` container.  
+- Je kunt de url terug vinden door in docker desktop te bekijken welke docker container er aan staat.  
+  Klik dan op de port naast de `NGINX` of `Laravel-test` container om je project in de browser te openen, bijvoorbeeld [http://localhost:80](http://localhost:80) 
 - Wil je een `php artisan` commando uitvoeren dan moet je gebruik maken van de `php` of `Laravel-test` container.
 
 
