@@ -14,7 +14,7 @@ Stap voor stap uitleg kun je hier vinden:
 
 ---
 ### 1- Installatie
-1. Login op de php docker container zodat je geen problemen hebt met php en composer.
+1. Login op de laravel.test of php docker container zodat je geen problemen hebt met php en composer. Hierin heb je namelijk al een werkende composer installatie.
     - Open hiervoor docker-desktop en zoek de juiste php container op
     - Klik op de drie puntjes achter de naam en daarna op **open terminal**
 2. Controleer of je op de juiste container zit met het volgende commando: ```php -v```

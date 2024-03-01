@@ -82,15 +82,14 @@ Let wel op dat jullie waarschijnlijk niet `$items` meegeven aan deze view, maar 
 
 ---
 ### 4- Controleren
-Om dit te bekijken ga je nu naar de dashboard projects index pagina.  
-Bekijk eerst even welke routes er allemaal zijn door dit php artisan commando uit te voeren:
+Om dit te bekijken ga je nu in de browser naar de dashboard projects index pagina.  
+Bekijk eerst even welke routes er allemaal zijn door dit Artisan commando uit te voeren:
 ```shell
 php artisan route:list
 ```
 Hier zie je als het goed is een route staan voor je projecten admin index in het dashboard.  
 Die url kun je gebruiken om dit overzicht te zien.  
-Bij mij is dat:
-`dashboard/projectadmin`
+Bij mij is dat: `dashboard/projectadmin`
 
 ---
 

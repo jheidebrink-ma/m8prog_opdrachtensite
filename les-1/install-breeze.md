@@ -15,8 +15,8 @@ Als je dit installeert krijg je o.a. registratie, inlog, uitlog, wachtwoord verg
 
 ---
 ### 1- Installeer Breeze
-Doorloop nu de stappen om Breeze toe te voegen ana je project: [Installeer Breeze](https://laravel.com/docs/10.x/starter-kits#laravel-breeze-installation)
-Voer dit commando uit in de terminal:
+Doorloop nu de stappen om Breeze toe te voegen aan je project: [Installeer Breeze](https://laravel.com/docs/10.x/starter-kits#laravel-breeze-installation)
+Je moet daarvoor de onderstaande commando's uitvoeren in de terminal.
 ```cmd
 composer require laravel/breeze --dev
 ```
@@ -24,11 +24,17 @@ Als dit niet direct lukt, ga dan naar `Docker Desktop` en klik op de 3 puntjes a
 Daar kun je hetzelfde commando uitvoeren.
 
 ### 2- Breeze en Blade
-Installeer nu Breeze met Blade door deze commando's uit te voeren:
+Installeer nu Breeze met Blade door deze commando's uit te voeren in de bovenstaande terminal:
 ```shell
 php artisan breeze:install
-
+```
+Vervolgens voer je een migratie voor je database uit:
+```shell
 php artisan migrate
+```
+Nu is het tijd om npm te installeren.  
+Dit voer je uit in de WSL terminal in je editor _( Visual Studio )_ 
+```shell
 npm install
 npm run dev
 ```

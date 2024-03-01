@@ -28,36 +28,38 @@ Kopieer die naam en maak in de `dashboard/projects/index.blade.php` een link naa
 ---
 ### 2- View aanmaken op basis van de index
 Kopieer de `dashboard/projects/index.blade.php` view naar `dashboard/projects/create.blade.php`   
-Hier komt het formulier in. 
-Open deze nieuwe view en pas de titel aan dat je weet dat dit het formulier is.  
+Hier komt het formulier in.  
+Open deze nieuwe view en pas de `header 1`_( titel )_ aan zodat je weet dat dit de formulier pagina is.  
 Je kunt de inhoud van de content verwijderen.
 
 
 ---
 ### 3- View implementeren in de controller
-Net zoals bij de index zorg je er nu voor dat de controller een view terug geeft in plaats van de tekst.
+Net zoals bij de index zorg je er nu voor dat de create functie in de controller een view terug geeft aan de browser.
 
 
 ---
 ### 4- Formulier maken
-In Tailwind zit de basis form functionaliteit, hiermee kunnen wij formulieren aanmaken in de views.  
-Zie: [Tailwind UI forms](https://tailwindui.com/components/application-ui/forms/form-layouts)
-In je tailwind.conf in de root van je project moet je hiervoor aangeven fat je gebruik wil maken van de tailwind plugin:
+In Tailwind zit basis form functionaliteit, hiermee kunnen wij formulieren aanmaken in de views.  
+Zie: [Tailwind UI forms](https://tailwindui.com/components/application-ui/forms/form-layouts)  
+In je `tailwind.conf` in de root van je project moet je hiervoor aangeven dat je gebruik wil maken van de tailwind form plugin:
 ```php
     plugins: [forms],
 ```
 
 Je kunt nu het voorbeeld formulier van Tailwind kopiëren of je maakt een nieuw HTML formulier aan.  
-Denk hierbij aan de volgende elementen:
-- form action="{% raw %}{{route('project.store')}}{% endraw %}" ( de route om het formulier op te slaan )
+Denk hierbij aan de volgende elementen die aangepast moeten worden voor jouw project.  
+Bijvoorbeeld:  
+- form action="{% raw %}{{route('project.store')}}{% endraw %}" _( de route om het formulier op te slaan )_  
 - form method="post" 
 - input fields waarbij de name gelijk is aan de naam van je database veld
 - submit button
 
-
+---
 #### Cross-site request forgeries
-Formulieren in Laravel zijn beveiligd met tegen Cross-site request forgeries, mensen die jouw formulier nabootsen.
-Voeg daarom `@csrf` toe in het formulier door dit net na het openen van het formulier te plaatsen.
+Formulieren in Laravel zijn beveiligd met tegen Cross-site request forgeries, mensen die jouw formulier nabootsen.  
+Voeg daarom `@csrf` toe in het formulier door dit net na het openen van het formulier te plaatsen.  
+Laravel beveiligd hierdoor automatisch jouw formulier.  
 
 
 ---
