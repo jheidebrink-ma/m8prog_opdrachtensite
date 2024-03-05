@@ -15,14 +15,14 @@ Overzicht hoe de file storage werkt in Laravel.
 Binnen Laravel is een `storage` folder waar verschillende bestanden van het project opgeslagen worden. Denk hierbij aan:
 - cache bestanden
 - log bestanden
-- bestanden die door het project geupload worden
+- bestanden die binnen het project geupload worden
 
 Deze laatste gaan wij gebruiken om bestanden te uploaden.  
 **Let op:** Deze folder staat niet in je `public` folder, en kan dus niet direct gebruikt worden door de browser.  
 Gelukkig kan Laravel ons helpen om deze bestanden wel beschikbaar te maken op de public omgeving. 
 
 ### 2- Configuratie
-In het bestand `config/filesystems.php` kom je verschillende instellingen tegen met betrekking tot het opslaan van de bestanden. 
+In het bestand `config/filesystems.php` kom je verschillende instellingen tegen met betrekking tot het opslaan van de bestanden.  
 Hier zie je bijvoorbeeld het onderstaande gedeelte:
 ```php
     'public' => [
@@ -33,9 +33,9 @@ Hier zie je bijvoorbeeld het onderstaande gedeelte:
             'throw' => false,
         ],
 ```
-In dit onderdeel staat aangegeven wat de driver is, sla je de bestanden lokaal op de server op of op een externe server.  
-Bij root kun je aangeven wat de locatie is van de folder op de server binnen de `storrage` folder.  
-Bij url geef je aan wat de folder is in de browser, dit is zeg maar een alias naar de folder op de server.
+In dit onderdeel staat aangegeven wat de driver is, en bepaal je of je de bestanden lokaal op de server opslaat of op een externe server.    
+Bij `root` kun je aangeven wat de locatie is van de folder op de server binnen de `storrage` folder.  
+Bij `url` geef je aan wat de folder is in de browser, dit is zeg maar een alias naar de folder op de server.  
 
 ---
 
@@ -47,11 +47,10 @@ Bij url geef je aan wat de folder is in de browser, dit is zeg maar een alias na
 
 - [File storage in Laravel](https://laravel.com/docs/10.x/filesystem)
 
-In de [volgende stap](file-upload) ga je een file upload veld toevoegen aan je formulier.
-{: .text-green-100 .fs-5 }
-
 ---
+### Volgende stap:
+{: .text-green-100 .fs-4 }
+[Database migration maken voor file upload](db-migration)
 
-{% include commit_push.md %}
 
 

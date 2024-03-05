@@ -17,19 +17,20 @@ Hiervoor kun je de `empty()' van php gebruiken.
 ```php
 if ( ! empty($image) ) {
 ```
-In dit voorbeeld controleer ik of de afbeelding NIET leeg is, en als dit waar is dan ga ik de upload verwerken.  
+In dit voorbeeld controleer ik of de afbeelding `NIET leeg` is. Als deze controle waar is dan ga ik de upload verwerken.  
 
 ---
 ### 2- Verplaatsen van de afbeelding.
-De afbeelding staat nu in de tijdelijke folder van de server, die kan ik nu gaan verplaatsen naar de storrage fodler:
+De afbeelding staat nu in de tijdelijke folder van de server, die kan ik nu gaan verplaatsen naar de storage folder:
 Hiervoor kun je een simpele actie van Laravel gebruiken:
 ```php
     $path = $request->file('FILE_NAME')?->store('FOLDER');
 ```
-Bij **FILE_NAME** kun je nu de naam van het input field gebruiken.  
-Bij **FOLDER** kun je een naam van de folder aangeven, in ons geval waarschijnlijk: `public/projecten`.  
-In de `/storage/app` folder kun je dit bestand terug vinden.
-Let op dat je ze ook in de public folder plaatst omdat de browser er anders niet bij kan.
+Bij **FILE_NAME** defineer je het input field uit het formulier.  
+Bij **FOLDER** defineer je de naam van de folder, in ons geval waarschijnlijk: `public/projecten`.  
+In de `/storage/app` folder kun je dit bestand straks terug vinden.  
+**Let op** dat je ook de public folder definieert in het pad omdat de browser er anders niet bij kan.   
+**Note** het vraagteken achter `file()` zorgt dat de `store()` functie alleen uitgevoerd wordt als de `file()` functie een object terug geeft.  
 
 ---
 ### 3- Opslaan van het path.
@@ -43,7 +44,7 @@ Je krijgt nu het path van de afbeelding terug, die kunnen wij opslaan in de data
 ### 4- Update action
 Voeg deze code ook toe aan de update functie zodat ook daar het bestand opgeslagen kan worden.
 
-
+---
 
 Zie voor meer informatie over het opslaan:
 [Storage in Laravel](https://laravel.com/docs/10.x/filesystem)
@@ -62,3 +63,7 @@ Zorg dat je file upload veld werkt en dat je het bestand kunt opvragen in je con
 {% include commit_push.md %}
 
 
+---
+### Volgende stap:
+{: .text-green-100 .fs-4 }
+[File weergeven](file-download)

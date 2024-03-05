@@ -5,4 +5,5 @@
 2. [Database migration maken voor file upload](db-migration)
 3. [File upload veld toevoegen](file-upload)
 4. [File upload valideren en bewaren in storage](file-storage)
-5. [Files ophalen of verwijderen uit de storage](file-download)
+5. [File ophalen en weergeven](file-download)
+6. [File verwijderen van de server](file-remove)
