@@ -8,14 +8,14 @@ nav_exclude: true
 ## Gegevens opslaan via je model class
 {: .text-green-100 .fs-6 }
 
-Nu de gegevens zijn gevalideerd kun je alle gegevens via je model class op gaan slaan.
-Ook stuur je de gebruiker door naar een andere pagina het opslaan, zodat je niet per ongeluk als je op reload drukt een dubbele rij in je table krijgt.
+Nu de gegevens zijn gevalideerd kun je alle gegevens via je model class gaan opslaan in de database.  
+Ook stuur je de gebruiker door naar een andere pagina na het opslaan, zodat je niet een dubbele rij in je table krijgt als je op reload drukt.
 
 ---
 ### 1- De valide data verwerken
 Nu wij zeker weten dat de data goed is kunnen wij aan de slag met opslaan.  
 Hiervoor ga je verder in de `store` functie in de `ProjectAdminController`.  
-De dd _( `debug die() `)_ functie heb je nu niet meer nodig, die regel kun je uit deze functie verwijderen.
+De dd() _`debug die()`_ functie heb je nu niet meer nodig, die regel kun je uit deze functie verwijderen.
 
 Voor het aanmaken van een nieuw model weer drie manieren mogelijk:
 ### Optie 1:
@@ -35,8 +35,10 @@ Voor het aanmaken van een nieuw model weer drie manieren mogelijk:
     $product->save();
 ```
 
-Optie 1 en 3 zijn sneller, maar je hebt dan minder controle over de elementen. In dat geval moet je eerst aangeven wat je wel en niet mag invullen. Door in de model een protected fillable array aan te maken.  
-Dat die je door in het model aan te geven welke elementen er ingevuld mogen worden. Bij mij ziet mijn model er nu zo uit:
+Optie 1 en 3 zijn sneller, maar je hebt dan minder controle over de elementen.  
+In optie 1 moet je eerst aangeven wat je wel en niet mag invullen, door in het model een protected $fillable array aan te maken.  
+Dat doe je door in het model aan te geven welke elementen er ingevuld mogen worden.  
+Bij mij ziet mijn Project model er nu zo uit:
 ```php
 class Project extends Model
 {
@@ -58,14 +60,17 @@ class Project extends Model
 }
 
 ```
-Optie 3 is overzichtelijker en heb je al een keer gebruikt. In dit voorbeeld gebruik gaan wij gebruik maken van optie 2.    
+
+---
+**Optie 3** is overzichtelijker en heb je al een keer gebruikt.   
+In dit voorbeeld gaan wij gebruik maken van **optie 2**.    
 
 ---
 ### 2- Opslaan van de data
-In ons geval hebben wij de informatie in de `$valid_data` variabele waar alle elementen in staan die overeenkomen met de kolommen in de database.  
+In ons geval hebben wij de informatie in de `$valid_data` variabele, waar alle elementen in staan die overeenkomen met de kolommen in de database.  
 Hierdoor kun je op zo'n manier een nieuw model aanmaken en opslaan in de database:
 ```php
-    $item = new Model( $validData );
+    $item = new Model( $valid_data );
     $item->save();
 ```
 Door de `save()` functie aan te roepen wordt er een element toegevoegd aan de database. 
@@ -76,11 +81,11 @@ Als het item is opgeslagen kun je de gebruiker sturen naar een andere pagina met
 ```php
 return redirect();
 ```
-Geef als parameter de route mee waar je naartoe wilt. Bijvoorbeeld de project.show route van het laatste element.
+Geef als parameter de route mee waar je naartoe wilt.  
+Bijvoorbeeld de `project.show` route met als parameter de id van het laatste element.
 ```php
 return redirect( route('project.show', $project->id ) );
 ```
-
 
 
 ### Optionele video:
@@ -94,4 +99,7 @@ Zorg dat je formulier helemaal werkt, met form validatie, foutmeldingen en een r
 
 {% include commit_push.md %}
 
-
+---
+### Volgende stap:
+{: .text-green-100 .fs-4 }
+[Aanpassen van gegevens met een formulier](form-edit)
