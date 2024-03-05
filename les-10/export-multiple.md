@@ -34,23 +34,28 @@ Alleen het export gedeelte pas ik aan door de project weergave in een loop in te
 {% endraw %}
 ```
 
-### 2- route
+### 2- Route
 Nu open je `web.php` en maak je een nieuwe route aan die deze functie aan roept.  
-Bijvoorbeeld met zo'n route: _( dit zijn weer voorbeeld namen )_
-Route::get('/project/download_all', [ProjectDownloadController::class, 'downloadAll'])->name('project.download_all');
+Bijvoorbeeld met zo'n route: _( dit zijn weer voorbeeld namen )_  
+`Route::get('/model/download_all', [ItemDownloadController::class, 'downloadAll'])->name('my_model.download_all'); `
 
 ### 3- Download knop
-Tenslotte hebben we natuurlijk ok nog een download knop nodig:
+Tenslotte hebben we natuurlijk ook nog een download knop nodig:
 ```php
-{% raw %}
-    <a href="{{route('project.download_all')}}">
+{% raw %}    <a href="{{route('my_model.download_all')}}">
         Download All
-    </a>
-{% endraw %}
+    </a>{% endraw %}
 ```
 
 ---
 
 {% include commit_push.md %}
 
+---
+### Dit was het.
+Je hebt nu een compleet Laravel project ontwikkeld waarbij wij diverse onderdelen behandeld hebben.  
+In een volgend project gaan wij verder in op beveiliging en deployment, maar voor nu:  
+Rond dit project af en gebruik dit voor je portfolio.
 
+
+<iframe src="https://giphy.com/embed/3o6EhLgZQJjJGDsOFW" width="480" height="203" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>

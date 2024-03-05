@@ -26,10 +26,10 @@ public function download(Project $project)
 {% endraw %}
 ```
 
-Binnen deze functie kan ik op verschillende manieren een export aanmaken.   
-Voor deze export maak ik gebruik van een interne callback functie. 
+Binnen deze functie kan ik op verschillende manieren een export aanmaken.  
+Voor deze export maak ik gebruik van een interne callback functie.  
 
-Eerst maak ik een filenaam voor de download aan en ik stel de headers in zodat de browser weet dat iets wil downloaden.
+Eerst maak ik een `filenaam` voor de download aan en ik stel de headers in zodat de browser weet dat iets wil downloaden.
 ```php
 {% raw %}
     $csvFileName = 'projects' . $project->title . '.csv';
@@ -41,7 +41,7 @@ Eerst maak ik een filenaam voor de download aan en ik stel de headers in zodat d
 ```
 
 Voor het aanmaken van de inhoud van het bestand maak ik binnen deze functie een callback functie.  
-Eerst maak ik een `header` regel aan ( de veldnamen ) daarna maak ik een nieuwe regel met `\n\r` en vervolgens geef ik de data weer.  
+Eerst maak ik een `header` regel aan `( de veldnamen )` daarna maak ik een nieuwe regel met `\n\r` en vervolgens geef ik de data weer.  
 Aan de callback geef ik ook mee dat ik de variabele `$project` wil gebruiken binnen de functie.
 ```php
 {% raw %}
@@ -57,17 +57,16 @@ Aan de callback geef ik ook mee dat ik de variabele `$project` wil gebruiken bin
 {% endraw %}
 ```
 
-Tenslotte is het tijd om dit terug geven als response:
+Tenslotte is het tijd om dit terug geven als `response stream` met een http code 200 _( success )_:
 ```php
 {% raw %}
     return Response::stream( $callback, 200, $headers);
 {% endraw %}
 ```
 
-Alles bij elkaar zal ongeveer deze functie geven:
+Alles bij elkaar zal dat ongeveer deze functie geven:
 ```php
-{% raw %}
-/**
+{% raw %}    /**
      * Download a single project in csv format 
      * 
      * @param Project $project
@@ -92,43 +91,39 @@ Alles bij elkaar zal ongeveer deze functie geven:
         };
 
         return Response::stream( $callback, 200, $headers);
-    }
-{% endraw %}
+    }{% endraw %}
 ```
 
 
 ### 2- route
 Nu open je `web.php` en maak je een nieuwe route aan die deze functie aan roept.  
-Bijvoorbeeld met zo'n route: _( dit zijn weer voorbeeld namen, gebruik je eigen namen )_
+Bijvoorbeeld met deze route: _( dit zijn weer voorbeeld namen, gebruik je eigen termen )_
 ```php
-{% raw %}
-Route::get('/project/{project}/download', [ProjectDownloadController::class, 'download'])
-    ->name('project.download');
-{% endraw %}
+{% raw %}Route::get('/project/{myModel}/download', [MyDownloadController::class, 'download'])
+    ->name('my_model.download');{% endraw %}
 ```
 
 ### 3- Download knop
-Tenslotte hebben we natuurlijk ook nog een download knop nodig:
+Tenslotte hebben we natuurlijk ook nog een download knop nodig bij elk project:
 ```php
-{% raw %}
-    <a href="{{route('project.download', $poject)}}">
+{% raw %}    <a href="{{route('my_model.download', $myModel)}}">
         Download dit project
-    </a>
-{% endraw %}
+    </a>{% endraw %}
 ```
 
 ---
-
 ### Geen optionele video.
 Er is geen video voor deze les.
 
+---
 ### Links
-
 - [Responses](https://laravel.com/docs/10.x/responses)
 
 
 ---
-
 {% include commit_push.md %}
 
-
+---
+### Volgende stap:
+{: .text-green-100 .fs-4 }
+[Exporteren van meerdere elementen](export-multiple)
