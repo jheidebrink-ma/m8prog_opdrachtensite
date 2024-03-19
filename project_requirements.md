@@ -15,7 +15,6 @@ Je bouwt je WordPress website aan de hand van deze algemene en functionele eisen
 
 - Responsive op mobiel, tablet en desktop
 - Je maakt gebruik van een frontend framework zoals Bootstrap, Tailwind, Bulma, Foundation, Pure. [Bekijk hier een overzicht](les-1/frameworks)
-- Je gebruikt Laravel Mix voor het compileren van je frontend assets
 - Je website heeft een gebruiksvriendelijke layout, design en UXD
 - Er is een duidelijk menu om door je website te navigeren
 - Je maakt regelmatige commits met duidelijk commit messages
@@ -25,16 +24,7 @@ Je bouwt je WordPress website aan de hand van deze algemene en functionele eisen
 {: .text-green-200}
 
 - De website heeft een specifiek door jouw zelf onderwerp
-- Er is een feed (uit de database) met: projecten / kalender items / address book 
-- Er is minstens één formulier om gegevens toe te voegen aan de website.
-- Er moeten foto's of andere bestanden geüpload kunnen worden door de ingelogde gebruikers.
-- Bestanden of foto's mogen alleen toegevoegd, aangepast of verwijderd worden door de beheerder.
-- Er zijn database migrations die de database wijzigingen bevatten.
-- Er zijn seeders om voorbeeld data (gebruikers, projecten, foto's etc.) in te laden.
-- De toegevoegde gegevens kunnen ook worden aangepast door de eigenaar. 
-- Er is een simpele beheer mogelijkheid (CMS) om inhoud te beheren.
+- Er is een feed (uit de database) met jouw onderwerp: klanten / projecten / kalender items / address book 
+- Er is minstens één contact formulier om gegevens te versturen
+- Er is minstens 1 custom post type
 - Bij oplevering: De website staat live en werkt naar behoren zonder fouten.
-- Optioneel: Je maakt gebruik van Bootstrap SASS om makkelijker responsive layouts te maken
-- Optioneel: De feed of overzichtspagina heeft een categorie of tag waarop gefilterd kan worden.
-- Optioneel: Er is een zoekfunctie om in alle inhoud te zoeken.
-- Optioneel: Je maakt gebruik van VueJS componenten voor bepaalde functionaliteiten.
