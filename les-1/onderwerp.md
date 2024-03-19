@@ -7,10 +7,10 @@ nav_exclude: true
 
 ## Beschrijf jouw project
 {: .text-green-100 .fs-6 }
-In deze periode gaan een Laravel project maken waarmee je een complete CRUD flow ontwikkeld.
+In deze periode gaan een WordPress website maken waarmee je een complete website ontwikkeld.
 
 ---
-## 1- Kies het onderwerp voor jouw Laravel website
+## 1- Kies het onderwerp voor jouw website
 - Lees eerst de [algemene functionele eisen](../project_requirements) door zodat je weet wat er van je verwacht wordt.
 - Bedenk het onderwerp en doel van jouw nieuwe website, bijvoorbeeld een portfolio website.
 - Bedenk aan de hand van de eisen, functionaliteiten die voor jouw website gemaakt kunnen worden.

@@ -6,15 +6,15 @@ nav_order: 1
 
 # Algemene en functionele eisen voor de website
 
-Je bouwt je Laravel website aan de hand van deze algemene en functionele eisen.
+Je bouwt je WordPress website aan de hand van deze algemene en functionele eisen.
 
-**In dit voorbeeld maak ik een portfolio website met projecten, maar je kunt ook een adresboek of agenda website ontwikkelen.**
+**In dit voorbeeld maak ik een website voor een groep waarbij iedereen een eigen pagina heeft, maar je kunt ook een portfolie, website voor een bakker of sport vereniging ontwikkelen.**
 
 ##  Algemene eisen
 {: .text-green-200}
 
 - Responsive op mobiel, tablet en desktop
-- Je maakt gebruik van Tailwind CSS met eigen kleuren en instellingen SASS 
+- Je maakt gebruik van een frontend framework zoals Bootstrap, Tailwind, Bulma, Foundation, Pure. [Bekijk hier een overzicht](les-1/frameworks)
 - Je gebruikt Laravel Mix voor het compileren van je frontend assets
 - Je website heeft een gebruiksvriendelijke layout, design en UXD
 - Er is een duidelijk menu om door je website te navigeren
