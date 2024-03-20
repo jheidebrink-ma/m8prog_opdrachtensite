@@ -5,9 +5,9 @@ nav_order: 0
 has_toc: true
 ---
 
-# Laravel - {{ page.title }}
+# WordPress - {{ page.title }}
 
-Op deze website vind je de opdrachten voor de unit M7PROG waarbij wij een Laravel project gaan ontwikkelen.
+Op deze website vind je de opdrachten voor de unit M8PROG waarbij wij een custom thema voor WordPress gaan ontwikkelen.
 
 ---
 

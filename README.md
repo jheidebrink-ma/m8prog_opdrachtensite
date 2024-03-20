@@ -1,4 +1,4 @@
-# M7PROG — Backend Programming (BAP)
+# M8PROG — Backend Programming (BAP)
 
 Deze site maakt gebruik van het Jekyll Theme: [Just the Docs](https://pmarsceill.github.io/just-the-docs/)
 
@@ -18,4 +18,4 @@ De website is dan te zien op:
 
 ----
 Na pushen van de master branch worden wijzigingen **automatisch** gepubliceerd op:
-[http://jheidebrink-ma.github.io/m7prog_opdrachtensite](http://jheidebrink-ma.github.io/m7prog_opdrachtensite)
+[http://jheidebrink-ma.github.io/m8prog_opdrachtensite](http://jheidebrink-ma.github.io/m78rog_opdrachtensite)

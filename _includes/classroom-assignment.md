@@ -6,7 +6,7 @@
 # Les {{ lesson_number }} - {{ lesson.title }}
 {: .text-green-200 .fs-7 }
 
-![Cover image](cover.jpg)
+![Cover image](cover.png)
 
 {{ lesson.description }}
 

@@ -1,11 +1,11 @@
-title: M7PROG - Laravel
-description: "M7PROG - Laravel Project."
+title: M8PROG - WordPress
+description: "M8PROG - WordPress Project."
 email: j.heidebrink@ma-web.nl
 
 github_username:  jheidebrink-ma
 
 # Build settings
-baseurl: "/m7prog_opdrachtensite"
+baseurl: "/m8prog_opdrachtensite"
 url: "https://jheidebrink-ma.github.io"
 remote_theme: "pmarsceill/just-the-docs"
 #theme: minima

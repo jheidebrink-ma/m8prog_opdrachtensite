@@ -8,7 +8,7 @@ nav_exclude: true
 # css frameworks
 A overview of the most used css frameworks in 2024.  
 
-![frameworks.png](frameworks.png)
+![frameworks.png](img/frameworks.png)
 
 
 # General-Purpose CSS Frameworks

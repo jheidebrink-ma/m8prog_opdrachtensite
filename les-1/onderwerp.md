@@ -14,7 +14,7 @@ In deze periode gaan een WordPress website maken waarmee je een complete website
 - Lees eerst de [algemene functionele eisen](../project_requirements) door zodat je weet wat er van je verwacht wordt.
 - Bedenk het onderwerp en doel van jouw nieuwe website, bijvoorbeeld een portfolio website.
 - Bedenk aan de hand van de eisen, functionaliteiten die voor jouw website gemaakt kunnen worden.
-- Maak een keuze welk css framework je gaat gebruiken: [Bekijk hier een overzicht](les-1/frameworks)
+- Maak een keuze welk css framework je gaat gebruiken: [Bekijk hier een overzicht](frameworks)
 
 ---
 ## 2- Beschrijf jouw website en de functionaliteiten
@@ -24,11 +24,11 @@ Maak in je (nog lege) repository een `website.md` markdown document en beschrijf
 - Hoe je de functionele eisen gaat verwerken in jouw website.
 - Wat voor stijl / look & feel je voor ogen hebt.
 
-Dit mag nog best groot en ongepolijst zijn.  
-Je hoeft ook nog niet te weten hoe je het gaat maken.
-Belangrijkste is dat je weet **wat** je wilt gaan maken, daarna duik je in **hoe** je dit gaat doen.
-{: .text-red-200 .fs-5 }
+Dit mag nog best grof en ongepolijst zijn.  
+Je hoeft ook nog niet te weten hoe je het gaat maken.  
+Belangrijkste is dat je weet **wat** je wilt gaan maken, daarna duik je in **hoe** je dit gaat doen.  
 Je kunt ook een schets maken, daarvan een foto maken en die toevoegen.
+{: .text-red-200 .fs-5 }
 
 ---
 ### Volgende stap:
