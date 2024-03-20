@@ -1,15 +1,15 @@
 "number","week","datum","title","description",
-1,"2","29-2-2024","WordPress installatie","Je begint met het installeren en configureren van een nieuw WordPress project voor je website. Hiervoor gebruiken wij een standaard Docker setup met een paar aanpassingen zodat er een custom thema kan staan.",
-2,"3","29-2-2024","Child theme","Je leert hoe je binnen Laravel een bestaand thema kunt uitbreiden zonder het originele thema aan te passen."
-3,"4","14-3-2024","Custom thema","Je leert om een custom thema te maken met een eigen vormgeving specifiek voor deze website. ",
-4,"5","21-3-2024","Webpack","",
-5,"6","22-3-2024","Loops en Single page templates","",
-6,"7","28-3-2024","De WordPress header en footer","",
-7,"8","4-4-2024","Actions en Filters","",
-8,"9","5-4-2024","Custom post type","",
-9,"10","11-4-2024","Custom admin pagina met options","",
-10,"11","18-4-2024","Localization","",
-10,"11","18-4-2024","Upload via FTP","",
-10,"11","18-4-2024","Deployment via GIT","",
+1,"2","29-2-2025","WordPress installatie","Je begint met het installeren en configureren van een nieuw WordPress project voor je website. Hiervoor gebruiken wij een standaard Docker setup met een paar aanpassingen zodat er een custom thema kan staan.",
+2,"3","29-2-2025","Child theme","Je leert hoe je binnen Laravel een bestaand thema kunt uitbreiden zonder het originele thema aan te passen."
+3,"4","14-3-2025","Custom thema","Je leert om een custom thema te maken met een eigen vormgeving specifiek voor deze website. ",
+4,"5","21-3-2025","Webpack","",
+5,"6","22-3-2025","Loops en Single page templates","",
+6,"7","28-3-2025","De WordPress header en footer","",
+7,"8","4-4-2025","Actions en Filters","",
+8,"9","5-4-2025","Custom post type","",
+9,"10","11-4-2025","Custom admin pagina met options","",
+10,"11","18-4-2025","Localization","",
+10,"11","18-4-2025","Upload via FTP","",
+10,"11","18-4-2025","Deployment via GIT","",
 
 
