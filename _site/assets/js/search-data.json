@@ -1,0 +1,1206 @@
+{"0": {
+    "doc": "Les 3",
+    "title": "De actieve route een andere class/stijl geven",
+    "content": "Laravel is zo “slim” dat het weet welke route de bezoeker van je website op dit moment bezoekt. Daarmee kun je de huidige menu optie een andere stijl geven. Ook gaan we de navigatie in een aparte template zetten en deze inladen met de @include instructie van de Blade template engine. Zo is de navigatie ook makkelijker in andere layouts te gebruiken als je dat wilt. 1- Navigatie template . Als het goed is heb je een navigation.blade.php view in de resources folder. Het kan zijn dat dit document begint met een underscore, of dat je gebruik maakt van het dashboard voorbeeld. Open dit document en zoek je navigatie items op, dit ziet er bijvoorbeeld zo uit: . &lt;x-nav-link :href=\"route('about')\"&gt; {{ __('About') }} &lt;/x-nav-link&gt; . Of dat het er zo uit ziet: . &lt;li class=\"mr-3 bg-lightblue text-white\"&gt; &lt;a href=\"{{ route('about') }}\"&gt; {{ __('About') }} &lt;/a&gt; &lt;/li&gt; . 2- Active status . Als je de &lt;x-nav oplossing gebruikt dan wordt de link afgehandeld in resources/views/components/nav-link.blade.php En hoef je alleen aan te geven wanneer dit element actief is door :active=\"request()-&gt;routeIs('about')\" toe te voegen. Dit is dan het resultaat van mijn about link: . &lt;x-nav-link :href=\"route('about')\" :active=\"request()-&gt;routeIs('about')\"&gt; {{ __('About') }} &lt;/x-nav-link&gt; . Werk je met optie 2 dan zul je dit in het link element aangeven via een if statement. Binnen Laravel kun je if statements maken op de volgende manier: . @if ( voorwaarde ) @endif . In dit geval maak ik een if statement die controleert wat de huidige route is en dan de achtergrond een andere kleur geeft: . @if(request()-&gt;routeIs('about') bg-blue @else bg-white @endif . Het resultaat ziet er dan zo uit: . &lt;li class=\"mr-3 bg-lightblue text-white @if(request()-&gt;routeIs('about') bg-blue @else bg-white @endif\"&gt; &lt;a href=\"{{ route('about') }}\"&gt; {{ __('About') }} &lt;/a&gt; &lt;/li&gt; . Optionele video: . Bekijk de video . Zorg dat je na het kijken van de video een werkend menu hebt en dat de actieve pagina een andere stijl heeft in het menu. ",
+    "url": "/m7prog_opdrachtensite/les-3/active-route#de-actieve-route-een-andere-classstijl-geven",
+    
+    "relUrl": "/les-3/active-route#de-actieve-route-een-andere-classstijl-geven"
+  },"1": {
+    "doc": "Les 3",
+    "title": "Commit en push",
+    "content": "Commit en push ALTIJD na het maken van een opdracht of aan het einde van de les. Zo is je voortgang zichtbaar en ontvang je feedback en/of hulp op de laatste versie van je code als dat nodig is. ",
+    "url": "/m7prog_opdrachtensite/les-3/active-route#commit-en-push",
+    
+    "relUrl": "/les-3/active-route#commit-en-push"
+  },"2": {
+    "doc": "Les 3",
+    "title": "Les 3",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/les-3/active-route",
+    
+    "relUrl": "/les-3/active-route"
+  },"3": {
+    "doc": "Les 7",
+    "title": "Admin routes maken en dashboard layout gebruiken",
+    "content": "Je kunt een verzameling routes (url’s) onder een bepaalde prefix hangen. Alle beheer pagina’s kun je bijvoorbeeld onder de slug /admin plaatsen in je route bestand. Je krijgt dan bijvoorbeeld de routes: /admin = Admin dashboard /admin/projects = Overzicht alle projecten /admin/projects/new = Voor aanmaken een nieuw project /admin/projects/1/edit = Voor bewerken van project met id 1 /admin/projects/2/edit = Voor bewerken van project met id 2 /admin/users = Overzicht van alle gebruikers /admin/..... - Enzovoort. Alles begint dus met de prefix /admin Je kunt daarom makkelijk in één keer alle routes met de prefix /admin afschermen zodat alleen admin gebruikers er nog bij kunnen. Zorg dat je een route group hebt voor jouw CMS / Admin functionaliteit en dat je hiervoor de dashboard view (met de app layout) gebruikt. Dan heb je al standaard een menu en uitlog functionaliteit. Hier vind je die default bestanden mocht je ze kwijt zijn. ",
+    "url": "/m7prog_opdrachtensite/les-7/admin-dashboard#admin-routes-maken-en-dashboard-layout-gebruiken",
+    
+    "relUrl": "/les-7/admin-dashboard#admin-routes-maken-en-dashboard-layout-gebruiken"
+  },"4": {
+    "doc": "Les 7",
+    "title": "Aan de slag",
+    "content": "1- Resource maken . Wij hebben al een Project model, dus wij hoeven niet een compleet nieuwe resource te maken. Je moet wel een controller maken. Meer info: Lees meer over resource controllers . Wij gaan een ProjectAdminController aanmaken voor je model. Bij MijnControler geef je de naam op van je controller, bijvoorbeeld ProjectAdminController. Bij ModelNaam geef je de naam op van je model, bijvoorbeeld Project. php artisan make:controller MijnControler --model=ModelNaam . Je hebt nu neen complete controller, bekijk app/Http/Controllers/ProjectAdminController.php maar even. 2- Routes aanmaken . In de routes gaan wij nu routes aanmaken voor alle CRUD handelingen, hiervoor kun je de route-groups gebruiken: Lees meer over Route groups . Maak eerst een Resource route aan: . Route::resources( [ 'url' =&gt; MyController::class, ] ); . Op de plek van url komt de url van dit model / onderdeel te staan en op de plek van MyController verwijs je naar de controller die je net hebt aangemaakt. Let wel op dat je er ook voor zorgt dat deze controller boven in je pagina onder ‘use’ toegevoegd is. Voeg nu de dashboard route prefix toe, plaats deze code om het resources blok heen: . Route::prefix('/dashboard')-&gt;group( function() { }); . Verplaats nu de de oude dashboard route ook binnen deze prefix. En tenslotte voeg je de middleware requirements to aan de prefix zodat je zeker weet dat iemand is ingelogd als hij naar het dashboard toe gaat. Route::prefix('/dashboard') -&gt;middleware(['auth', 'verified']) -&gt;group(function () { Route::get( '/', function () { return view('dashboard'); })-&gt;name('dashboard'); Route::resources( [ 'projectadmin' =&gt; ProjectAdminController::class, ] ); }); . 3- Controller instellen . Plaats in de controller die je gemaakt hebt verschillende teksten om zo zeker te weten dat het werkt, bijvoorbeeld zo iets: . public function index() { return 'Dit is mijn index'; } . Als je nu je project gaat testen dan zie je nu welke pagina / functionaliteit je bekijkt. Optionele video . Kijk de video om te zien hoe dit werkt. Bekijk de video . Links . | Lees meer over resource controllers | Lees meer over Route groups | Meer over route prefixes | Meer over authenticatie en routes afschermen | . ",
+    "url": "/m7prog_opdrachtensite/les-7/admin-dashboard#aan-de-slag",
+    
+    "relUrl": "/les-7/admin-dashboard#aan-de-slag"
+  },"5": {
+    "doc": "Les 7",
+    "title": "Commit en push",
+    "content": "Commit en push ALTIJD na het maken van een opdracht of aan het einde van de les. Zo is je voortgang zichtbaar en ontvang je feedback en/of hulp op de laatste versie van je code als dat nodig is. Volgende stap: . List view maken met dashboard layout . ",
+    "url": "/m7prog_opdrachtensite/les-7/admin-dashboard#commit-en-push",
+    
+    "relUrl": "/les-7/admin-dashboard#commit-en-push"
+  },"6": {
+    "doc": "Les 7",
+    "title": "Les 7",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/les-7/admin-dashboard",
+    
+    "relUrl": "/les-7/admin-dashboard"
+  },"7": {
+    "doc": "Les 7",
+    "title": "Formulier maken en de gegevens opsturen",
+    "content": "Je gaat een formulier maken om nieuwe gegevens toe te voegen. Je zorgt ook dat het formulier veilig wordt opgestuurd en dat de gegevens aankomen in de juiste method in je controller. 1- Knop maken naar de create route . Zoek via het commando php artisan route:list op wat de naam van de route is voor het aanmaken ( create ) van een project. Mogelijk moet je dit commando uitvoeren in je docker terminal van de php of Laravel container. Kopieer die naam en maak in de dashboard/projects/index.blade.php een link naar deze route. &lt;a href=\"{{route('ROUTE-NAAR-CREATE')}}\" class=\"bg-green hover:bg-green text-white font-bold py-2 px-4 rounded float-right\"&gt; {{ __('New project') }} &lt;/a&gt; . 2- View aanmaken op basis van de index . Kopieer de dashboard/projects/index.blade.php view naar dashboard/projects/create.blade.php Hier komt het formulier in. Open deze nieuwe view en pas de header 1( titel ) aan zodat je weet dat dit de formulier pagina is. Je kunt de inhoud van de content verwijderen. 3- View implementeren in de controller . Net zoals bij de index zorg je er nu voor dat de create functie in de controller een view terug geeft aan de browser. 4- Formulier maken . In Tailwind zit basis form functionaliteit, hiermee kunnen wij formulieren aanmaken in de views. Zie: Tailwind UI forms In je tailwind.conf in de root van je project moet je hiervoor aangeven dat je gebruik wil maken van de tailwind form plugin: . plugins: [forms], . Je kunt nu het voorbeeld formulier van Tailwind kopiëren of je maakt een nieuw HTML formulier aan. Denk hierbij aan de volgende elementen die aangepast moeten worden voor jouw project. Bijvoorbeeld: . | form action=”{{route(‘project.store’)}}” ( de route om het formulier op te slaan ) | form method=”post” | input fields waarbij de name gelijk is aan de naam van je database veld | submit button | . Cross-site request forgeries . Formulieren in Laravel zijn beveiligd met tegen Cross-site request forgeries, mensen die jouw formulier nabootsen. Voeg daarom @csrf toe in het formulier door dit net na het openen van het formulier te plaatsen. Laravel beveiligd hierdoor automatisch jouw formulier. 5- Ontvangen . Dit formulier verstuur je nu naar de store route. In de functie die deze functie op opvangt zorg ik nu dat de verstuurde data zichtbaar is. Plaats daarvoor een dump() in deze store functie. Als je wilt kun je alle verstuurde data weergeven met de volgende code: . /** * Store a newly created resource in storage. */ public function store(Request $request) { dump( $request-&gt;all() ); } . 6- Link naar nieuwe pagina . Het is natuurlijk handig om ergens een knop te hebben om een nieuw project aan te maken. Dan is het wel zo netjes als je ervoor zorgt dat deze knop alleen toegankelijk is voor ingelogde gebruikers. Dat kun je als volgt doen: . @auth &lt;a href=\"{{ route('ROUTE-NAAR-CREATE') }}\" class=\"bg-blue hover:bg-green text-white font-bold py-2 px-4 rounded\"&gt;Nieuw Project&lt;/a&gt; @endauth . Optionele video: . Bekijk de video . Zorg dat je vanaf je lijst pagina een knop hebt naar de ‘create’ route met het formulier om gegevens toe te voegen. Zorg ook dat je het gecontroleerd dat het form oin de store() method van je controller aankomt!` . In de volgende stap ga je validatie regels toevoegen zodat je foutmeldingen kunt tonen bij incorrecte invoer. Links . | Tailwind CSS form voorbeeld (bekijk de source om te zien hoe je dit doet met Tailwind CSS) | . ",
+    "url": "/m7prog_opdrachtensite/les-7/create-view#formulier-maken-en-de-gegevens-opsturen",
+    
+    "relUrl": "/les-7/create-view#formulier-maken-en-de-gegevens-opsturen"
+  },"8": {
+    "doc": "Les 7",
+    "title": "Commit en push",
+    "content": "Commit en push ALTIJD na het maken van een opdracht of aan het einde van de les. Zo is je voortgang zichtbaar en ontvang je feedback en/of hulp op de laatste versie van je code als dat nodig is. ",
+    "url": "/m7prog_opdrachtensite/les-7/create-view#commit-en-push",
+    
+    "relUrl": "/les-7/create-view#commit-en-push"
+  },"9": {
+    "doc": "Les 7",
+    "title": "Les 7",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/les-7/create-view",
+    
+    "relUrl": "/les-7/create-view"
+  },"10": {
+    "doc": "Les 8",
+    "title": "Gegevens verwijderen",
+    "content": "Je gaat een mogelijkheid maken om gegevens te verwijderen. Na deze les heb je alle CRUD operaties en dus een simpel CMS gemaakt voor gegevens op je website. De data wordt verstuurd naar de route: . DELETE dashboard/projects/{project} ........ projects.destroy › ProjectAdminController@destroy . 1- Verwijderen knop in de index. Waarschijnlijk heb je bij elk project in het dashboard nu een &lt;a href='...'&gt; link naar de delete route. Dit gaat alleen niet werken met een a href omdat de request methode altijd de GET methode is. Daarom moet ik een formulier aanmaken met daarbij de juiste route en methode, bijvoorbeeld: . &lt;form action=\"{{route('projects.destroy', $project)}}\" method=\"post\"&gt; @csrf {{ method_field('delete') }} &lt;button type=\"verwijder\" class=\"rounded-md bg-orange\"&gt; Verwijder &lt;/button&gt; &lt;/form&gt; . 2- Verwijderen van een element . Deze route komt aan in de ProjectAdminController en dan bij de destroy methode. In deze functie zie je dat het model als parameter wordt meegegeven, die kun je vervolgens met de methode delete() verwijderen. Daarna redirect ik terug naar de index, mijn code ziet er bijvoorbeeld zo uit: . /** * Remove the specified resource from storage. */ public function destroy(Model $model) { $project-&gt;delete(); return redirect(route('model.index')); } . 3- Maken van meldingen. Het is natuurlijk fijn om steeds meldingen te geven voordat en nadat je iets verwijdert. Aan de voorkant kun je daarvoor javascript gebruiken. Aan de achterkant kun je een melding meegeven tijdens de redirect: . return redirect(route('projects.index'))-&gt;with('alert', 'Het item '.$project-&gt;title.' is nu weg.'); . In de view waar je naartoe gaat kun je vervolgens deze melding ophalen via de session: . @if (session('alert')) &lt;div class=\"p-2 bg-yellow border-2 rounded\"&gt; {{ session('alert') }} &lt;/div&gt; @endif . ",
+    "url": "/m7prog_opdrachtensite/les-8/crud-delete#gegevens-verwijderen",
+    
+    "relUrl": "/les-8/crud-delete#gegevens-verwijderen"
+  },"11": {
+    "doc": "Les 8",
+    "title": "Feest moment",
+    "content": "Je hebt nu een mooie CRUD applicatie gemaakt. Geniet van dit moment, sla goed op, commit EN push en ga even een rondje dansen. Optionele video: . Bekijk de video . Links . | Deleting models | . Zorg dat je de gegevens vanaf de lijst/overzichtspagina kunt verwijderen. ",
+    "url": "/m7prog_opdrachtensite/les-8/crud-delete#feest-moment",
+    
+    "relUrl": "/les-8/crud-delete#feest-moment"
+  },"12": {
+    "doc": "Les 8",
+    "title": "Commit en push",
+    "content": "Commit en push ALTIJD na het maken van een opdracht of aan het einde van de les. Zo is je voortgang zichtbaar en ontvang je feedback en/of hulp op de laatste versie van je code als dat nodig is. ",
+    "url": "/m7prog_opdrachtensite/les-8/crud-delete#commit-en-push",
+    
+    "relUrl": "/les-8/crud-delete#commit-en-push"
+  },"13": {
+    "doc": "Les 8",
+    "title": "Les 8",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/les-8/crud-delete",
+    
+    "relUrl": "/les-8/crud-delete"
+  },"14": {
+    "doc": "Les 5",
+    "title": "CRUD ( Create, Read, Update, Delete ) operaties met je Eloquent model class",
+    "content": "Je hebt nu een Eloquent model class die gekoppeld is aan een database table. Via deze methode is het eenvoudig gegevens toe te voegen, te lezen, aan te passen en te verwijderen (CRUD) in Laravel. Je hoeft geen ingewikkelde SQL queries meer te schrijven, maar werkt via de PHP model class en de ingebouwde functions met de database. ",
+    "url": "/m7prog_opdrachtensite/les-5/crud-eloquent#crud--create-read-update-delete--operaties-met-je-eloquent-model-class",
+    
+    "relUrl": "/les-5/crud-eloquent#crud--create-read-update-delete--operaties-met-je-eloquent-model-class"
+  },"15": {
+    "doc": "Les 5",
+    "title": "Data versturen via de controller.",
+    "content": "Wij gaan tijdelijk via de controller extra projecten toevoegen om iets meer data weer te kunnen geven, dit doen wij in 3 stappen. 1- Route aanmaken . Maak een nieuwe route aan in routes/web.php, bijvoorbeeld: . Route::get('/projects/add', [ ProjectController::class, 'add' ])-&gt;name('project.add'); . 2- Controller endpoint aanmaken . Deze nieuwe route moet natuurlijk wel ergens opgevangen worden, dat doe je in de controller : app/Http/Controllers/ProjectController.php. Daar moet nu een add functie komen die de data gaat toevoegen. public function add() { } . 3- Project aanmaken . Met de volgende code kun je een model aanmaken en vervolgens toevoegen aan de database, plaats deze code binnen de bovenstaande functie. // Maak een model aan $model = new Model(); // definieer de velden $model-&gt;field_one = 'mijn data'; // sla het model op $model-&gt;save(); . ",
+    "url": "/m7prog_opdrachtensite/les-5/crud-eloquent#data-versturen-via-de-controller",
+    
+    "relUrl": "/les-5/crud-eloquent#data-versturen-via-de-controller"
+  },"16": {
+    "doc": "Les 5",
+    "title": "4- Resultaat",
+    "content": "Roep de nieuwe url op in je browser. Als het goed is zie je een witte pagina. Nu kun je in de database zien dat je een project is aangemaakt. Optionele video . In de video kun zien hoe je deze model class kunt gebruiken om alle gegevens in de table op te halen via de model class en hoe je die gegevens vervolgens aan de view kunt geven om ze te tonen. Meer informatie: Crud videos . Zorg dat je alle CRUD operaties hebt uitgeprobeerd en kan toepassen in je code. ",
+    "url": "/m7prog_opdrachtensite/les-5/crud-eloquent#4--resultaat",
+    
+    "relUrl": "/les-5/crud-eloquent#4--resultaat"
+  },"17": {
+    "doc": "Les 5",
+    "title": "Commit en push",
+    "content": "Commit en push ALTIJD na het maken van een opdracht of aan het einde van de les. Zo is je voortgang zichtbaar en ontvang je feedback en/of hulp op de laatste versie van je code als dat nodig is. Volgende stap: . Gegevens ophalen in controller en weergeven in de view . ",
+    "url": "/m7prog_opdrachtensite/les-5/crud-eloquent#commit-en-push",
+    
+    "relUrl": "/les-5/crud-eloquent#commit-en-push"
+  },"18": {
+    "doc": "Les 5",
+    "title": "Les 5",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/les-5/crud-eloquent",
+    
+    "relUrl": "/les-5/crud-eloquent"
+  },"19": {
+    "doc": "Les 5",
+    "title": "CRUD operaties met je Eloquent model class",
+    "content": "In de volgende video’s is uitgelegd hoe je CRUD binnen Laravel gebruikt. 1- Create - Gegevens toevoegen via de model class . Bekijk de video . 2- Read - Gegevens ophalen via de model class . Bekijk de video . 3- Update - Gegevens aanpassen via de model class . Bekijk de video . 4- Delete - Gegevens verwijderen via de model class . Bekijk de video . Zorg dat je alle CRUD operaties hebt uitgeprobeerd en kan toepassen in je code. ",
+    "url": "/m7prog_opdrachtensite/les-5/crud#crud-operaties-met-je-eloquent-model-class",
+    
+    "relUrl": "/les-5/crud#crud-operaties-met-je-eloquent-model-class"
+  },"20": {
+    "doc": "Les 5",
+    "title": "Les 5",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/les-5/crud",
+    
+    "relUrl": "/les-5/crud"
+  },"21": {
+    "doc": "Les 9",
+    "title": "Database migration maken voor file upload",
+    "content": "Je moet eerst een veld toevoegen in de database om straks de bestandsnaam in op te slaan. Dat doe je door een nieuwe database wijziging migration te maken en het veld toe te voegen via een script. Daarna gebruik je php artisan migrate om de wijziging door te voeren in de database. 2- De database . Wij gaan straks bestanden opslaan op de server, maar die willen wij ook weer kunnen uitlezen aan de voorkant de website doordat deze gekoppeld is met een project. Het is namelijk belangrijk dat je weet welke foto je op welk moment moet weergeven. Note: Controleer eerst of je nog geen image row in je tabel hebt. Als je die wel hebt dan kun je deze stap over slaan. Een nieuwe migratie maak je via php artisan of als je met sail werkt, via sail artisan. Gebruik daarvoor het volgende commando: . [php of sail] artisan make:migration migratie_naam . Bijvoorbeeld: . php artisan make:migration alter_table_add_image_col . Vervolgens open je deze nieuwe migratie, die je vind in de database/migrations/ folder. Met deze migratie gaan wij de products tabel aanpassen door er een image kolom bij te plaatsen. Open deze migratie, geef aan welke tabel je wilt aanpassen met deze code Schema::table, dus niet Schema::create(). Vervolgens voeg je het veld toe dat je wilt toevoegen. In dit geval zal de image naam een string zijn. Bijvoorbeeld zo, let wel even op dat je de juiste tabel en veldnaam gebruikt: . /** * Run the migrations. */ public function up(): void { Schema::table('TABLE_NAME', function (Blueprint $table) { $table-&gt;string('FIELD_NAME')-&gt;nullable(); }); } . Nu je de migratie hebt gemaakt moet je ook aangeven hoe je deze weer ongedaan kunt maken. Daarbij geef je weer aan welke tabel Laravel moet gebruiken en welke kolom er verwijdert moet worden: . /** * Reverse the migrations. */ public function down(): void { Schema::table('TABLE_NAME', function (Blueprint $table) { $table-&gt;dropColumn('FIELD_NAME'); }); } . 3- Migratie . Voer vervolgens deze migratie uit via php artisan of als je met sail werkt, via sail artisan. php artisan migrate . Optionele video: . Bekijk de video . ",
+    "url": "/m7prog_opdrachtensite/les-9/db-migration#database-migration-maken-voor-file-upload",
+    
+    "relUrl": "/les-9/db-migration#database-migration-maken-voor-file-upload"
+  },"22": {
+    "doc": "Les 9",
+    "title": "Commit en push",
+    "content": "Commit en push ALTIJD na het maken van een opdracht of aan het einde van de les. Zo is je voortgang zichtbaar en ontvang je feedback en/of hulp op de laatste versie van je code als dat nodig is. Volgende stap: . In de volgende stap ga je een file upload veld toevoegen aan je formulier. ",
+    "url": "/m7prog_opdrachtensite/les-9/db-migration#commit-en-push",
+    
+    "relUrl": "/les-9/db-migration#commit-en-push"
+  },"23": {
+    "doc": "Les 9",
+    "title": "Les 9",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/les-9/db-migration",
+    
+    "relUrl": "/les-9/db-migration"
+  },"24": {
+    "doc": "Les 2",
+    "title": "Debug bar implementeren",
+    "content": "Met de debug bar voor Laravel kun je controleren wat er goed of niet goed gaat in je project. Stap voor stap uitleg kun je hier vinden: https://github.com/barryvdh/laravel-debugbar . 1- Installatie . | Login op de laravel.test of php docker container zodat je geen problemen hebt met php en composer. Hierin heb je namelijk al een werkende composer installatie. | Open hiervoor docker-desktop en zoek de juiste php container op | Klik op de drie puntjes achter de naam en daarna op open terminal | . | Controleer of je op de juiste container zit met het volgende commando: php -v . | Krijg je een error dan heb je niet de php container geopend, probeer het nog maar een keertje maar dan nu met de correcte container. | . | Installeer de debug bar via composer: composer require barryvdh/laravel-debugbar --dev | Om de debug bar aan of uit te zetten kun je in de .env file aangeven of je applicatie in debug mode zit: APP_DEBUG=true | Optioneel: Mogelijk laad het systeem niet automatisch de debug bar, daarom moet je in de providers array in de config/app.php aangeven dat de debug bar geladen moet worden. Voeg daar deze regel toe: Barryvdh\\Debugbar\\ServiceProvider::class, Als je binnen laravel gebruik wilt maken van de debug functie om bijvoorbeeld een debug regel weer te geven dan moet je in de config/app.php de volgende regel aan het facades onderdeel toevoegen: 'Debugbar' =&gt; Barryvdh\\Debugbar\\Facades\\Debugbar::class, | . 2- Controle . Als je nu in de browser naar je project gaat dan zie je onderaan het Laravel logo. Daarnaast vind je een aantal elementen, bijvoorbeeld welke views en route er momenteel geladen worden. ",
+    "url": "/m7prog_opdrachtensite/les-2/debugbar#debug-bar-implementeren",
+    
+    "relUrl": "/les-2/debugbar#debug-bar-implementeren"
+  },"25": {
+    "doc": "Les 2",
+    "title": "Commit en push",
+    "content": "Commit en push ALTIJD na het maken van een opdracht of aan het einde van de les. Zo is je voortgang zichtbaar en ontvang je feedback en/of hulp op de laatste versie van je code als dat nodig is. Volgende stap: . Installeer Tailwind CSS . ",
+    "url": "/m7prog_opdrachtensite/les-2/debugbar#commit-en-push",
+    
+    "relUrl": "/les-2/debugbar#commit-en-push"
+  },"26": {
+    "doc": "Les 2",
+    "title": "Les 2",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/les-2/debugbar",
+    
+    "relUrl": "/les-2/debugbar"
+  },"27": {
+    "doc": "Les 2",
+    "title": "Maak een design en layout voor je website",
+    "content": "Maak een eerste ontwerp aan de hand van je wireframe. Zorg dat je in ieder geval in je ontwerp aan het volgende hebt gedacht: . Header met: . | Logo | Titel van je website | Menu / Navigatie | . Content gebied . | De belangrijkste plek in je layout | De plek in je layout waar de ECHTE inhoud van elke pagina wordt geplaatst. | . Footer met wat onderdelen: . | Social icons | Contactgegevens | . Maak nu een document met alle gebruikte kleuren, lettertypes, en andere design elementen (en de gebruikte stijlen). Deze heb je zo nodig om Tailwind aan te gaan passen. Bijvoorbeeld . | Normale tekst: Nunito, 16px | Kop 1: Helvetica Bold, 22px | Kop 2: Helvetica, 18px | Kop 3: Helvetica, 16px . | orange - #FFCC00 | lightgreen - #5FFF33 | darkblue - #3142C9 | . Zet dit document in je repository zodat je daar snel alles kunt vinden! . ",
+    "url": "/m7prog_opdrachtensite/les-2/design-layout#maak-een-design-en-layout-voor-je-website",
+    
+    "relUrl": "/les-2/design-layout#maak-een-design-en-layout-voor-je-website"
+  },"28": {
+    "doc": "Les 2",
+    "title": "Commit en push",
+    "content": "Commit en push ALTIJD na het maken van een opdracht of aan het einde van de les. Zo is je voortgang zichtbaar en ontvang je feedback en/of hulp op de laatste versie van je code als dat nodig is. ",
+    "url": "/m7prog_opdrachtensite/les-2/design-layout#commit-en-push",
+    
+    "relUrl": "/les-2/design-layout#commit-en-push"
+  },"29": {
+    "doc": "Les 2",
+    "title": "Les 2",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/les-2/design-layout",
+    
+    "relUrl": "/les-2/design-layout"
+  },"30": {
+    "doc": "Les 8",
+    "title": "Gegevens valideren en opslaan",
+    "content": "Je gaat het formulier valideren en wijzigingen opslaan. De data wordt verstuurd naar de route: . PUT|PATCH dashboard/project/{project} ......... project.update › ProjectAdminController@update . 1- Verwerken van de input . Nu is het weer tijd om de input te verwerken. Dit lijkt heel erg op het aanmaken van een project. Ga naar de volgende functie: ProjectAdminController@update Kopieer nu de complete code uit het create stuk en plak deze in de update, zodat je de validatie functionaliteit hebt. Zorg er vervolgens voor dat je niet een nieuw element aan maakt, maar dat je het object uit de parameters update. Dit is mijn complete update functie in de admin controller: . /** * Update the specified resource in storage. * * @param Request $request * @param MyModel $modelObject * @return \\Illuminate\\Contracts\\Foundation\\Application|\\Illuminate\\Foundation\\Application|\\Illuminate\\Http\\RedirectResponse|\\Illuminate\\Routing\\Redirector */ public function update(Request $request, MyModel $modelObject) { $valid_data = $request-&gt;validate( [ 'title' =&gt; 'required|max:255|unique:models_tabel,id,'.$modelObject-&gt;id, 'intro' =&gt; 'required', 'description' =&gt; 'required', 'active' =&gt; 'nullable', ] ); $modelObject-&gt;update($valid_data); $modelObject-&gt;save(); return redirect( route('mymodel.show', $modelObject-&gt;id ) ); } . Note: gebruik wel je eigen model en variabele en tabel naam. Omdat ik nu ga bewerken wil ik wel dat de titel uniek is door te controleren of er een regel in de database is met deze nieuwe titel EN dan mag het huidige project niet mee tellen. Vandaar dit stukje in de validatie: . 'unique:models_tabel,id,'.$modelObject-&gt;id . 2- Verwijderen van duplicate code . Om je code netjes te houden verplaats ik nu het validatie gedeelte naar een losse functie binnen mijn class zodat deze maar één keer voorkomt. Bekijk hiervoor de video als je meer informatie nodig hebt. Optionele video: . Bekijk de video . Zorg dat je de gegevens valideert en de foutmeldingen ziet, en dat de aangepaste gegevens goed worden opgeslagen in de database. Links . | Include andere views | Updaten van een model / rij in de database | . ",
+    "url": "/m7prog_opdrachtensite/les-8/edit-update#gegevens-valideren-en-opslaan",
+    
+    "relUrl": "/les-8/edit-update#gegevens-valideren-en-opslaan"
+  },"31": {
+    "doc": "Les 8",
+    "title": "Commit en push",
+    "content": "Commit en push ALTIJD na het maken van een opdracht of aan het einde van de les. Zo is je voortgang zichtbaar en ontvang je feedback en/of hulp op de laatste versie van je code als dat nodig is. Volgende stap: . In de volgende opdracht ga je de laatste CRUD-operatie maken: Delete (verwijderen van een rij uit de database). Gegevens verwijderen . ",
+    "url": "/m7prog_opdrachtensite/les-8/edit-update#commit-en-push",
+    
+    "relUrl": "/les-8/edit-update#commit-en-push"
+  },"32": {
+    "doc": "Les 8",
+    "title": "Les 8",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/les-8/edit-update",
+    
+    "relUrl": "/les-8/edit-update"
+  },"33": {
+    "doc": "Les 10",
+    "title": "Exporteren van data",
+    "content": "Je hebt nu de flow gemaakt voor een export naar csv bestand, nu gaan wij een export maken voor meerdere projecten. Deze is hetzelfde als de vorige export, maar nu met meerdere items. 1- De functie . Om te beginnen heb je een functie nodig die de export afhandelt, maak daarom een nieuwe functie aan. In mijn geval is dat downloadAll. Binnen deze functie plak ik de functionaliteit uit de andere download functie. Alleen het export gedeelte pas ik aan door de project weergave in een loop in te plaatsen. foreach ($projects as $project) { echo implode( ',', [ $project-&gt;id, $project-&gt;title, $project-&gt;description, ] ); echo \"\\n\\r\"; } . 2- Route . Nu open je web.php en maak je een nieuwe route aan die deze functie aan roept. Bijvoorbeeld met zo’n route: ( dit zijn weer voorbeeld namen ) Route::get('/model/download_all', [ItemDownloadController::class, 'downloadAll'])-&gt;name('my_model.download_all'); . 3- Download knop . Tenslotte hebben we natuurlijk ook nog een download knop nodig: . &lt;a href=\"{{route('my_model.download_all')}}\"&gt; Download All &lt;/a&gt; . ",
+    "url": "/m7prog_opdrachtensite/les-10/export-multiple#exporteren-van-data",
+    
+    "relUrl": "/les-10/export-multiple#exporteren-van-data"
+  },"34": {
+    "doc": "Les 10",
+    "title": "Commit en push",
+    "content": "Commit en push ALTIJD na het maken van een opdracht of aan het einde van de les. Zo is je voortgang zichtbaar en ontvang je feedback en/of hulp op de laatste versie van je code als dat nodig is. Dit was het. Je hebt nu een compleet Laravel project ontwikkeld waarbij wij diverse onderdelen behandeld hebben. In een volgend project gaan wij verder in op beveiliging en deployment, maar voor nu: Rond dit project af en gebruik dit voor je portfolio. ",
+    "url": "/m7prog_opdrachtensite/les-10/export-multiple#commit-en-push",
+    
+    "relUrl": "/les-10/export-multiple#commit-en-push"
+  },"35": {
+    "doc": "Les 10",
+    "title": "Les 10",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/les-10/export-multiple",
+    
+    "relUrl": "/les-10/export-multiple"
+  },"36": {
+    "doc": "Les 10",
+    "title": "Exporteren van data",
+    "content": "Het kan handig zijn als je bepaalde elementen kunt exporteren, naar bijvoorbeeld een csv bestand zodat deze later voor statistieken gebruikt kan worden door een klant of een specialist. Daarom gaan wij nu aan de slag met de export mogelijkheid binnen ons Laravel project. Eerst gaan wij één enkel object exporteren, later zullen wij een query gebruiken. 1- De functie . Om te beginnen heb je een functie nodig die de export afhandelt. Begin met het openen van de controller die de functionaliteit gaat afhandelen. Ik heb net een nieuwe controller ProjectDownloadController aangemaakt, maar je kunt ook de ProjectController gebruiken. Binnen deze Controller heb ik een nieuwe functie aangemaakt, aan deze functie geef ik een Project Model als parameter mee zodat ik altijd weet dat er een Project beschikbaar is: . public function download(Project $project) { } . Binnen deze functie kan ik op verschillende manieren een export aanmaken. Voor deze export maak ik gebruik van een interne callback functie. Eerst maak ik een filenaam voor de download aan en ik stel de headers in zodat de browser weet dat iets wil downloaden. $csvFileName = 'projects' . $project-&gt;title . '.csv'; $headers = [ 'Content-Type' =&gt; 'text/csv', 'Content-Disposition' =&gt; 'attachment; filename=\"' . $csvFileName . '\"', ]; . Voor het aanmaken van de inhoud van het bestand maak ik binnen deze functie een callback functie. Eerst maak ik een header regel aan ( de veldnamen ) daarna maak ik een nieuwe regel met \\n\\r en vervolgens geef ik de data weer. Aan de callback geef ik ook mee dat ik de variabele $project wil gebruiken binnen de functie. $callback = static function() use($project) { echo 'id,title,description'; echo \"\\n\\r\"; echo implode(',', [ $project-&gt;id, $project-&gt;title, $project-&gt;description ]); }; . Tenslotte is het tijd om dit terug geven als response stream met een http code 200 ( success ): . return Response::stream( $callback, 200, $headers); . Alles bij elkaar zal dat ongeveer deze functie geven: . /** * Download a single project in csv format * * @param Project $project * @return \\Symfony\\Component\\HttpFoundation\\StreamedResponse */ public function download(Project $project) { $csvFileName = 'projects' . $project-&gt;title . '.csv'; $headers = [ 'Content-Type' =&gt; 'text/csv', 'Content-Disposition' =&gt; 'attachment; filename=\"' . $csvFileName . '\"', ]; $callback = static function() use($project) { echo 'id,title,description'; echo \"\\n\\r\"; echo implode(',', [ $project-&gt;id, $project-&gt;title, $project-&gt;description ]); }; return Response::stream( $callback, 200, $headers); } . 2- route . Nu open je web.php en maak je een nieuwe route aan die deze functie aan roept. Bijvoorbeeld met deze route: ( dit zijn weer voorbeeld namen, gebruik je eigen termen ) . Route::get('/project/{myModel}/download', [MyDownloadController::class, 'download']) -&gt;name('my_model.download'); . 3- Download knop . Tenslotte hebben we natuurlijk ook nog een download knop nodig bij elk project: . &lt;a href=\"{{route('my_model.download', $myModel)}}\"&gt; Download dit project &lt;/a&gt; . Geen optionele video. Er is geen video voor deze les. Links . | Responses | . ",
+    "url": "/m7prog_opdrachtensite/les-10/export-single#exporteren-van-data",
+    
+    "relUrl": "/les-10/export-single#exporteren-van-data"
+  },"37": {
+    "doc": "Les 10",
+    "title": "Commit en push",
+    "content": "Commit en push ALTIJD na het maken van een opdracht of aan het einde van de les. Zo is je voortgang zichtbaar en ontvang je feedback en/of hulp op de laatste versie van je code als dat nodig is. Volgende stap: . Exporteren van meerdere elementen . ",
+    "url": "/m7prog_opdrachtensite/les-10/export-single#commit-en-push",
+    
+    "relUrl": "/les-10/export-single#commit-en-push"
+  },"38": {
+    "doc": "Les 10",
+    "title": "Les 10",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/les-10/export-single",
+    
+    "relUrl": "/les-10/export-single"
+  },"39": {
+    "doc": "Les 9",
+    "title": "File weergeven",
+    "content": "Je gaat een het bestand weergeven bij projecten. 1- Link de storage folder . De storage folder is niet direct zichtbaar in je public folder. Daarom moet je een symlink maken om deze zichtbaar te maken in de public folder. Hiervoor kun je het volgende commando gebruiken: . [php of sail] artisan storage:link . Bijvoorbeeld: . php artisan storage:link . Nu is de public folder die in de storage/app folder staat ook te benaderen door de browser. 2- Voeg de image toe aan de view . Ga naar de view van een project toe. Open bijvoorbeeld: resources/views/projects/show.blade.php Voeg daar ergens de controle toe of een project wel een image heeft. En geef binnen die if de afbeelding weer: . @if($project-&gt;image) &lt;img src=\"{{Storage::url($project-&gt;image)}}\"&gt; @endif . 2- Voeg de image toe aan de view . ",
+    "url": "/m7prog_opdrachtensite/les-9/file-download#file-weergeven",
+    
+    "relUrl": "/les-9/file-download#file-weergeven"
+  },"40": {
+    "doc": "Les 9",
+    "title": "Commit en push",
+    "content": "Commit en push ALTIJD na het maken van een opdracht of aan het einde van de les. Zo is je voortgang zichtbaar en ontvang je feedback en/of hulp op de laatste versie van je code als dat nodig is. Volgende stap: . File verwijderen uit de storage . ",
+    "url": "/m7prog_opdrachtensite/les-9/file-download#commit-en-push",
+    
+    "relUrl": "/les-9/file-download#commit-en-push"
+  },"41": {
+    "doc": "Les 9",
+    "title": "Les 9",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/les-9/file-download",
+    
+    "relUrl": "/les-9/file-download"
+  },"42": {
+    "doc": "Les 9",
+    "title": "File verwijderen",
+    "content": "Dit is de laatste stap in het CRUD process. Als een regel uit de database verwijderd wordt moet het gekoppelde bestand natuurlijk ook verwijderd worden. 1- Verwijder het bestand . Ga in de controller naar de destroy functie. Voordat je het model verwijderd moet je eerst het bestand verwijderen. Natuurlijk controleer je ook even of er wel een afbeelding is. Bijvoorbeeld: . /** * Remove the specified resource from storage. */ public function destroy(Model $model) { if ( ! empty($project-&gt;image ) ) { Storage::delete($project-&gt;image); } $project-&gt;delete(); return redirect(route('model.index')); } . Dat is het, je hebt nu een mooie complete CRUD flow. ",
+    "url": "/m7prog_opdrachtensite/les-9/file-remove#file-verwijderen",
+    
+    "relUrl": "/les-9/file-remove#file-verwijderen"
+  },"43": {
+    "doc": "Les 9",
+    "title": "Commit en push",
+    "content": "Commit en push ALTIJD na het maken van een opdracht of aan het einde van de les. Zo is je voortgang zichtbaar en ontvang je feedback en/of hulp op de laatste versie van je code als dat nodig is. ",
+    "url": "/m7prog_opdrachtensite/les-9/file-remove#commit-en-push",
+    
+    "relUrl": "/les-9/file-remove#commit-en-push"
+  },"44": {
+    "doc": "Les 9",
+    "title": "Les 9",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/les-9/file-remove",
+    
+    "relUrl": "/les-9/file-remove"
+  },"45": {
+    "doc": "Les 9",
+    "title": "File verwerken",
+    "content": "Je gaat een het bestand verwerken en opslaan op de server. 1- Controleren op een image . Omdat dit veld niet verplicht is kunnen wij er niet vanuit gaan dat wij altijd een afbeelding moeten verwerken. Hiervoor kun je de `empty()’ van php gebruiken. if ( ! empty($image) ) { . In dit voorbeeld controleer ik of de afbeelding NIET leeg is. Als deze controle waar is dan ga ik de upload verwerken. 2- Verplaatsen van de afbeelding. De afbeelding staat nu in de tijdelijke folder van de server, die kan ik nu gaan verplaatsen naar de storage folder: Hiervoor kun je een simpele actie van Laravel gebruiken: . $path = $request-&gt;file('FILE_NAME')?-&gt;store('FOLDER'); . Bij FILE_NAME defineer je het input field uit het formulier. Bij FOLDER defineer je de naam van de folder, in ons geval waarschijnlijk: public/projecten. In de /storage/app folder kun je dit bestand straks terug vinden. Let op dat je ook de public folder definieert in het pad omdat de browser er anders niet bij kan. Note het vraagteken achter file() zorgt dat de store() functie alleen uitgevoerd wordt als de file() functie een object terug geeft. 3- Opslaan van het path. Je krijgt nu het path van de afbeelding terug, die kunnen wij opslaan in de database: . $project-&gt;image = $path; $project-&gt;save(); . 4- Update action . Voeg deze code ook toe aan de update functie zodat ook daar het bestand opgeslagen kan worden. Zie voor meer informatie over het opslaan: Storage in Laravel . Geen optionele video. Er is geen video voor deze les. Zorg dat je file upload veld werkt en dat je het bestand kunt opvragen in je controller met de dd() functie. ",
+    "url": "/m7prog_opdrachtensite/les-9/file-storage#file-verwerken",
+    
+    "relUrl": "/les-9/file-storage#file-verwerken"
+  },"46": {
+    "doc": "Les 9",
+    "title": "Commit en push",
+    "content": "Commit en push ALTIJD na het maken van een opdracht of aan het einde van de les. Zo is je voortgang zichtbaar en ontvang je feedback en/of hulp op de laatste versie van je code als dat nodig is. Volgende stap: . File weergeven . ",
+    "url": "/m7prog_opdrachtensite/les-9/file-storage#commit-en-push",
+    
+    "relUrl": "/les-9/file-storage#commit-en-push"
+  },"47": {
+    "doc": "Les 9",
+    "title": "Les 9",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/les-9/file-storage",
+    
+    "relUrl": "/les-9/file-storage"
+  },"48": {
+    "doc": "Les 9",
+    "title": "File upload veld toevoegen",
+    "content": "Je gaat een file upload veld toevoegen en het formulier aanpassen zodat het bestand ook goed wordt meegestuurd. 1- multipart/form-data . Om bestanden via een html formulier te versturen moet je eerst in het formulier aangeven dat er verschillende type data verstuurd kan worden. Wij zijn nu bezig in dit formulier: . /resources/views/dashboard/projects/form.blade.php . Voeg de enctype attribute toe aan je form tag: . enctype=\"multipart/form-data\" . 2- Image field . Nu kun je een image veld toevoegen aan je formulier. Dat kan bijvoorbeeld zo’n veld zijn: . &lt;input type=\"file\" name=\"plaatje\"&gt; . 3- Image verwerken in de controller . Als het formulier verstuurd is dan moet ook dit veld verwerkt worden. Open daarom de controller die de het formulier verwerkt. Op twee plakken verwerk je het formulier: `store` en `update`. Wij beginnen met het aanpassen van de `store`, dan kunnen wij daarna de code kopiëren naar de andere functie. Onthoud hoe je de `name` van het veld hebt ingesteld, bij mij is dat `plaatje` waardoor ik nu het bestand via de request zo opvangen: ```php $image = $request-&gt;file('plaatje'); dd($image); . Als je het formulier nu verstuurd dan zie je diverse informatie en kun je aan de slag met het opslaan van de afbeelding. Optionele video: . Bekijk de video . Links . | Storage in Laravel | . Zorg dat je file upload veld werkt en dat je het bestand kunt opvragen in je controller met de dd() functie. ",
+    "url": "/m7prog_opdrachtensite/les-9/file-upload#file-upload-veld-toevoegen",
+    
+    "relUrl": "/les-9/file-upload#file-upload-veld-toevoegen"
+  },"49": {
+    "doc": "Les 9",
+    "title": "Commit en push",
+    "content": "Commit en push ALTIJD na het maken van een opdracht of aan het einde van de les. Zo is je voortgang zichtbaar en ontvang je feedback en/of hulp op de laatste versie van je code als dat nodig is. Volgende stap: . File upload valideren en bewaren in storage . ",
+    "url": "/m7prog_opdrachtensite/les-9/file-upload#commit-en-push",
+    
+    "relUrl": "/les-9/file-upload#commit-en-push"
+  },"50": {
+    "doc": "Les 9",
+    "title": "Les 9",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/les-9/file-upload",
+    
+    "relUrl": "/les-9/file-upload"
+  },"51": {
+    "doc": "Les 8",
+    "title": "Aanpassen gegevens met een formulier",
+    "content": "Het is natuurlijk leuk om gegevens toe te voegen, maar af en toe wil je ook iets kunnen wijzigen. Daarom ga je het formulier herbruiken om een rij uit de database table aan te passen. 1- Toevoegen van een wijzig link . Plaats bij elk project in het dashboard overzicht een wijzig link. De link naar deze actie is de route model.edit, waarbij je het model of het id als referentie moet meegeven. Bijvoorbeeld: route('project.edit', $project). Deze url kun je opvragen door het volgende php artisan commando uit te voeren in de terminal: . php artisan route:links . Note: Zorg ervoor dat deze knop alleen zichtbaar is voor mensen die ingelogd zijn. Voorbeeld, in mijn geval is dit een link die eruit ziet als een knop. @auth &lt;a href=\"{{route('project.edit', $project)}}\" class=\"bg-yellow me-2 focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900\"&gt; Wijzig &lt;/a&gt; @endauth . 2- Het formulier voorbereiden . Om het project aan te kunnen passen hebben wij een view nodig met een formulier. Hiervoor wil ik het formulier van de create gebruiken, maar ik wil hem niet kopiëren zodat ik het maar één keer hoef te onderhouden. Knip daarom het formulier uit de create view ( resources/views/dashboard/projects/create.blade.php ). Plak dit formulier in een nieuw view bestand: form.blade.php. In het create bestand moet je nu aangeven dat je het formulier wilt includen, hierbij is het handig als je de route en method mee geeft zodat je het formulier op twee verschillende manieren kunt gebruiken (PUT en POST). Dit kun je doen als volgt waarbij ik als 2e parameter een array met waardes mee geef.: . @include('dashboard.projects.form', ['route'=&gt;route('projects.store'), 'method'=&gt;'post']) . Omdat je volgens de browser alleen GET en POST kunt gebruiken moet ik een omweg maken om het formulier met een PUT methode te versturen. Daarom ziet het begin van het formulier na het verwerken er als volgt uit, waarbij $method gevuld is met de aarde bij de include hierboven. &lt;form action=\"{{$route}}\" method=\"post\"&gt; @csrf {{ method_field($method) }} . 3- De edit view . Kopieer nu de add.blade.php view of als je die niet hebt, create.blade.php bestand naar edit.blade.php en pas daar onder andere de titel aan zodat het duidelijk is dat je een project gaat aanpassen. Ik heb bijvoorbeeld deze titel geplaatst: . Je gaat nu dit project bewerken: {{$project-&gt;title}} . De route ( action van het formulier ) moeten wij ook even wat aanpassen omdat je nu iets gaat opslaan. In de lijst met routes heb je waarschijnlijk ook deze route gezien: projects.update Daar zie je ook dat de methode put is in plaats van post, dus die moet ik aanpassen bij het laden van het formulier. De include in de edit.blade.php ziet er daarom als volgt uit: . @include('dashboard.projects.form', ['route'=&gt;route('projects.update', $project), 'method'=&gt;'put']) . 4- De edit functie . In de ProjectAdminController zoek je de edit functie op en zorg je dat het edit.blade.php bestand terug geeft met daarbij het model als extra parameter: . public function edit(Model $model) { return view('dashboard.model.edit', ['model'=&gt;$model]); } . 5- Meegeven van informatie aan de velden . In het formulier is het wel zo fijn als de oude data zichtbaar is in de velden. Daarom gaan wij op de plekken waar wij nu de oude data weergeven als extra parameter de originele data van het project meegeven, als default waarde. Een invulveld kan er daarom zo uit gaan zien: . &lt;input id=\"title\" name=\"title\" type=\"text\" value=\"{{old('title', $project-&gt;title)}}\" class=\"block w-full rounded-md border-0\"&gt; . Bekijk het formulier maar eens in de browser en zie dat de informatie van het project zichtbaar is in het formulier. 7- Model ook meegeven bij het aanmaken . Omdat je in het formulier het model object gebruikt moet je ervoor zorgen dat je bij het includen van het formulier in de create.blade.php ook een leeg model mee geeft zodat je geen error krijgt bij het aanmaken van een project. In de create.blade.php ziet mijn include er nu zo uit: . @include('dashboard.projects.form', [ 'route' =&gt;route('projects.store'), 'method' =&gt;'post', 'project' =&gt;new \\App\\Models\\Project() ] ) . Optionele video: . Intro over login/dashboard linkjes . Bekijk de video . Zorg dat je een link vanaf de lijst met gegevens naar de edit route en daar ene view hebt met een formulier. Zorg dat je het formulier hergebruikt dat je al had gemaakt. Zorg ook dat de gegevens al worden ingevuld. Links . | Blade directives @auth en @guest | . ",
+    "url": "/m7prog_opdrachtensite/les-8/form-edit#aanpassen-gegevens-met-een-formulier",
+    
+    "relUrl": "/les-8/form-edit#aanpassen-gegevens-met-een-formulier"
+  },"52": {
+    "doc": "Les 8",
+    "title": "Commit en push",
+    "content": "Commit en push ALTIJD na het maken van een opdracht of aan het einde van de les. Zo is je voortgang zichtbaar en ontvang je feedback en/of hulp op de laatste versie van je code als dat nodig is. Volgende stap: . Gegegevens valideren en opslaan . ",
+    "url": "/m7prog_opdrachtensite/les-8/form-edit#commit-en-push",
+    
+    "relUrl": "/les-8/form-edit#commit-en-push"
+  },"53": {
+    "doc": "Les 8",
+    "title": "Les 8",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/les-8/form-edit",
+    
+    "relUrl": "/les-8/form-edit"
+  },"54": {
+    "doc": "Les 7",
+    "title": "Overzicht: Forms en validatie",
+    "content": "In deze les en de volgende les leer je hoe je formulieren kunt maken waar bezoekers (of jij zelf) gegevens mee kunnen invoeren en opsturen. Jij als developer kunt de gegevens vervolgens in een controller gaan verwerken. In de opdracht-video’s zie je hoe je een simpel CMS kunt maken onder de url /dashboard op je website en hoe je formulieren en CRUD operaties (Create, Read, Update en Delete) kunt gebruiken om de gegevens in je database te beheren. Een aantal dingen zijn belangrijk hierbij: . | Beveiliging: Zorg dat een script je form niet gaat spammen. | Authenticatie: Zorg dat je alleen iets mag bewerken/toevoegen als je ingelogd bent als admin gebruiker. | Validatie: De ingevoerde gegevens controleren en valideren. | Foutmeldingen tonen bij formulier velden die niet correct zijn ingevuld. | . Optionele video: . Kijk de video voor een overzicht van wat je aan het einde van de opdrachten (ongeveer) werkend kan hebben. Bekijk de video . In de volgende opdrachten ga je zelf een formulier maken, validatie regels toevoegen en foutmeldingen tonen. Daarna kun je de gegevens via je Model class makkelijk toevoegen aan de database . ",
+    "url": "/m7prog_opdrachtensite/les-7/form-validation-overview#overzicht-forms-en-validatie",
+    
+    "relUrl": "/les-7/form-validation-overview#overzicht-forms-en-validatie"
+  },"55": {
+    "doc": "Les 7",
+    "title": "Commit en push",
+    "content": "Commit en push ALTIJD na het maken van een opdracht of aan het einde van de les. Zo is je voortgang zichtbaar en ontvang je feedback en/of hulp op de laatste versie van je code als dat nodig is. Volgende stap: . Route groep maken voor admin routes - dashboard layout . ",
+    "url": "/m7prog_opdrachtensite/les-7/form-validation-overview#commit-en-push",
+    
+    "relUrl": "/les-7/form-validation-overview#commit-en-push"
+  },"56": {
+    "doc": "Les 7",
+    "title": "Les 7",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/les-7/form-validation-overview",
+    
+    "relUrl": "/les-7/form-validation-overview"
+  },"57": {
+    "doc": "Les 8",
+    "title": "Form validatie en foutmeldingen",
+    "content": "Nu wordt het tijd om de ingevulde gegevens te valideren, zodat er geen lege artikelen in de database toegevoegd kunnen worden. Je doet dit door validatie regels per invoerveld te definiëren en je gebruikt de validate() methode van het $request object om de validatie uit te voeren. Is een veld niet goed ingevuld dan stuurt Laravel je automatisch terug naar het formulier, zodat je de foutmelding(en) kunt tonen. Ook kun je de ingevoerde data weer in het veld plaatsen zodat je deze niet opnieuw hoeft in te vullen. Meer informatie . Ga naar de Laravel website en bekijk welke validatie regels er beschikbaar zijn: validatie regels . 1- Request data controleren . Om te beginnen ga je de verstuurde informatie weergeven. Open de controller waar je de CRUD functies in hebt staan, waarschijnlijk is dat ProjectAdminController. Werk nu in de store functie. Als argument zie je dat er een Request object meegegeven moet worden: . public function store(Request $request) . Dit object kun je weergeven door gebruik te maken van de debug functies van Laravel: debug dump(): dump() debug die(): dd() . Probeer dit maar eens uit: . public function store(Request $request) { dump( $request-&gt;all() ); } . Je ziet nu alle velden die verstuurd zijn vanuit het formulier. Probeer nu één veld weer te geven, door aan de input() fucntie mee te geven welk veld je wil zien. public function store(Request $request) { dump( $request-&gt;input('veldnaam') ); } . 2- Validatie instellen . Je weet nu hoe je de data kunt ophalen, nu gaan wij aan de slag met de validatie. Dit kan op twee manieren, of je plaatst het resultaat in een variabele óf je stopt het script als het niet goed is. De eerste optie is voor straks makkelijker omdat we dan gelijk de valide data in een array hebben. Je moet per element aangeven of het verplicht is en of er specifieke eisen zijn. Als de titel bijvoorbeeld verplicht is én uniek moet zijn in de posts tabel én hij maximaal 255 karakters mag bevatten dan zou dit werken: . public function store(Request $request) { $valid_data = $request-&gt;validate([ 'title' =&gt; 'required|unique:posts|max:255', 'onderdeel' =&gt; 'required', ]); dd($valid); } . Als je de verkeerde informatie invoert dan kom je weer terug op het formulier. 3- Errors weergeven . Nu weet je alleen nog niet of het goed is gegaan, daarom moet je in de view bij het formulier ook de error weergeven als die er is. Dat doe je door deze code op de plek te plaatsen waar je de errors wilt zien, bijvoorbeeld in views/dashboard/create.blade.php: . @if ($errors-&gt;any()) &lt;div class=\"p-2 bg-yellow border-2 rounded\"&gt; &lt;ul&gt; @foreach ($errors-&gt;all() as $error) &lt;li&gt;{{ $error }}&lt;/li&gt; @endforeach &lt;/ul&gt; &lt;/div&gt; @endif . | Hierbij controleer ik eerst of er errors zijn. | Als dat het geval is dan laat ik een list zien. | In deze list plaats ik alle errors via een foreach loop. | . 4- Weergeven van oude data . Het is prettig dat als je een formulier invult en er errors zijn, je nog wel de oude data ziet. Hiervoor moet je de oude values toevoegen aan de velden. Dit doe je door een value toe te voegen, in dit geval voor het veld titel: {{old('title')}} . &lt;input name=\"veldnaam\" type=\"text\" value=\"{{old('veldnaam')}}\" /&gt; . Optionele video: . Bekijk de video . Zorg dat je een formulier hebt met validatie regels en foutmeldingen en dat de “oude” inpout were wordt getoond als er validatie errors zijn, zodat je niet alles opnieuw hoft in te vullen. Links . | Documentatie over requests | Documentatie over form validatie | Alle validatie regels | Documentatie over foutmeldingen tonen | Documentatie over tonen van eerdere invoer | . ",
+    "url": "/m7prog_opdrachtensite/les-8/form-validation#form-validatie-en-foutmeldingen",
+    
+    "relUrl": "/les-8/form-validation#form-validatie-en-foutmeldingen"
+  },"58": {
+    "doc": "Les 8",
+    "title": "Commit en push",
+    "content": "Commit en push ALTIJD na het maken van een opdracht of aan het einde van de les. Zo is je voortgang zichtbaar en ontvang je feedback en/of hulp op de laatste versie van je code als dat nodig is. Volgende stap: . Gegevens opslaan via je model class . ",
+    "url": "/m7prog_opdrachtensite/les-8/form-validation#commit-en-push",
+    
+    "relUrl": "/les-8/form-validation#commit-en-push"
+  },"59": {
+    "doc": "Les 8",
+    "title": "Les 8",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/les-8/form-validation",
+    
+    "relUrl": "/les-8/form-validation"
+  },"60": {
+    "doc": "Les 2",
+    "title": "De layout gebruiken in je nieuwe homepage",
+    "content": "Je hebt nu een eigen Laravel layout voor jouw website (werk daar rustig aan door de komende tijd) . De volgende stap is de layout gaan gebruiken in je views (de pagina’s van je website). Dat is nu best wel simpel in vergelijking met de andere php projecten. ",
+    "url": "/m7prog_opdrachtensite/les-2/homepage#de-layout-gebruiken-in-je-nieuwe-homepage",
+    
+    "relUrl": "/les-2/homepage#de-layout-gebruiken-in-je-nieuwe-homepage"
+  },"61": {
+    "doc": "Les 2",
+    "title": "Doel",
+    "content": "Het is de bedoeling dat je een stramien maakt voor de jouw website. In de loop van de komende lessen gaan wij een complete website bouwen. ",
+    "url": "/m7prog_opdrachtensite/les-2/homepage#doel",
+    
+    "relUrl": "/les-2/homepage#doel"
+  },"62": {
+    "doc": "Les 2",
+    "title": "Les 2",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/les-2/homepage",
+    
+    "relUrl": "/les-2/homepage"
+  },"63": {
+    "doc": "Les 5",
+    "title": "Les 5 -",
+    "content": ". Deze opdracht komt binnenkort beschikbaar. ",
+    "url": "/m7prog_opdrachtensite/les-5/index#les-5--",
+    
+    "relUrl": "/les-5/index#les-5--"
+  },"64": {
+    "doc": "Les 5",
+    "title": "Les 5",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/les-5/index",
+    
+    "relUrl": "/les-5/index"
+  },"65": {
+    "doc": "Les 1",
+    "title": "Les 1 - Kickoff - WordPress project maken",
+    "content": ". Je begint met het installeren en configureren van een nieuw WordPress project voor je website. Aan het eind van de les. Maak de opdrachten voor deze les . | Start | Nieuw Laravel project maken met Composer | Configureer je Laravel project | Installeer Laravel Breeze starter kit | . ",
+    "url": "/m7prog_opdrachtensite/les-1/#les-1---kickoff---wordpress-project-maken",
+    
+    "relUrl": "/les-1/#les-1---kickoff---wordpress-project-maken"
+  },"66": {
+    "doc": "Les 1",
+    "title": "Les 1",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/les-1/",
+    
+    "relUrl": "/les-1/"
+  },"67": {
+    "doc": "Les 6",
+    "title": "Les 6 -",
+    "content": ". Deze opdracht komt binnenkort beschikbaar. ",
+    "url": "/m7prog_opdrachtensite/les-6/index#les-6--",
+    
+    "relUrl": "/les-6/index#les-6--"
+  },"68": {
+    "doc": "Les 6",
+    "title": "Les 6",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/les-6/index",
+    
+    "relUrl": "/les-6/index"
+  },"69": {
+    "doc": "Home",
+    "title": "WordPress - Home",
+    "content": "Op deze website vind je de opdrachten voor de unit M8PROG waarbij wij een WordPress custom thema gaan ontwikkelen. ",
+    "url": "/m7prog_opdrachtensite/#wordpress---home",
+    
+    "relUrl": "/#wordpress---home"
+  },"70": {
+    "doc": "Home",
+    "title": "Opdrachten en uitleg",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/#opdrachten-en-uitleg",
+    
+    "relUrl": "/#opdrachten-en-uitleg"
+  },"71": {
+    "doc": "Home",
+    "title": "Les 1:  Kickoff - WordPress project maken",
+    "content": "Je begint met het installeren en configureren van een nieuw WordPress project voor je website. Aan het eind van de les. Start . ",
+    "url": "/m7prog_opdrachtensite/#les-1--kickoff---wordpress-project-maken",
+    
+    "relUrl": "/#les-1--kickoff---wordpress-project-maken"
+  },"72": {
+    "doc": "Home",
+    "title": "Les 2:  Child theme",
+    "content": "Deze les komt binnenkort online. Vanaf 01-03-2025 online . ",
+    "url": "/m7prog_opdrachtensite/#les-2--child-theme",
+    
+    "relUrl": "/#les-2--child-theme"
+  },"73": {
+    "doc": "Home",
+    "title": "Les 3:",
+    "content": "Deze les komt binnenkort online. Vanaf 07-03-2025 online . ",
+    "url": "/m7prog_opdrachtensite/#les-3",
+    
+    "relUrl": "/#les-3"
+  },"74": {
+    "doc": "Home",
+    "title": "Les 4:",
+    "content": "Deze les komt binnenkort online. Vanaf 14-03-2025 online . ",
+    "url": "/m7prog_opdrachtensite/#les-4",
+    
+    "relUrl": "/#les-4"
+  },"75": {
+    "doc": "Home",
+    "title": "Les 5:",
+    "content": "Deze les komt binnenkort online. Vanaf 15-03-2025 online . ",
+    "url": "/m7prog_opdrachtensite/#les-5",
+    
+    "relUrl": "/#les-5"
+  },"76": {
+    "doc": "Home",
+    "title": "Les 6:",
+    "content": "Deze les komt binnenkort online. Vanaf 21-03-2025 online . ",
+    "url": "/m7prog_opdrachtensite/#les-6",
+    
+    "relUrl": "/#les-6"
+  },"77": {
+    "doc": "Home",
+    "title": "Les 7:",
+    "content": "Deze les komt binnenkort online. Vanaf 04-04-2025 online . ",
+    "url": "/m7prog_opdrachtensite/#les-7",
+    
+    "relUrl": "/#les-7"
+  },"78": {
+    "doc": "Home",
+    "title": "Les 8:",
+    "content": "Deze les komt binnenkort online. Vanaf 05-04-2025 online . ",
+    "url": "/m7prog_opdrachtensite/#les-8",
+    
+    "relUrl": "/#les-8"
+  },"79": {
+    "doc": "Home",
+    "title": "Les 9:",
+    "content": "Deze les komt binnenkort online. Vanaf 11-04-2025 online . ",
+    "url": "/m7prog_opdrachtensite/#les-9",
+    
+    "relUrl": "/#les-9"
+  },"80": {
+    "doc": "Home",
+    "title": "Les 10:",
+    "content": "Deze les komt binnenkort online. Vanaf 18-04-2025 online . ",
+    "url": "/m7prog_opdrachtensite/#les-10",
+    
+    "relUrl": "/#les-10"
+  },"81": {
+    "doc": "Home",
+    "title": "Home",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/",
+    
+    "relUrl": "/"
+  },"82": {
+    "doc": "Les 10",
+    "title": "Les 10 -",
+    "content": ". Deze opdracht komt binnenkort beschikbaar. ",
+    "url": "/m7prog_opdrachtensite/les-10/index#les-10--",
+    
+    "relUrl": "/les-10/index#les-10--"
+  },"83": {
+    "doc": "Les 10",
+    "title": "Les 10",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/les-10/index",
+    
+    "relUrl": "/les-10/index"
+  },"84": {
+    "doc": "Les 7",
+    "title": "Les 7 -",
+    "content": ". Deze opdracht komt binnenkort beschikbaar. ",
+    "url": "/m7prog_opdrachtensite/les-7/index#les-7--",
+    
+    "relUrl": "/les-7/index#les-7--"
+  },"85": {
+    "doc": "Les 7",
+    "title": "Les 7",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/les-7/index",
+    
+    "relUrl": "/les-7/index"
+  },"86": {
+    "doc": "Les 3",
+    "title": "Les 3 -",
+    "content": ". Deze opdracht komt binnenkort beschikbaar. ",
+    "url": "/m7prog_opdrachtensite/les-3/index#les-3--",
+    
+    "relUrl": "/les-3/index#les-3--"
+  },"87": {
+    "doc": "Les 3",
+    "title": "Les 3",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/les-3/index",
+    
+    "relUrl": "/les-3/index"
+  },"88": {
+    "doc": "Les 4",
+    "title": "Les 4 -",
+    "content": ". Deze opdracht komt binnenkort beschikbaar. ",
+    "url": "/m7prog_opdrachtensite/les-4/index#les-4--",
+    
+    "relUrl": "/les-4/index#les-4--"
+  },"89": {
+    "doc": "Les 4",
+    "title": "Les 4",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/les-4/index",
+    
+    "relUrl": "/les-4/index"
+  },"90": {
+    "doc": "Les 2",
+    "title": "Les 2 - Child theme",
+    "content": ". Je leert hoe een layout en een view samenwerken. Je past de Tailwind CSS aan met jouw eigen kleuren en fonts en gebruikt SASS en Laravel Mix om je frontend assets te compileren. Je zet je design en layout om in layout in Laravel. Deze opdracht komt binnenkort beschikbaar. ",
+    "url": "/m7prog_opdrachtensite/les-2/index#les-2---child-theme",
+    
+    "relUrl": "/les-2/index#les-2---child-theme"
+  },"91": {
+    "doc": "Les 2",
+    "title": "Les 2",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/les-2/index",
+    
+    "relUrl": "/les-2/index"
+  },"92": {
+    "doc": "Les 8",
+    "title": "Les 8 -",
+    "content": ". Deze opdracht komt binnenkort beschikbaar. ",
+    "url": "/m7prog_opdrachtensite/les-8/index#les-8--",
+    
+    "relUrl": "/les-8/index#les-8--"
+  },"93": {
+    "doc": "Les 8",
+    "title": "Les 8",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/les-8/index",
+    
+    "relUrl": "/les-8/index"
+  },"94": {
+    "doc": "Les 9",
+    "title": "Les 9 -",
+    "content": ". Deze opdracht komt binnenkort beschikbaar. ",
+    "url": "/m7prog_opdrachtensite/les-9/index#les-9--",
+    
+    "relUrl": "/les-9/index#les-9--"
+  },"95": {
+    "doc": "Les 9",
+    "title": "Les 9",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/les-9/index",
+    
+    "relUrl": "/les-9/index"
+  },"96": {
+    "doc": "Les 1",
+    "title": "Laravel Breeze installeren (inloggen/uitloggen)",
+    "content": "Laravel Breeze is een starter kit van Laravel die allerlei handige authenticatie features toevoegt aan je Laravel project. Als je dit installeert krijg je o.a. registratie, inlog, uitlog, wachtwoord vergeten e.d. tot je beschikking. 1- Installeer Breeze . Doorloop nu de stappen om Breeze toe te voegen aan je project: Installeer Breeze Je moet daarvoor de onderstaande commando’s uitvoeren in de terminal. composer require laravel/breeze --dev . Als dit niet direct lukt, ga dan naar Docker Desktop en klik op de 3 puntjes achter je php of Laravel.test container en selecteer terminal. Daar kun je hetzelfde commando uitvoeren. 2- Breeze en Blade . Installeer nu Breeze met Blade door deze commando’s uit te voeren in de bovenstaande terminal: . php artisan breeze:install . Vervolgens voer je een migratie voor je database uit: . php artisan migrate . Nu is het tijd om npm te installeren. Dit voer je uit in de WSL terminal in je editor ( Visual Studio ) . npm install npm run dev . 2- Controle en account . Als het goed is heb je nu ook werkende registratie, inlog/uitlog en wachtwoord vergeten functionaliteit. Ga maar in je browser naar je project en tik vervolgens het volgende path achter de url: register Je kunt ook rechtsboven op register klikken. Zorg dat je een account hebt gemaakt om mee in te loggen op je website. 3- Commit . | Voeg alles toe aan je repository met git add . | Commit (met een goede commit message) en push alles weer naar Github. | . ",
+    "url": "/m7prog_opdrachtensite/les-1/install-breeze#laravel-breeze-installeren-inloggenuitloggen",
+    
+    "relUrl": "/les-1/install-breeze#laravel-breeze-installeren-inloggenuitloggen"
+  },"97": {
+    "doc": "Les 1",
+    "title": "Commit en push",
+    "content": "Commit en push ALTIJD na het maken van een opdracht of aan het einde van de les. Zo is je voortgang zichtbaar en ontvang je feedback en/of hulp op de laatste versie van je code als dat nodig is. ",
+    "url": "/m7prog_opdrachtensite/les-1/install-breeze#commit-en-push",
+    
+    "relUrl": "/les-1/install-breeze#commit-en-push"
+  },"98": {
+    "doc": "Les 1",
+    "title": "Les 1",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/les-1/install-breeze",
+    
+    "relUrl": "/les-1/install-breeze"
+  },"99": {
+    "doc": "Les 1",
+    "title": "Configuratie instellen",
+    "content": "Je gaat een nu je project instellen met de noodzakelijke gegevens. 1- Laravel project configureren . | Configureer je Laravel project door de .env file aan te passen als dit noodzakelijk is. | Als je Laravel hebt geïnitialiseerd via curl dan heb je een Sail setup en zijn de database instellingen al goed. | Als je geïnstalleerd hebt via composer dan moet je de database instellingen doen door: . | in het .env bestand de DB_xxx instellingen in te vullen op basis van je docker-compose.yml gegevens. | . | Stel de APP_NAME in met de naam van jouw website. | . 2- Testen . Bekijk je project nu in de browser. | Open Docker Desktop | Klik dan op de port achter NGINX of Laravel-... container. | In je browser zie je nu http://localhost:88 of http://localhost:89 | . ",
+    "url": "/m7prog_opdrachtensite/les-1/laravel-config#configuratie-instellen",
+    
+    "relUrl": "/les-1/laravel-config#configuratie-instellen"
+  },"100": {
+    "doc": "Les 1",
+    "title": "Commit en push",
+    "content": "Commit en push ALTIJD na het maken van een opdracht of aan het einde van de les. Zo is je voortgang zichtbaar en ontvang je feedback en/of hulp op de laatste versie van je code als dat nodig is. Volgende stap: . Installeer Laravel Breeze starter kit . ",
+    "url": "/m7prog_opdrachtensite/les-1/laravel-config#commit-en-push",
+    
+    "relUrl": "/les-1/laravel-config#commit-en-push"
+  },"101": {
+    "doc": "Les 1",
+    "title": "Les 1",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/les-1/laravel-config",
+    
+    "relUrl": "/les-1/laravel-config"
+  },"102": {
+    "doc": "Les 2",
+    "title": "Laravel layout maken voor jouw ontwerp",
+    "content": ". Eindelijk is het tijd om jouw ontwerp en stylen om te gaan zetten in HTML en CSS. Het belangrijkste is het maken van de layout. De layout bepaalt de algemene look en feel en indeling van je website. Alle pagina’s maken vervolgens gebruik van die layout (zodat je geen dubbele code hoeft te maken) Je kunt gebruik maken van de voorbeeld layout die al in Laravel zit, bekijk eens de bestanden in de view folder in de resources folder. Note . Het is in deze stap de bedoeling om ‘ongeveer’ een layout in te stellen. Probeer een menu weer te geven en een eigen footer te maken. Maak niet je complete website af in deze stap. Advies . Gebruik de indeling van dashboard.blade.php ( kopieer deze naar een nieuw bestand ). In dit bestand wordt op een dynamische manier de layout opgehaald. Plaats deze code maar eens binnen deze tags: &lt;x-guest-layout&gt;. Of verwijder een blok html en kijk eens wat er nu gebeurd. 1- Layout instellen . Zorg dat je nu de layout in Laravel werkend hebt en dat je deze kunt gebruiken voor de “views” (pagina’s) die je gaat maken. Meer over layouts in Laravel vind je in de documentatie: . | https://laravel.com/docs/10.x/blade#building-layouts | . 2- Indeling van website . Voor deze les beginnen wij met een basis structuur van een pagina met de volgende items: . | layout container | header met een logo en het menu | navigatie menu met minimaal 3 items | footer met copyright | content element met voorbeeld tekst Je kunt als voorbeeld van de structuur naar de bestanden kijken in de views en layout folder. Zie voor meer informatie: https://laravel.com/docs/10.x/views | . ",
+    "url": "/m7prog_opdrachtensite/les-2/laravel-layout#laravel-layout-maken-voor-jouw-ontwerp",
+    
+    "relUrl": "/les-2/laravel-layout#laravel-layout-maken-voor-jouw-ontwerp"
+  },"103": {
+    "doc": "Les 2",
+    "title": "Commit en push",
+    "content": "Commit en push ALTIJD na het maken van een opdracht of aan het einde van de les. Zo is je voortgang zichtbaar en ontvang je feedback en/of hulp op de laatste versie van je code als dat nodig is. Volgende stap: . Maak een homepage view en gebruik hierbij jouw layout . ",
+    "url": "/m7prog_opdrachtensite/les-2/laravel-layout#commit-en-push",
+    
+    "relUrl": "/les-2/laravel-layout#commit-en-push"
+  },"104": {
+    "doc": "Les 2",
+    "title": "Les 2",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/les-2/laravel-layout",
+    
+    "relUrl": "/les-2/laravel-layout"
+  },"105": {
+    "doc": "Les 1",
+    "title": "Laravel project starten",
+    "content": "We gaan Laravel installeren in een Docker omgeving. Deze omgeving gaan wij tijdens deze gehele module gebruiken. 1- Laravel project initialiseren . 1- Maak een nieuwe repository aan in GitHub voor m7prog-laravel 2- Navigeer op je computer naar de folder waar je project straks komt te staan. 3- Wij werken nu volgens de setup van laravel.com 4- Start eerst Docker Desktop Je kunt Laravel installeren op twee manieren, met een nieuwe docker installatie via curl of via composer. Begin met de eerste versie, gaat dit mis, dan kun je overstappen op het alternatief vanuit docker. Windows gebruikers . Let op: Op Windows moet je een paar extra stappen doorlopen. Op Windows moet je gebruik maken van WSL. Dit is een Linux laag die binnen Windows gaat draaien. | Zorg ervoor dat je wsl geïnstalleerd hebt door het volgende commando uit te voeren in command prompt: wsl --install . Het kan zijn dat je een user moet aanmaken, hiervoor moet je een naam ingeven zonder kapitalen en spaties. Bij het invullen van het wachtwoord klopt het dat je niets ziet. | Open nu Docker Desktop. Ga naar instellingen en dan resources en zet onder het WSL integration tabje Ubuntu aan, zie afbeelding. | Herstart nu je computer. ( Ja, echt waar ) | Open nu de project folder waar je straks gaat werken in jouw editor, zoals Visual Studio Code of PhpStorm | In je editor open je de terminal en selecteer daar de ‘wsl’ modus. | . 2a- Installatie via Curl . Navigeer naar je project folder en voer het volgende commando uit in de terminal. Zo initialiseer je een nieuw laravel project in de folder m7prog-laravel: curl -s \"https://laravel.build/m7prog-laravel\" | bash Navigeer nu naar de folder m7prog-laravel cd m7prog-laravel Je kunt nu Laravel starten door gebruik te maken via Sail ./vendor/bin/sail up . 2b- Alternatief via composer . Volg deze stappen alleen als Sail niet werkt. Als alternatief kun je ook Laravel installeren via Composer. Hiervoor dien je composer op je computer geïnstalleerd te hebben, dit controleer je door cmd of de terminal te openen en dit commando uit te voeren: composer -V Zie je nu een error, dan moet je eerst composer installeren via: https://getcomposer.org/doc/00-intro.md Vervolgens ga je naar je project folder en installeer je laravel met dit commando: composer create-project laravel/laravel m7prog-laravel Nu kun je het project via docker starten. Kopieer de volgende folders uit de vorige les of download ze hieronder en plaats ze in deze ( m7prog-laravel ) folder: . | /docker/ ( download ) | /docker-compose.yml ( download ) | . Navigeer nu naar de folder m7prog-laravel Start docker: docker-composer up -d . 3- Controle . Als het goed is heb je nu een nieuw Laravel project waar je in kunt gaan werken. | Zorg ervoor dat je een git repo gekoppeld hebt aan dit project. | Je kunt de url terug vinden door in docker desktop te bekijken welke docker container er aan staat. Klik dan op de port naast de NGINX of Laravel-test container om je project in de browser te openen, bijvoorbeeld http://localhost:80 | Wil je een php artisan commando uitvoeren dan moet je gebruik maken van de php of Laravel-test container. | . ",
+    "url": "/m7prog_opdrachtensite/les-1/laravel-start#laravel-project-starten",
+    
+    "relUrl": "/les-1/laravel-start#laravel-project-starten"
+  },"106": {
+    "doc": "Les 1",
+    "title": "Commit en push",
+    "content": "Commit en push ALTIJD na het maken van een opdracht of aan het einde van de les. Zo is je voortgang zichtbaar en ontvang je feedback en/of hulp op de laatste versie van je code als dat nodig is. Volgende stap: . Configureer je Laravel project . ",
+    "url": "/m7prog_opdrachtensite/les-1/laravel-start#commit-en-push",
+    
+    "relUrl": "/les-1/laravel-start#commit-en-push"
+  },"107": {
+    "doc": "Les 1",
+    "title": "Les 1",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/les-1/laravel-start",
+    
+    "relUrl": "/les-1/laravel-start"
+  },"108": {
+    "doc": "Les 7",
+    "title": "Lijst weergave maken met de dashboard layout",
+    "content": "Nu ga je eerst de lijst weergave maken met de dashboard layout. Ook laat je een simpele lijst zien met de gegevens en een paginering. Later ga je daar edit-linkjes aan toevoegen zodat je elke rij uit de database kunt gaan aanpassen. 1- Menu aanmaken . Zoek in de web.php welke view er gebruikt is voor de dashboard pagina. Dit is het onderdeel van het huidige dashboard menu item: . &lt;x-nav-link :href=\"route('dashboard')\" :active=\"request()-&gt;routeIs('dashboard')\"&gt; {{ __('Dashboard') }} &lt;/x-nav-link&gt; . Zoek nu via artisan op welke view er naar het projecten overzicht binnen het dashboard gaat met dit commando: . php artisan route:list . Kopieer de naam en plaats deze in het nieuwe menu item dat je gemaakt hebt. Let op, er is mogelijk ook een hamburger menu, onderaan, daar is het ook handig om het menu item toe te voegen. 2- Dashboard view folder . Maak in de views folder een mapje dashboard plaats daarin een nieuwe map met de naam projects . Kopieer het bestand dashboard.blade.php naar deze projects folder en noem hem index.blade.php Je hebt nu twee dezelfde bestanden. Pas in dit bestand een tekst aan zodat je weet naar welke view je kijkt en je niet per ongeluk naar de dashboard view andere bestand kijkt. Bijvoorbeeld het tekstje: You're logged in! kun je veranderen in Projecten overzicht . Geef aan in de index functie van je controller aan dat je een view wilt weergeven. Bijvoorbeeld met deze functie: . return view('dashboard.projects.index'); . ( slashes zijn vervangen door puntjes ) . 3- Overzicht in je view . In de view ga je nu een weergave maken van je projecten. Haal eerst in de index functie in je controller ( ProjectenAdminController.php ) de producten op. Geef aan dat je gebruik wilt maken van paginering. Dit doe je door de inhoud van de index function aan te passen in deze code: . $projects = Project::paginate(2); return view('dashboard.projects.index', ['projects'=&gt;$projects]); . In het view bestand /dashboard/projects/index.blade.php kun je nu alle projecten weergeven zoals je al eerder hebt gedaan. Daaronder kun je nu de paginering weergeven met deze code {{$projects-&gt;links()}} Dan krijg je bijvoorbeeld zo’n stuk code: . @foreach($items as $item) &lt;a href=\"{{route('projectadmin.show', $item)}}\"&gt;{{ $item-&gt;title }}&lt;/a&gt;&lt;br&gt; @endforeach {{$items-&gt;links()}} . Let wel op dat jullie waarschijnlijk niet $items meegeven aan deze view, maar dat de variabele anders heet. 4- Controleren . Om dit te bekijken ga je nu in de browser naar de dashboard projects index pagina. Bekijk eerst even welke routes er allemaal zijn door dit Artisan commando uit te voeren: . php artisan route:list . Hier zie je als het goed is een route staan voor je projecten admin index in het dashboard. Die url kun je gebruiken om dit overzicht te zien. Bij mij is dat: dashboard/projectadmin . Optionele video: . Bekijk de video . In de volgende opdracht ga je zelf een formulier maken, validatie regels toevoegen en foutmeldingen tonen. Daarna kun je de gegevens via je Model class makkelijk toevoegen aan de database . ",
+    "url": "/m7prog_opdrachtensite/les-7/list-view#lijst-weergave-maken-met-de-dashboard-layout",
+    
+    "relUrl": "/les-7/list-view#lijst-weergave-maken-met-de-dashboard-layout"
+  },"109": {
+    "doc": "Les 7",
+    "title": "Commit en push",
+    "content": "Commit en push ALTIJD na het maken van een opdracht of aan het einde van de les. Zo is je voortgang zichtbaar en ontvang je feedback en/of hulp op de laatste versie van je code als dat nodig is. Volgende stap: . Formulier maken en de gegevens opsturen . ",
+    "url": "/m7prog_opdrachtensite/les-7/list-view#commit-en-push",
+    
+    "relUrl": "/les-7/list-view#commit-en-push"
+  },"110": {
+    "doc": "Les 7",
+    "title": "Les 7",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/les-7/list-view",
+    
+    "relUrl": "/les-7/list-view"
+  },"111": {
+    "doc": "Les 5",
+    "title": "Migration terug draaien",
+    "content": "In mijn project database heb ik te weinig velden toegevoegd. Ik wil namelijk ook nog een images veld toevoegen. 1- Rollback . Gebruik het volgende commando om de laatste migratie terug te draaien: . // Wanneer je gebruik maakt van de originele docker setup php artisan migrate:rollback . // wanneer je gebruik maakt van `sail` sail artisan migrate:rollback . 2- Migratie aanpassen . Pas nu je migratie document aan door bijvoorbeeld een image veld aan te maken waar je straks de naam van een afbeelding kunt opslaan: . $table-&gt;string('image')-&gt;nullable(); . 3- Uitvoeren . Nu kun je de migratie opnieuw uitvoeren. // Wanneer je gebruik maakt van de originele docker setup php artisan migrate . // wanneer je gebruik maakt van `sail` sail artisan migrate . ",
+    "url": "/m7prog_opdrachtensite/les-5/migration-rollback#migration-terug-draaien",
+    
+    "relUrl": "/les-5/migration-rollback#migration-terug-draaien"
+  },"112": {
+    "doc": "Les 5",
+    "title": "Commit en push",
+    "content": "Commit en push ALTIJD na het maken van een opdracht of aan het einde van de les. Zo is je voortgang zichtbaar en ontvang je feedback en/of hulp op de laatste versie van je code als dat nodig is. Volgende stap: . CRUD operaties met je model class . ",
+    "url": "/m7prog_opdrachtensite/les-5/migration-rollback#commit-en-push",
+    
+    "relUrl": "/les-5/migration-rollback#commit-en-push"
+  },"113": {
+    "doc": "Les 5",
+    "title": "Les 5",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/les-5/migration-rollback",
+    
+    "relUrl": "/les-5/migration-rollback"
+  },"114": {
+    "doc": "Les 4",
+    "title": "Overzicht: Models en de database",
+    "content": "Zorg dat je deze introductie even rustig doorleest zodat je snapt hoe de model-laag in Laravel samenwerkt met de database. Deze pagina geeft informatie over Eloquent, lees deze eerst door voordat je gaat bouwen. De model laag in een MVC-framework (zoals Laravel) bevat alle functionaliteit om met de gegevens in je website of webapplicatie te werken. Laravel bevat hiervoor twee belangrijke onderdelen: . | De QueryBuilder waarmee je vrij “low-level” SQL queries kunt uitvoeren op de database. | Eloquent. Een onderdeel die het makkelijk maakt om alle CRUD-operaties (create, read, update en delete) en meer uit te voeren op de gegevens in je database. | . De Eloquent oplossing heeft veel meer voordelen en mogelijkheden, het is ook veiliger om deze te gebruiken. QueryBuilder . De QueryBuilder is een simpele manier om met gegevens uit je database te werken. Deze code laat zien hoe je alle users ophaalt uit de users table (bijvoorbeeld in een controller method): . // Bovenin je PHP file moet je altijd aangeven wat je bedoelt met DB use Illuminate\\Support\\Facades\\DB; // En dan bijvoorbeeld in een listUsers() function in een controller public function listUsers(){ $users = DB::table('users')-&gt;get(); // $user bevat een array met alle rijen uit de users table foreach ($users as $user) { echo $user-&gt;name; } } . Om een rij aan de users table toe te voegen (insert) gebruik je de insert() method van de DB class: . // Bovenin je PHP file moet je altijd aangeven wat je bedoelt met DB use Illuminate\\Support\\Facades\\DB; // En dan bijvoorbeeld in een insertUser() function in een controller public function insertUser(){ DB::table('users')-&gt;insert([ 'name' =&gt; 'Dylan', 'email' =&gt; 'dylan@example.com', ]); } . Uiteraard kun je ook gegevens verwijderen en updaten. Lees hoe je dat doet in de QueryBuilder documentatie. Eloquent . Wij gaan Eloquent gebruiken om met gegevens uit de database te werken. | In Eloquent wordt elke table uit de database gekoppeld aan een PHP (model) class. | Een class bevat de eigenschappen van de table en ook functions om met de gegevens te werken uit de database. | . De PHP model classes staan altijd in: app\\Models. Bijvoorbeeld app\\Models\\User.php: . class User extends Model { // De User erft allerlei functions van de (Eloquent) Model class // Hierdoor krijg je meteen al heel veel handige functionaliteit in je class! } . Om deze User class (die in dit voorbeeld gekoppeld is aan de users table!) te gebruiken: . // Altijd bovenaan aangeven welke model class je gaat gebruiken use App\\Models\\User // Zelfde voorbeeld als in vorige code maar dan met de Eloquent model class public function listUsers(){ $users = User::all(); // Via User class haal je alles uit de 'users' table // LET OP, HET VERSCHIL MET DE QUERYBUILDER IS: // In elke $user zit nu een instance van de User class (en dus geen array) foreach ($users as $user) { echo $user-&gt;name; } } . Houd goed in gedachten: De PHP CLASS IS GEKOPPELD AAN EEN DATABASE TABLE. Alles over Eloquent staat in de Laravel documentatie . In de volgende opdracht ga je zelf een database migratie en een model class genereren voor jouw website en deze gebruiken om gegevens op te halen en te tonen in je view. Volgende stap: . Een Eloquent model class en database migration maken . ",
+    "url": "/m7prog_opdrachtensite/les-4/model-database-overview#overzicht-models-en-de-database",
+    
+    "relUrl": "/les-4/model-database-overview#overzicht-models-en-de-database"
+  },"115": {
+    "doc": "Les 4",
+    "title": "Les 4",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/les-4/model-database-overview",
+    
+    "relUrl": "/les-4/model-database-overview"
+  },"116": {
+    "doc": "Les 4",
+    "title": "Een model class en database migration maken",
+    "content": "Nu je een beeld hebt van hoe Laravel (PHP) via Eloquent samenwerkt met de database ben je klaar om zelf aan de slag te gaan. Dit ga je doen (de video kan je extra informatie geven): . | Een Eloquent model class en een database migration maken. | De database migration aanpassen (welke velden wil je in je tabel?). | De database migration uitvoeren, zodat de table ook echt wordt aangemaakt. | . ",
+    "url": "/m7prog_opdrachtensite/les-4/model-migration-migrate#een-model-class-en-database-migration-maken",
+    
+    "relUrl": "/les-4/model-migration-migrate#een-model-class-en-database-migration-maken"
+  },"117": {
+    "doc": "Les 4",
+    "title": "1- Model class aanmaken",
+    "content": "Het Model element is een vertaling / verbinding tussen de website en de database. Op onze website komen verschillende projecten. Voor deze projecten gaan wij een model aanmaken. Ook maken wij gelijk een database migratie aan, hiervoor gebruiken wij de -m optie. Zorg ervoor dat je model naam met een kapitaal begint. php artisan make:model -m Project . Je ziet nu dat er een model én een migratie aangemaakt zijn: . INFO Model [app/Models/Project.php] created successfully. INFO Migration [database/migrations/2024_02_05_151958_create_projects_table.php] created successfully. Open nu het Model bestand: app/Models/Project.php en bekijk eens welke functies er al beschikbaar zijn doordat hij een uitbreiding is op de algemene Model class. Dit bestand kun je nu weer sluiten omdat wij verder gaan met de migraties. ",
+    "url": "/m7prog_opdrachtensite/les-4/model-migration-migrate#1--model-class-aanmaken",
+    
+    "relUrl": "/les-4/model-migration-migrate#1--model-class-aanmaken"
+  },"118": {
+    "doc": "Les 4",
+    "title": "2- Migratie",
+    "content": "Open nu het migratie bestand dat net is aangemaakt en voeg daar de elementen toe die noodzakelijk zijn. Dit bestand is te vinden in de folder /database/migrations/ Meestal is dit het laatste bestand. Je ziet nu al een stukje code klaar staan dat ervoor zorgt dat er een nieuwe tabel aangemaakt wordt. Ook zie je dat Laravel alvast twee kolommen toe wilt voegen. Wij maken nu een paar extra elementen aan, bijvoorbeeld voor een titel en een omschrijving: . Schema::create('projects', function (Blueprint $table) { $table-&gt;id(); $table-&gt;string('title'); $table-&gt;text('description')-&gt;nullable(); $table-&gt;boolean('active')-&gt;default(false); $table-&gt;timestamps(); }); . Ik heb een column voor ‘title’ toegevoegd, een tekst column voor de description en een boolean om aan te geven of dit project wel of niet actief is. Kun je zelf nog andere elementen voor de projecten verzinnen? Misschien een intro column. Zie hier een overzicht van alle mogelijke types: available-column-types Let op: blijf gebruik maken van engelse benamingen, gebruik niet titel en title door elkaar . ",
+    "url": "/m7prog_opdrachtensite/les-4/model-migration-migrate#2--migratie",
+    
+    "relUrl": "/les-4/model-migration-migrate#2--migratie"
+  },"119": {
+    "doc": "Les 4",
+    "title": "3- Migratie uitvoeren",
+    "content": "Voor het toevoegen van de tabel met de kolommen hoeven wij geen mysql te schrijven, maar kan ik Laravel de opdracht geven om dit uit te voeren. Gebruik hiervoor de migratie functionaliteit van Laravel: . // Wanneer je gebruik maakt van de originele docker setup php artisan migrate . // wanneer je gebruik maakt van sail sail artisan migrate . De kans is groot dat je nu een error ziet doordat Artisan geen verbinding kan maken met de database. De oplossing hiervoor is door dit commando uit te voeren vanaf de laravel / php instance in Docker. Open daarvoor het terminal venster door in docker desktop op de drie puntjes achter de betreffende container te klikken en terminal te selecteren. Open nu de database interface ( via een app als HeidiSQL of SequelAce of de webinterface phpmyadmin ) en controleer of de tabel is toegevoegd. Optionele video: . Bekijk de video . ",
+    "url": "/m7prog_opdrachtensite/les-4/model-migration-migrate#3--migratie-uitvoeren",
+    
+    "relUrl": "/les-4/model-migration-migrate#3--migratie-uitvoeren"
+  },"120": {
+    "doc": "Les 4",
+    "title": "Commit en push",
+    "content": "Commit en push ALTIJD na het maken van een opdracht of aan het einde van de les. Zo is je voortgang zichtbaar en ontvang je feedback en/of hulp op de laatste versie van je code als dat nodig is. Volgende stap: . Een database seeder maken . ",
+    "url": "/m7prog_opdrachtensite/les-4/model-migration-migrate#commit-en-push",
+    
+    "relUrl": "/les-4/model-migration-migrate#commit-en-push"
+  },"121": {
+    "doc": "Les 4",
+    "title": "Les 4",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/les-4/model-migration-migrate",
+    
+    "relUrl": "/les-4/model-migration-migrate"
+  },"122": {
+    "doc": "Les 4",
+    "title": "Een seeder maken",
+    "content": "Op dit moment heb je een tabel gemaakt met bijbehorend model. Nu is het tijd om ook wat voorbeeld data in de tabel te plaatsen. Dat doe je door gebruik te maken van Seeders. ",
+    "url": "/m7prog_opdrachtensite/les-4/model-migration-seeders#een-seeder-maken",
+    
+    "relUrl": "/les-4/model-migration-seeders#een-seeder-maken"
+  },"123": {
+    "doc": "Les 4",
+    "title": "1- Seeder aanmaken",
+    "content": "Eerst gaan we een nieuwe seeder maken om straks data toe te kunnen voegen: . php artisan make:seeder ProjectSeeder . Er is nu een nieuwe seeder aangemaakt waarmee een project toegevoegd kan worden. Open maar het bestand: . /database/seeders/ProjectSeeder.php . Hier vind je de run functie. Deze voert het toevoegen uit. Je kunt nu Laravel Eloquent gebruiken om je data toe te voegen. Dit lijkt erg op zoals wij straks met models omgaan. Om gebruik te maken van deze seeder moet je eerst de DB functionaliteit importeren. Daarvoor moet je deze regel toevoegen bovenin het php document ( het use gedeelte ): use Illuminate\\Support\\Facades\\DB; . Het is ook mogelijk om gebruik te maken van Model Factories hierbij kun je een aantal items met random data zoals fake tekst toevoegen. Zorg ervoor dat in het use gedeelte bovenaan de code ook de faker geladen wordt: use Faker\\Factory as Faker; Bovenaan in de functie geef je aan dat je een faker wilt gebruiken om fake data toe te voegen. Dit hoeft niet, je kunt ook zelf de data verzinnen zoals in het voorbeeld met de hand. $faker = Faker::create(); . Elementen Velden die jij zelf hebt bedacht maar hier niet staan zul je moeten toevoegen. Vul de verschillende elementen van het model via faker: . DB::table('projects')-&gt;insert([ 'title' =&gt; $faker-&gt;colorName(), 'intro' =&gt; $faker-&gt;text(50), 'description' =&gt; $faker-&gt;text(), 'active' =&gt; true, ]); . Of met de hand: . DB::table('projects')-&gt;insert([ 'title' =&gt; 'Mijn project titel', 'intro' =&gt; 'Anim non lorem sit est.', 'description' =&gt; 'Enim labore eu, sed. Sed esse incididunt aute velit. Incididunt, aute velit duis amet sint. Duis amet sint pariatur esse anim officia mollit. Sint pariatur esse anim. Esse anim officia mollit laboris aliqua, et esse.', 'active' =&gt; true, ]); . ",
+    "url": "/m7prog_opdrachtensite/les-4/model-migration-seeders#1--seeder-aanmaken",
+    
+    "relUrl": "/les-4/model-migration-seeders#1--seeder-aanmaken"
+  },"124": {
+    "doc": "Les 4",
+    "title": "2- Seeder uitvoeren",
+    "content": "Voor het toevoegen van de tabel en instellingen hoeven wij geen mysql te schrijven, maar kan ik Laravel de opdracht geven om dit uit te voeren. Gebruik hiervoor de seed functionaliteit van Laravel: . // Wanneer je gebruik maakt van de originele docker setup php artisan db:seed --class=ProjectSeeder . // wanneer je gebruik maakt van sail sail artisan db:seed --class=ProjectSeeder . ",
+    "url": "/m7prog_opdrachtensite/les-4/model-migration-seeders#2--seeder-uitvoeren",
+    
+    "relUrl": "/les-4/model-migration-seeders#2--seeder-uitvoeren"
+  },"125": {
+    "doc": "Les 4",
+    "title": "3- Controle",
+    "content": "Open nu de database interface ( via een app of phpmyadmin ) en controleer of de data is toegevoegd. Waarschijnlijk heb je nog geen verbinding met deze database server, hiervoor kunt je een IDE gebruiken of een PhpMyAdmin server implementeren, daarvoor moet je dan deze stappen volgen: 1- Plak de volgende code in docker-compose.yml onder de selenium container. phpmyadmin: image: phpmyadmin environment: PMA_HOST: 'mysql' PMA_USER: '${DB_USERNAME}' PMA_PASSWORD: '${DB_PASSWORD}' ports: - \"1088:80\" networks: - sail . Let goed op de uitlijning, deze moet overeenkomen met de andere blokken. 2- Build de omgeving weer met het commando: ./vendor/bin/sail up -d . 3- Open de nieuwe docker container in de browser: http://localhost:1088 . Optionele video: . Bekijk de video . ",
+    "url": "/m7prog_opdrachtensite/les-4/model-migration-seeders#3--controle",
+    
+    "relUrl": "/les-4/model-migration-seeders#3--controle"
+  },"126": {
+    "doc": "Les 4",
+    "title": "Commit en push",
+    "content": "Commit en push ALTIJD na het maken van een opdracht of aan het einde van de les. Zo is je voortgang zichtbaar en ontvang je feedback en/of hulp op de laatste versie van je code als dat nodig is. ",
+    "url": "/m7prog_opdrachtensite/les-4/model-migration-seeders#commit-en-push",
+    
+    "relUrl": "/les-4/model-migration-seeders#commit-en-push"
+  },"127": {
+    "doc": "Les 4",
+    "title": "Les 4",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/les-4/model-migration-seeders",
+    
+    "relUrl": "/les-4/model-migration-seeders"
+  },"128": {
+    "doc": "Les 8",
+    "title": "Gegevens opslaan via je model class",
+    "content": "Nu de gegevens zijn gevalideerd kun je alle gegevens via je model class gaan opslaan in de database. Ook stuur je de gebruiker door naar een andere pagina na het opslaan, zodat je niet een dubbele rij in je table krijgt als je op reload drukt. 1- De valide data verwerken . Nu wij zeker weten dat de data goed is kunnen wij aan de slag met opslaan. Hiervoor ga je verder in de store functie in de ProjectAdminController. De dd() debug die() functie heb je nu niet meer nodig, die regel kun je uit deze functie verwijderen. Voor het aanmaken van een nieuw model weer drie manieren mogelijk: . Optie 1: . $product = new Product::create($request-&gt;all()); . Optie 2: . $product = new Product($valid_data); $product-&gt;save(); . Optie 3: . $product = new Product(); $product-&gt;title = $request-&gt;input('title'); $product-&gt;category = $request-&gt;input('category'); $product-&gt;save(); . Optie 1 en 3 zijn sneller, maar je hebt dan minder controle over de elementen. In optie 1 moet je eerst aangeven wat je wel en niet mag invullen, door in het model een protected $fillable array aan te maken. Dat doe je door in het model aan te geven welke elementen er ingevuld mogen worden. Bij mij ziet mijn Project model er nu zo uit: . class Project extends Model { use HasFactory; /** * Elements that are allowed be filled in directly * * @var string[] */ protected $fillable = ['title', 'intro', 'description', 'active']; /** * The table associated with the model. * * @var string */ protected $table = 'projects'; } . Optie 3 is overzichtelijker en heb je al een keer gebruikt. In dit voorbeeld gaan wij gebruik maken van optie 2. 2- Opslaan van de data . In ons geval hebben wij de informatie in de $valid_data variabele, waar alle elementen in staan die overeenkomen met de kolommen in de database. Hierdoor kun je op zo’n manier een nieuw model aanmaken en opslaan in de database: . $item = new Model( $valid_data ); $item-&gt;save(); . Door de save() functie aan te roepen wordt er een element toegevoegd aan de database. 3- Versturen van resultaat . Als het item is opgeslagen kun je de gebruiker sturen naar een andere pagina met de volgende code: . return redirect(); . Geef als parameter de route mee waar je naartoe wilt. Bijvoorbeeld de project.show route met als parameter de id van het laatste element. return redirect( route('project.show', $project-&gt;id ) ); . Optionele video: . Bekijk de video . Zorg dat je formulier helemaal werkt, met form validatie, foutmeldingen en een redirect na succesvol opslaan. ",
+    "url": "/m7prog_opdrachtensite/les-8/model-save#gegevens-opslaan-via-je-model-class",
+    
+    "relUrl": "/les-8/model-save#gegevens-opslaan-via-je-model-class"
+  },"129": {
+    "doc": "Les 8",
+    "title": "Commit en push",
+    "content": "Commit en push ALTIJD na het maken van een opdracht of aan het einde van de les. Zo is je voortgang zichtbaar en ontvang je feedback en/of hulp op de laatste versie van je code als dat nodig is. Volgende stap: . Aanpassen van gegevens met een formulier . ",
+    "url": "/m7prog_opdrachtensite/les-8/model-save#commit-en-push",
+    
+    "relUrl": "/les-8/model-save#commit-en-push"
+  },"130": {
+    "doc": "Les 8",
+    "title": "Les 8",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/les-8/model-save",
+    
+    "relUrl": "/les-8/model-save"
+  },"131": {
+    "doc": "Les 4",
+    "title": "Gegevens ophalen in controller en weergeven in de view",
+    "content": "Je kunt nu (na wat oefenen) alle CRUD operaties uitvoeren met de Eloquent model class. Het doel is om een lijst met projecten op te halen en aan een view door te geven. In de view kun je met de Blade @foreach directive de gegevens tonen met jouw eigen HTML en CSS. 1- Maak een functie aan in je ProjectController . Maak in je ProjectController een index functie aan waar je straks alle projecten gaat ophalen. public function index() { } . 2- Haal alle projecten op . Binnen deze functie haal je vervolgens alle Projecten op door het model te laden en daarbij aan te geven wat jke wilt ophalen. $projects = Project::all(); . Of als je alleen de actieve projecten wilt ophalen, gesorteerd op title: . $projects = Project::where('active', 1) -&gt;orderBy('title') -&gt;take(10) -&gt;get(); . Geef vervolgens deze informatie door aan het view bestand /resources/views/projects/index.blade.php . return view( 'projects.index', [ 'projects' =&gt; $projects, ] ); . 3- Maak een view bestand . Maak een nieuw views bestand aan: /resources/views/projects/index.blade.php Je kunt hierbinnen de als voorbeeld een oud bestand gebruiken. In het content gedeelte plaats je vervolgens de loop: . @foreach( $projects as $project ) &lt;div class=\"max-w-sm p-2 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700\"&gt; &lt;h5 class=\"mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-center\"&gt; {{$project-&gt;title}} &lt;/h5&gt; &lt;/div&gt; @endforeach . 4- Maak een route aan . De route die ik nu wil gebruiken is: . Route::get('/projects/index', [ ProjectController::class, 'index' ])-&gt;name('project.index'); . 5- Test de route . Bekijk deze route en geniet van het mooie overzicht dat je gemaakt hebt op dit endpoint. /projects/index . Optionele video: . In de video laat ik zien hoe je dit doet. Bekijk de video . Zorg dat je na deze opdracht een werkende lijst pagina hebt met gegevens uit de database. In de volgende les ga je een formulier maken om gegevens via de model class op te slaan. Ook leer je hoe je forms veilig maakt met CSRF en hoe je gegevens makkelijk kunt valideren met Laravel. Ook ga je gebruiksvriendelijke foutmeldingen als de ingevulde gegevens niet geldig zijn. ",
+    "url": "/m7prog_opdrachtensite/les-5/model-view-loop#gegevens-ophalen-in-controller-en-weergeven-in-de-view",
+    
+    "relUrl": "/les-5/model-view-loop#gegevens-ophalen-in-controller-en-weergeven-in-de-view"
+  },"132": {
+    "doc": "Les 4",
+    "title": "Commit en push",
+    "content": "Commit en push ALTIJD na het maken van een opdracht of aan het einde van de les. Zo is je voortgang zichtbaar en ontvang je feedback en/of hulp op de laatste versie van je code als dat nodig is. Volgende stap: . Templates . ",
+    "url": "/m7prog_opdrachtensite/les-5/model-view-loop#commit-en-push",
+    
+    "relUrl": "/les-5/model-view-loop#commit-en-push"
+  },"133": {
+    "doc": "Les 4",
+    "title": "Les 4",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/les-5/model-view-loop",
+    
+    "relUrl": "/les-5/model-view-loop"
+  },"134": {
+    "doc": "Les 3",
+    "title": "Navigatie / menu toevoegen met alle (relevante) pagina’s",
+    "content": "Nu je een aantal routes/pagina’s hebt gemaakt en je er in je browser naar toe kunt navigeren, ga je een menu bewerken. Uiteraard gebruik je je eigen HTML en CSS en design. Als je het dashboard.blade.php voorbeeld hebt gebruikt dan heb je een navigation.blade.php bestand met daarin een desktop én een mobiel menu. 1- a href tag . In de HTML kun je links maken naar een betreffende route. Hiervoor gebruik je de naam van de route die je hebt ingesteld bij de betreffende route. Bijvoorbeeld bij de about route: . {{ route('about') :} . In de blade templates kun je php functies aanroepen door aan te geven dat je iets wilt uitvoeren. Dat doe je door een code te plaatsen tussen deze twee karakters: {{ }} Nu roepen wij een route aan die wij hebben ingesteld, een compleet voorbeeld is dit: . &lt;a href=\"{{route('about')}}\"&gt;About&lt;/a&gt; . 2- Menu aanpassen . Zorg ervoor dat je vanuit het menu naar de about pagina kunt linken. Optionele video: . Kijk de video hoe je navigatie in je layout kunt toevoegen zodat je deze op elke pagina ziet. Bekijk de video . Zorg dat je na deze les een werkend menu hebt om te navigeren naar de routes / pagina’s op je website. Minimaal de link naar de about pagina moet werken. ",
+    "url": "/m7prog_opdrachtensite/les-3/navigatie#navigatie--menu-toevoegen-met-alle-relevante-paginas",
+    
+    "relUrl": "/les-3/navigatie#navigatie--menu-toevoegen-met-alle-relevante-paginas"
+  },"135": {
+    "doc": "Les 3",
+    "title": "Commit en push",
+    "content": "Commit en push ALTIJD na het maken van een opdracht of aan het einde van de les. Zo is je voortgang zichtbaar en ontvang je feedback en/of hulp op de laatste versie van je code als dat nodig is. Volgende stap: . Actieve pagina een andere class/stijl geven . ",
+    "url": "/m7prog_opdrachtensite/les-3/navigatie#commit-en-push",
+    
+    "relUrl": "/les-3/navigatie#commit-en-push"
+  },"136": {
+    "doc": "Les 3",
+    "title": "Les 3",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/les-3/navigatie",
+    
+    "relUrl": "/les-3/navigatie"
+  },"137": {
+    "doc": "Les 1",
+    "title": "Beschrijf jouw project",
+    "content": "In deze periode gaan een Laravel project maken waarmee je een complete CRUD flow ontwikkeld. ",
+    "url": "/m7prog_opdrachtensite/les-1/onderwerp#beschrijf-jouw-project",
+    
+    "relUrl": "/les-1/onderwerp#beschrijf-jouw-project"
+  },"138": {
+    "doc": "Les 1",
+    "title": "1- Kies het onderwerp voor jouw Laravel website",
+    "content": ". | Lees eerst de algemene functionele eisen door zodat je weet wat er van je verwacht wordt. | Bedenk het onderwerp en doel van jouw nieuwe website, bijvoorbeeld een portfolio website. | Bedenk aan de hand van de eisen, functionaliteiten die voor jouw website gemaakt kunnen worden. | . ",
+    "url": "/m7prog_opdrachtensite/les-1/onderwerp#1--kies-het-onderwerp-voor-jouw-laravel-website",
+    
+    "relUrl": "/les-1/onderwerp#1--kies-het-onderwerp-voor-jouw-laravel-website"
+  },"139": {
+    "doc": "Les 1",
+    "title": "2- Beschrijf jouw website en de functionaliteiten",
+    "content": "Maak in je (nog lege) repository een website.md markdown document en beschrijf in maximaal een half A4-tje: . | Het onderwerp en doel van de website. | Voor wie je de website of webapplicatie gaat maken. | Hoe je de functionele eisen gaat verwerken in jouw website. | Wat voor stijl / look &amp; feel je voor ogen hebt. | . Dit mag nog best groot en ongepolijst zijn. Je hoeft ook nog niet te weten hoe je het gaat maken. Belangrijkste is dat je weet wat je wilt gaan maken, daarna duik je in hoe je dit gaat doen. Uiteraard krijg je hier ook hulp bij, in de lessen . Volgende stap: . Nieuw Laravel project maken met Composer . ",
+    "url": "/m7prog_opdrachtensite/les-1/onderwerp#2--beschrijf-jouw-website-en-de-functionaliteiten",
+    
+    "relUrl": "/les-1/onderwerp#2--beschrijf-jouw-website-en-de-functionaliteiten"
+  },"140": {
+    "doc": "Les 1",
+    "title": "Les 1",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/les-1/onderwerp",
+    
+    "relUrl": "/les-1/onderwerp"
+  },"141": {
+    "doc": "Les 9",
+    "title": "Overzicht file uploads en storage in Laravel",
+    "content": "Overzicht hoe de file storage werkt in Laravel. 1- De upload folder . Binnen Laravel is een storage folder waar verschillende bestanden van het project opgeslagen worden. Denk hierbij aan: . | cache bestanden | log bestanden | bestanden die binnen het project geupload worden | . Deze laatste gaan wij gebruiken om bestanden te uploaden. Let op: Deze folder staat niet in je public folder, en kan dus niet direct gebruikt worden door de browser. Gelukkig kan Laravel ons helpen om deze bestanden wel beschikbaar te maken op de public omgeving. 2- Configuratie . In het bestand config/filesystems.php kom je verschillende instellingen tegen met betrekking tot het opslaan van de bestanden. Hier zie je bijvoorbeeld het onderstaande gedeelte: . 'public' =&gt; [ 'driver' =&gt; 'local', 'root' =&gt; storage_path('app/public'), 'url' =&gt; env('APP_URL').'/storage', 'visibility' =&gt; 'public', 'throw' =&gt; false, ], . In dit onderdeel staat aangegeven wat de driver is, en bepaal je of je de bestanden lokaal op de server opslaat of op een externe server. Bij root kun je aangeven wat de locatie is van de folder op de server binnen de storrage folder. Bij url geef je aan wat de folder is in de browser, dit is zeg maar een alias naar de folder op de server. Optionele video: . Bekijk de video . Links . | File storage in Laravel | . Volgende stap: . Database migration maken voor file upload . ",
+    "url": "/m7prog_opdrachtensite/les-9/overview-storage#overzicht-file-uploads-en-storage-in-laravel",
+    
+    "relUrl": "/les-9/overview-storage#overzicht-file-uploads-en-storage-in-laravel"
+  },"142": {
+    "doc": "Les 9",
+    "title": "Les 9",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/les-9/overview-storage",
+    
+    "relUrl": "/les-9/overview-storage"
+  },"143": {
+    "doc": "Algemene en functionele eisen",
+    "title": "Algemene en functionele eisen voor de website",
+    "content": "Je bouwt je WordPress custom thema aan de hand van deze algemene en functionele eisen. In dit voorbeeld maak ik een reis website met verschillende bestemmingen. Je moet voor je zelf een onderwerp verzinnen dat je gebruikt voor deze website. ",
+    "url": "/m7prog_opdrachtensite/project_requirements.html#algemene-en-functionele-eisen-voor-de-website",
+    
+    "relUrl": "/project_requirements.html#algemene-en-functionele-eisen-voor-de-website"
+  },"144": {
+    "doc": "Algemene en functionele eisen",
+    "title": "Algemene eisen",
+    "content": ". | Responsive op mobiel, tablet en desktop | Je maakt gebruik van een css framework zoals Bootstrap, Tailwind CSS, Foundation of Skeleton | Je gebruikt NPM voor het compileren van je frontend assets | Je website heeft een gebruiksvriendelijke layout, design en UXD | Er is een duidelijk menu om door je website te navigeren | Je maakt regelmatige commits met duidelijk commit messages | . ",
+    "url": "/m7prog_opdrachtensite/project_requirements.html#algemene-eisen",
+    
+    "relUrl": "/project_requirements.html#algemene-eisen"
+  },"145": {
+    "doc": "Algemene en functionele eisen",
+    "title": "Functionele eisen",
+    "content": ". | De website heeft een specifiek door jouw zelf onderwerp | Bij oplevering: De website staat live en werkt naar behoren zonder fouten. | . ",
+    "url": "/m7prog_opdrachtensite/project_requirements.html#functionele-eisen",
+    
+    "relUrl": "/project_requirements.html#functionele-eisen"
+  },"146": {
+    "doc": "Algemene en functionele eisen",
+    "title": "Algemene en functionele eisen",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/project_requirements.html",
+    
+    "relUrl": "/project_requirements.html"
+  },"147": {
+    "doc": "Les 3",
+    "title": "Routes, controllers en view maken",
+    "content": "Wij gaan nu een aantal routes maken voor je website. In eerste instantie wil ik deze pagina maken: http://localhost/about . Denk na over verschillende pagina’s en functionaliteiten: Bijvoorbeeld: . | Wat zou de titel van de pagina zijn? | Wat is een mooie url, bijvoorbeeld: /projecten of /about of /contactformulier. | Welke naam zou de controller krijgen?, bijvoorbeeld: ProjectController, AboutController, ContactController. | . ",
+    "url": "/m7prog_opdrachtensite/les-3/routes-controllers-views#routes-controllers-en-view-maken",
+    
+    "relUrl": "/les-3/routes-controllers-views#routes-controllers-en-view-maken"
+  },"148": {
+    "doc": "Les 3",
+    "title": "Maak routes, controllers en views voor jouw website",
+    "content": "Voor alle pagina’s ga je nu een route maken, een controller en een view. Daarna ga je de pagina’s in je navigatie zetten zodat je door de site kan klikken (met nog lege pagina’s) . PHP Artisan . Je kunt routes met de hand maken door verschillende documenten aan te maken en te linken met elkaar, maar Laravel kan je ook via de Artisan commando’s uitvoeren. Zie voor meer informatie: https://laravel.com/docs/10.x/artisan Deze commando’s voer je uit in de terminal, dit kan in de code editor of in docker. Afhankelijk van je setup gebruik je php artisan of sail artisan, hier krijg je vanzelf een melding van te zien als je de verkeerde manier gebruikt. 1- Controller aanmaken . Om een controller aan te maken gebruik je dit commando: php artisan make:controller ControllerName . Bijvoorbeeld voor mijn about pagina wat wij nu gaan aanmaken: php artisan make:controller AboutController . Let op: dat je deze naam CammelCase is en met een kapitaal begint Let op: gebruik engelse benamingen voor models en controllers. Later gaan wij models aanmaken en migraties, om een model aan te maken gebruik je dit commando: php artisan make:model modelName Let op dat je op de plek waar modelName staat je natuurlijk wel de juiste model naam moet plaatsen. Bijvoorbeeld: About Let op: een model is enkelvoud, deze staat straks gelijk aan één regel in uit de database. Om meerdere elementen ( model én controller ) te gelijk aan te maken kun je bijvoorbeeld het volgende commando uitvoeren om een model én een controller aan te maken: php artisan make:model modelName -c . Je kunt ook een combinatie maken, hierbij een aantal opties: . | -c, --controller Create a new controller for the model | -f, --factory Create a new factory for the model | --force Create the class even if the model already exists | -m, --migration Create a new migration file for the model | -s, --seed Create a new seeder file for the model | -p, --pivot Indicates if the generated model should be a custom intermediate table model | -r, --resource Indicates if the generated controller should be a resource controller | . ",
+    "url": "/m7prog_opdrachtensite/les-3/routes-controllers-views#maak-routes-controllers-en-views-voor-jouw-website",
+    
+    "relUrl": "/les-3/routes-controllers-views#maak-routes-controllers-en-views-voor-jouw-website"
+  },"149": {
+    "doc": "Les 3",
+    "title": "2- Controller configureren",
+    "content": "In de /app/Http/Controllers vind je nu de nieuwe Controller, AboutController open deze. Voeg de volgende publieke functie toe: . public function index() { return 'Dit is de about pagina.'; } . Nu heb je een functie gemaakt die wij als route kunnen aanroepen. Deze functie zal een tekstje weergeven op de pagina. ",
+    "url": "/m7prog_opdrachtensite/les-3/routes-controllers-views#2--controller-configureren",
+    
+    "relUrl": "/les-3/routes-controllers-views#2--controller-configureren"
+  },"150": {
+    "doc": "Les 3",
+    "title": "3- Routes",
+    "content": "Ga nu naar het bestand: /routes/web.php Daar kun je een route aanmaken die naar deze functie verwijst. Geef hierbij aan: . | Welke request methode je gebruikt: GET / POST / DELETE / PATCH / PUT | Wat de url is | Welke class je aanroept | Welke functie je binnen die class aanroept Bijvoorbeeld: Route::METHOD(URL, CLASS)-&gt;name(INTERNE_NAAM); . Bijvoorbeeld voor onze about pagina: . Route::get('/about', [ \\App\\Http\\Controllers\\AboutController::class, 'index'])-&gt;name('about'); . | . 4- Controle . Bekijk nu wat er in de browser gebeurd door naar de about pagina te gaan, bijvoorbeeld: http://localhost:89/about . Video: . Kijk de video om te zien hoe je dat doet: . Bekijk de video . Zorg dat je na deze video alle routes hebt voor jouw website. Meer uitleg en ondersteuning? . In de Laravel documentatie staat ALLE uitleg over hoe je routes en controllers gebruikt, met voorbeelden. | Laravel Routes | Laravel Controllers | . ",
+    "url": "/m7prog_opdrachtensite/les-3/routes-controllers-views#3--routes",
+    
+    "relUrl": "/les-3/routes-controllers-views#3--routes"
+  },"151": {
+    "doc": "Les 3",
+    "title": "Commit en push",
+    "content": "Commit en push ALTIJD na het maken van een opdracht of aan het einde van de les. Zo is je voortgang zichtbaar en ontvang je feedback en/of hulp op de laatste versie van je code als dat nodig is. Volgende stap: . Menu maken met links (routes) naar alle pagina’s . ",
+    "url": "/m7prog_opdrachtensite/les-3/routes-controllers-views#commit-en-push",
+    
+    "relUrl": "/les-3/routes-controllers-views#commit-en-push"
+  },"152": {
+    "doc": "Les 3",
+    "title": "Les 3",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/les-3/routes-controllers-views",
+    
+    "relUrl": "/les-3/routes-controllers-views"
+  },"153": {
+    "doc": "Les 3",
+    "title": "Overview: Wat zijn routes?",
+    "content": "Het bestand met de routes: routes/web.php bevat alle routes voor je website. Het is als het ware de menukaart van je website. | Voor elke pagina of URL op je website MOET je een route definiëren. | Die routes plaats je in het bestand routes/web.php. | We website kan alleen maar naar routes toe die hier gedefinieerd zijn. | . Wat heb je nodig om een route te laten werken? . | Een URL (die mag je zelf bedenken, dus verzin een SEO vriendelijke url) | Een request method (GET,POST). Meestal gebruik je GET. Voor form afhandeling meestal POST. | Een controller class. | Een public function (method) in de class die de code voor jouw route bevat. | Een view ( een blade.php bestand in de resources/views ) die de HTML bevat zoals aangegeven in een route of controller. | . Voorbeeld . Hier een voorbeeld hoe je GET een route maakt naar de url /blog die afgehandeld wordt door de function index in een BlogController. De route heeft een (interne naam) blog.index (hiermee kun je er makkelijker naar linken in je code). Volgende stap: . Routes, controllers en views maken voor jouw website . ",
+    "url": "/m7prog_opdrachtensite/les-3/routes#overview-wat-zijn-routes",
+    
+    "relUrl": "/les-3/routes#overview-wat-zijn-routes"
+  },"154": {
+    "doc": "Les 3",
+    "title": "Les 3",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/les-3/routes",
+    
+    "relUrl": "/les-3/routes"
+  },"155": {
+    "doc": "Les 6",
+    "title": "Weergave van één project",
+    "content": "Je hebt een overzicht van de projecten gemaakt, nu gaan wij aan de slag om één project op te halen. 1- Route aanmaken . Wij beginnen met het aanmaken van een route met daarin een referentie naar het project Model. Open /routes/web.php en voeg daar een nieuwe route toe waarbij je in het url gedeelte op de laatste plek aangeeft dat er een verplichte variabele is. Dat doe je door de model naam tussen brackets te plaatsen: . Route::get('URL/{variabele}', [Controller::class, 'functie'])-&gt;name('routenaam'); . Voorbeeld: . Route::get('/project/{project}', [ProjectController::class, 'show'])-&gt;name('project.show'); . 2- Functie in de controller maken . Nu kun je deze route opvangen in de controller, je hebt aangegeven dat hij naar de show functie verwijst. Die maken wij nu aan. Let hierbij op dat je een parameter aanmaakt met dezelfde naam als de variabele in de route. In ons geval project. Maak ook gebruik van type-casting waarbij je forceert dat de variabele een Project is. public function show(Project $project): string { } . Plaats in deze functie nu om te testen een debug call: dump($project); Hierdoor zie je in ieder geval wat informatie als je naar de url gaat. 3- View . Kopieer nu de project index view en noem die show.blade.php Verwijder de loop en laat bijvoorbeeld de titel zien van het project: . &lt;h2&gt;{{$project-&gt;title}}&lt;/h2&gt; . 4- stuur de project Model door naar de view . Ga nu weer terug naar de show functie in de ProjectController. Geef daar nu het model door aan de view zoals in dit voorbeeld met een model. Dit zal voor jullie waarschijnlijk een project zijn. /** * Show a single item * * @param Model $model * @return string */ public function show(Model $model): string { return view('model.show', ['model'=&gt;$model]); } . 5- Link naar de show pagina . Nu heb je de single pagina gemaakt en moeten wij alleen nog een link via de &lt;a href tag maken naar deze pagina. Ga naar het index.blade.php document waar je het overzicht hebt gemaakt voor de projecten. In de foreach loop kun je nu bij elk item een link maken naar deze nieuwe view. Daarbij geef je het project mee aan de route. Bijvoorbeeld op deze manier wanneer je route de naam model.show heeft: . &lt;a href=\"{{route('model.show', $model)}}\"&gt;Bekijk dit item&lt;/a&gt; . ",
+    "url": "/m7prog_opdrachtensite/les-6/show-model#weergave-van-%C3%A9%C3%A9n-project",
+    
+    "relUrl": "/les-6/show-model#weergave-van-één-project"
+  },"156": {
+    "doc": "Les 6",
+    "title": "Testen",
+    "content": "Bekijk nu je site en zie dat je van het overzicht naar het project kunt navigeren. ",
+    "url": "/m7prog_opdrachtensite/les-6/show-model#testen",
+    
+    "relUrl": "/les-6/show-model#testen"
+  },"157": {
+    "doc": "Les 6",
+    "title": "Commit en push",
+    "content": "Commit en push ALTIJD na het maken van een opdracht of aan het einde van de les. Zo is je voortgang zichtbaar en ontvang je feedback en/of hulp op de laatste versie van je code als dat nodig is. ",
+    "url": "/m7prog_opdrachtensite/les-6/show-model#commit-en-push",
+    
+    "relUrl": "/les-6/show-model#commit-en-push"
+  },"158": {
+    "doc": "Les 6",
+    "title": "Les 6",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/les-6/show-model",
+    
+    "relUrl": "/les-6/show-model"
+  },"159": {
+    "doc": "Les 3",
+    "title": "Tailwind configuratie aanpassen",
+    "content": "Tailwind CSS kun je helemaal customizen met je eigen kleuren, stijlen, lettertypen en andere zaken. Dit doe je in het bestand tailwind.config.js dat in de root van je Laravel project staat. Als je Les 1 hebt gemaakt en Laravel Breeze hebt geïnstalleerd staat hier al wat configuratie in. 1- Configuratie . Zorg dat de je minimaal 2 elementen aanpast op je website, denk hierbij aan de achtergrond kleur of een ander font. Je kunt alle onderdelen van het default theme extenden (uitbreiden) of onderdelen helemaal opnieuw instellen (zoals de kleuren, lettertypen e.d.) . Hier vind je de documentatie van de Tailwind configuratie: . | https://tailwindcss.com/docs/configuration#configuration-options | En hier het basis Tailwind configuratie bestand met ALLES wat je kunt aanpassen of overschrijven. | . 2- Watcher . Tailwind werkt anders dan bijvoorbeeld bootstrap. Tailwind kijkt naar jouw view bestanden ( templates ) om te zien welke styles en andere codes jij gebruikt in je bestanden. Alleen noodzakelijke css wordt gecompiled. Zo blijft de grote van je css minimaal. Hiervoor moet je wel in een terminal scherm Tailwind watch open laten staan. Open terminal scherm en voer dit commando uit: . npx tailwindcss -i ./resources/css/app.css -o ./public/dist/app.css --watch . Pas maar ergens de achtergrond aan door bijvoorbeeld de background aan te passen. Dit doe je door een class toe te voegen of aan te passen. &lt;main class=\"bg-red-500\"&gt; . ",
+    "url": "/m7prog_opdrachtensite/les-3/tailwind-config#tailwind-configuratie-aanpassen",
+    
+    "relUrl": "/les-3/tailwind-config#tailwind-configuratie-aanpassen"
+  },"160": {
+    "doc": "Les 3",
+    "title": "Commit en push",
+    "content": "Commit en push ALTIJD na het maken van een opdracht of aan het einde van de les. Zo is je voortgang zichtbaar en ontvang je feedback en/of hulp op de laatste versie van je code als dat nodig is. Volgende stap: . Overview: wat zijn routes en controllers? . ",
+    "url": "/m7prog_opdrachtensite/les-3/tailwind-config#commit-en-push",
+    
+    "relUrl": "/les-3/tailwind-config#commit-en-push"
+  },"161": {
+    "doc": "Les 3",
+    "title": "Les 3",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/les-3/tailwind-config",
+    
+    "relUrl": "/les-3/tailwind-config"
+  },"162": {
+    "doc": "Les 2",
+    "title": "Tailwind",
+    "content": "Tailwind CSS kun je helemaal customizen met je eigen kleuren, stijlen, lettertypen en andere zaken. Door gebruik te maken van Tailwind hebben wij met weinig moeite een responsive website ontwikkeld. 1- Tailwind implementeren . Je kunt de standaard Tailwind installatie volgen, maar doordat julie Breeze gebruiken hoef je niet alle stappen te doorlopen. Tailwind CSS installation . Om Tailwind te installeren voer je deze commando’s uit in de terminal: . npm install -D tailwindcss npx tailwindcss init . Vervolgens implementeren wij de css in de HTML head: . Open welcome.blade.php in je resources/views folder. Het &lt;style&gt;&lt;/style&gt; onderdeel kun je verwijderen. Om scripts en css dynamisch in te laden kun je gebruik maken van vite. Plaats de volgende regel in de HTML head: @vite(['resources/css/app.css']) . In het bestand vite.config.js staat ingesteld welke bestanden er bijgehouden worden. Om de bestanden te gebruiken in de public folder moet je je project compilen via npm. Draai daarvoor het volgende commando in de terminal: . npm run dev . 2- Compile nu de css . In de terminal kun je de css compile met dit commando: npx tailwindcss -i ./resources/css/app.css -o ./public/dist/app.css --watch . Bewaar dit commando omdat je dit elke keer moet aanzetten als je wijzigingen wilt doorvoeren in de css en JavaScript. 3- Controleer . Bekijk de website en zie dat je nu een complete site hebt met een responsive design. ",
+    "url": "/m7prog_opdrachtensite/les-2/tailwind#tailwind",
+    
+    "relUrl": "/les-2/tailwind#tailwind"
+  },"163": {
+    "doc": "Les 2",
+    "title": "Commit en push",
+    "content": "Commit en push ALTIJD na het maken van een opdracht of aan het einde van de les. Zo is je voortgang zichtbaar en ontvang je feedback en/of hulp op de laatste versie van je code als dat nodig is. Volgende stap: . Pas de Laravel layout aan naar jouw ontwerp en gebruik HTML/CSS en Tailwind CSS . ",
+    "url": "/m7prog_opdrachtensite/les-2/tailwind#commit-en-push",
+    
+    "relUrl": "/les-2/tailwind#commit-en-push"
+  },"164": {
+    "doc": "Les 2",
+    "title": "Les 2",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/les-2/tailwind",
+    
+    "relUrl": "/les-2/tailwind"
+  },"165": {
+    "doc": "Les 5",
+    "title": "Layout implementatie",
+    "content": "Nu heb je verschillende onderdelen van je website en is het handig om onderdelen van de layout te gaan hergebruiken. In andere projecten gebruikte je daarvoor de de include en require functionaliteit van php. In Laravel kun je gebruik maken van een basis template waar je variabele objecten in gaat stoppen. ",
+    "url": "/m7prog_opdrachtensite/les-5/templates#layout-implementatie",
+    
+    "relUrl": "/les-5/templates#layout-implementatie"
+  },"166": {
+    "doc": "Les 5",
+    "title": "1- Yield",
+    "content": "Er zijn twee verschillende manieren om deze implementatie te gebruiken. Wij gaan aan de slag met het @yield commando. Zie voor meer informatie https://laravel.com/docs/10.x/blade . Wij gaan een master layout maken waar wij verschillende elementen gaan toevoegen. Elke template zal de master gaan extenden ( uitbreiden ). ",
+    "url": "/m7prog_opdrachtensite/les-5/templates#1--yield",
+    
+    "relUrl": "/les-5/templates#1--yield"
+  },"167": {
+    "doc": "Les 5",
+    "title": "4 stappen:",
+    "content": ". | Maak een master.blade.php bestand aan in de folder resource/views/layout/ | Plaats in deze pagina verschillende HTML onderdelen, zie een voorbeeld van een layout onderaan de pagina, deze niet gebruiken omdat hij niet werkt. Belangrijk is dat je ergens aangeeft dat daar de content moet komen met deze code: {{ $slot }} | Open het project.blade.php view bestand en geef buiten je content aan dat je de master wilt extenden door deze code te plaatsen: &lt;x-master-layout&gt; | De content binnen dit blok zal nu in op de plek waar {{ $slot }} staat komen. | . ",
+    "url": "/m7prog_opdrachtensite/les-5/templates#4-stappen",
+    
+    "relUrl": "/les-5/templates#4-stappen"
+  },"168": {
+    "doc": "Les 5",
+    "title": "2- JavaScript",
+    "content": "Dit zelfde systeem kunnen wij ook met bijvoorbeeld JavaScript gebruiken door bijvoorbeeld deze code in project.blade.php te plaatsen: . @section('scripts') &lt;script&gt; Console.log('Mijn script werkt'); &lt;/script&gt; @endsection . In de footer.blade.php kun je in de deze scripts ophalen met deze code: . @yield( 'scripts' ) . ",
+    "url": "/m7prog_opdrachtensite/les-5/templates#2--javascript",
+    
+    "relUrl": "/les-5/templates#2--javascript"
+  },"169": {
+    "doc": "Les 5",
+    "title": "Voorbeeld",
+    "content": "&lt;!DOCTYPE html&gt; &lt;html lang=\"{{ str_replace('_', '-', app()-&gt;getLocale()) }}\"&gt; &lt;head&gt; &lt;meta charset=\"utf-8\"&gt; &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"&gt; &lt;meta name=\"csrf-token\" content=\"{{ csrf_token() }}\"&gt; &lt;title&gt;@yield('page_title') | {{ config('app.name', 'MA-Site') }}&lt;/title&gt; @vite(['resources/css/app.css', 'resources/js/app.js']) &lt;/head&gt; &lt;body class=\"font-sans antialiased\"&gt; &lt;div class=\"min-h-screen bg-gray-100 dark:bg-gray-900\"&gt; &lt;!-- Page Heading --&gt; @if (isset($header)) &lt;header class=\"bg-white dark:bg-gray-300 shadow\"&gt; &lt;div class=\"max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8\"&gt; {{ $header }} &lt;/div&gt; &lt;/header&gt; @endif &lt;!-- Page Content --&gt; &lt;main class=\"bg-red-500\"&gt; {{ $slot }} &lt;/main&gt; &lt;/div&gt; @include('layouts.partials.footer') @include('layouts.partials.scripts') &lt;/body&gt; &lt;/html&gt; . ",
+    "url": "/m7prog_opdrachtensite/les-5/templates#voorbeeld",
+    
+    "relUrl": "/les-5/templates#voorbeeld"
+  },"170": {
+    "doc": "Les 5",
+    "title": "Commit en push",
+    "content": "Commit en push ALTIJD na het maken van een opdracht of aan het einde van de les. Zo is je voortgang zichtbaar en ontvang je feedback en/of hulp op de laatste versie van je code als dat nodig is. ",
+    "url": "/m7prog_opdrachtensite/les-5/templates#commit-en-push",
+    
+    "relUrl": "/les-5/templates#commit-en-push"
+  },"171": {
+    "doc": "Les 5",
+    "title": "Les 5",
+    "content": " ",
+    "url": "/m7prog_opdrachtensite/les-5/templates",
+    
+    "relUrl": "/les-5/templates"
+  }
+}

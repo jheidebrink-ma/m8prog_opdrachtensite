@@ -1,0 +1,51 @@
+title: M8PROG - WordPress
+description: "M8PROG - WordPress Custom theme."
+email: j.heidebrink@ma-web.nl
+
+github_username:  jheidebrink-ma
+
+# Build settings
+baseurl: "/m8prog_opdrachtensite"
+url: "https://jheidebrink-ma.github.io"
+remote_theme: "pmarsceill/just-the-docs"
+#theme: minima
+plugins:
+  - jekyll-feed
+
+#plugins:
+#  - jekyll-feed
+
+exclude: ["code-examples", "start.sh", ".idea", "sketch"]
+ga_tracking: false
+search_enabled: false
+heading_anchors: false
+
+# Config theme
+# See: https://pmarsceill.github.io/just-the-docs/docs/configuration/
+# color_scheme: dark
+
+logo: "/assets/images/logo.png"
+
+#bap:
+#  assignment_url: https://classroom.github.com/a/a3oV1MzV
+#  skip_date_check: false
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+# exclude:
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
