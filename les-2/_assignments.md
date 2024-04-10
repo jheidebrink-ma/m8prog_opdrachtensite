@@ -1,6 +1,8 @@
 ### Maak de opdrachten voor deze les
 {: .text-green-200 .fs-6 }
 
-1. [Kies een thema](choose)
-2. [Maak een child thema aan](create)
-3. [Controleer en activeer dit thema](select)
+1. [Selecteer en configureer een thema](select)
+2. [Maak de structuur van je child thema](structure)
+3. [Stel de style.css in](style_css)
+4. [Controleer en activeer dit thema](select)
+
