@@ -1,8 +1,6 @@
 ### Maak de opdrachten voor deze les
 {: .text-green-200 .fs-6 }
 
-1. [Installeer de debug bar](debugbar)
-2. [Installeer Tailwind CSS](tailwind)
-3. [Maak een design](design-layout)
-3. [Pas de Laravel layout aan naar jouw ontwerp en gebruik HTML/CSS en Tailwind CSS](laravel-layout)
-4. [Maak een homepage view en gebruik hierbij jouw layout](homepage)
+1. [Selecteer en configureer een thema](select)
+2. [Maak de structuur van je child thema](structure)
+3. [Stel de style.css in](style_css)
