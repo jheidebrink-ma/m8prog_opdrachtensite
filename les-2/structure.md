@@ -41,6 +41,7 @@ function m8prog_enqueue_styles() {
 In dit bestand geef je aan hoe je thema heet en wat de parent is.  
 In dit voorbeeld heb ik een nieuw thema gemaakt met de naam `M8PROG`  
 En `cue` _( de folder naam )_ is het parent thema. 
+Zie voor alle opties: [https://developer.wordpress.org/themes/core-concepts/main-stylesheet/](https://developer.wordpress.org/themes/core-concepts/main-stylesheet/)
 ```css
 /*
 Theme Name: M8PROG
