@@ -31,7 +31,7 @@ Speelt maar even 15 minuten met deze customizer en alle instellingen.
 
 ---
 ### 3- Controleer
-Bekijk de website en zie dat je nu een complete site hebt met een responsive design.
+Bekijk de website in je browser en zie dat het nieuwe thema actief is.
 
 ---
 
