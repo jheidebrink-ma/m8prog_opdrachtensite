@@ -14,7 +14,7 @@ Deze omgeving gaan wij tijdens deze gehele module gebruiken.
 ## Requirements
 {: .text-red-100 .fs-6 }
 Er zijn een aantal vereisten aan dit project:
-1. Je hebt een werkende Docker installatie.
+1. Je hebt een werkende Docker Desktop installatie.
 2. De volgende poorten zijn niet in gebruik:
    - 80
    - 3310
@@ -24,13 +24,13 @@ Er zijn een aantal vereisten aan dit project:
 ---
 ### 1- Docker container initialiseren
 1- Maak een nieuwe repository aan in [GitHub](http://github.com/) voor **m8prog-wordpress**, zorg dat de repository _private_ is.
-2- Navigeer op je computer naar de folder waar je project straks komt te staan. 
-3- Clone je github project zodat je een nieuwe folder hebt die gekoppeld is aan git en waar straks je bestanden in komen.
+2- Navigeer op je computer naar de folder waar je project straks komt te staan, _niet een nieuwe folder aanmaken_. 
+3- [Clone je github project](https://git-scm.com/docs/git-clone) zodat je een nieuwe folder hebt die gekoppeld is aan git en waar straks je bestanden in komen.
 4- Start eerst [Docker Desktop](https://www.docker.com/products/docker-desktop/)  
 5- Plaats de docker-compose.yml in de root van deze folder. [download](_data/docker-compose.yml)
 6- Plaats het `.env.example` bestand in de root van deze folder. [download](_data/.env.example)
 7- Kopieer de `.env.example` naar `.env` en vul in dit nieuwe bestand de database gegevens in die je zelf verzint. 
-8- Start docker.
+8- Start de docker containers en detach docker uit je terminal _( geef de terminal vrij na het opstarten )_.
 ```shell
 docker-compose up -d
 ```

@@ -8,19 +8,29 @@ nav_exclude: true
 ## Maak de structuur van je custom theme
 {: .text-green-100 .fs-6 }
 
-Je gaat nu de structuur maken van een nieuw WordPress thema zodat je een custom website kunt ontwikkelen zonder na hoeft te denken over CRUD-functionaliteit.    
+Veel bedrijven maken een custom WordPress thema voor een specifieke klant of event.  
+Jij gaat nu een WordPress thema maken voor een specifieke klant.  
+Door gebruik te maken van WordPress hoef je je geen zorgen te maken over CRUD-functionaliteit of database verbindingen.    
 
 ---
-### 1- Folder en bestand structuur
-1. Maak een nieuwe folder aan met de naam van jouw thema
+# Thema naam
+{: .text-red-100 .fs-6 }
+Op de plekken waar je ziet staan: **'M8PROG_THEME_NAME'**  
+moet straks natuurlijk naam van jouw eigen thema plaatsen.
+{: .text-red-100 .fs-5 }
+
+---
+### 1- Structuur van de thema folder
+1. Maak een nieuwe folder aan in de thema folder met de naam voor jouw thema, _(gebruik geen kapitalen en spaties)_
 2. Plaats hierin een nieuw bestand met de naam `style.css`
-3. Plaats hierin een nieuw bestand met de naam `functions.php`
-4. Plaats hierin een nieuw bestand met de naam `screenshot.png`
+3. Plaats hierin een nieuw bestand met de naam `index.php`
+4. Plaats hierin een nieuw bestand met de naam `functions.php`
+5. Plaats hierin een nieuw bestand met de naam `screenshot.png`
 Meer informatie over thema's: [https://codex.wordpress.org/Theme_Development](https://codex.wordpress.org/Theme_Development)
 
 ---
 ### 2- screenshot.png
-Dit bestand is een screenshot of design van jouw eigen thema zodat je straks makkelijker het thema kunt kiezen.
+Dit bestand is een screenshot of het design van jouw eigen thema zodat je straks makkelijker het thema kunt kiezen.
 
 ---
 ### 3- functions.php
@@ -35,6 +45,27 @@ function m8prog_enqueue_styles() {
 	);
 }
 ```
+
+---
+### 4- index.php
+Hier komen straks de codes in die je pagina's weergeven.  
+Plaats nu tijdelijk even een voorbeeld tekst in dit document, geen opmaak, alleen een dump.   
+_Als je niets kunt verzinnen gebruik dan deze dump:_   
+```php
+<?php
+echo '<pre style="background:#0f0; padding: 2rem; width:100%; z-index:9999">';
+print_r( 'dit is mijn index pagina' );
+echo '</pre>';
+die(__FILE__.':'.__LINE__);
+```
+
+---
+### 5- Hiërarchie
+De opzet van WordPress gaat volgens een bepaalde structuur, net als bij andere frameworks, meer informatie vind je hier:  
+[https://kinsta.com/nl/blog/template-hierarchie-van-wordpress/](https://kinsta.com/nl/blog/template-hierarchie-van-wordpress/)  
+Of als je liever een rustgevende video wilt bekijken:  
+[https://learn.wordpress.org/tutorial/a-beginners-guide-to-the-wordpress-template-hierarchy/](https://learn.wordpress.org/tutorial/a-beginners-guide-to-the-wordpress-template-hierarchy/)
+
 
 ---
 

@@ -3,7 +3,7 @@ version: '3.9'
 services:
     # Wordpress, nginx and php
     wordpress:
-        image: wordpress
+        image: wordpress:php8.3
         ports:
             - 80:80
         environment:

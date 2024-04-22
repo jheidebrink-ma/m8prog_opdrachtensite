@@ -12,7 +12,7 @@ Je gaat nu de structuur maken van een nieuw child thema zodat je aanpassingen ku
 
 ---
 ### 1- Folder en bestand structuur
-1. Maak een nieuwe folder aan
+1. Maak een nieuwe folder aan in de thema folder, _(gebruik geen kapitalen en spaties)_
 2. Plaats hierin een nieuw bestand met de naam `style.css`
 3. Plaats hierin een nieuw bestand met de naam `functions.php`
 4. Plaats hierin een nieuw bestand met de naam `screenshot.png`
@@ -20,7 +20,7 @@ Meer informatie over child themes: [developer.wordpress.org/themes/advanced-topi
 
 ---
 ### 2- screenshot.png
-Dit bestand is een screenshot of design van jouw eigen thema zodat je straks makkelijker het thema kunt kiezen.
+Dit bestand is een screenshot of het design van jouw eigen thema zodat je straks makkelijker het thema kunt kiezen.
 
 ---
 ### 3- functions.php

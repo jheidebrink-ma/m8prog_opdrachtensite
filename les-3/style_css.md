@@ -8,43 +8,36 @@ nav_exclude: true
 ## Stel de style.css in
 {: .text-green-100 .fs-6 }
 
-In het style.css bestand kun je aangeven hoe het thema heet en wie hem gemaakt heeft.    
+In het style.css bestand geef je nu wat informatie over dit thema weer.    
 
 ---
 ### 1- style.css
 In dit bestand geef je aan hoe je thema heet en wat de parent is.  
-In dit voorbeeld heb ik een nieuw thema gemaakt met de naam `M8PROG`  
+In dit voorbeeld heb ik een nieuw thema gemaakt met de naam `M8PROG_THEME_NAME`  
 Zie voor alle opties: [https://developer.wordpress.org/themes/core-concepts/main-stylesheet/](https://developer.wordpress.org/themes/core-concepts/main-stylesheet/)
-Dit zijn de minimale instellingen 
-```css
-/*
-Theme Name: M8PROG
-Author: Jasper
-*/
-
-```
-
-Een overzicht van wat meer instellingen:  
-Bekijk de instellingen maar eens om te zien wat je zelf wilt gebruiken.  
+Dit is een voorbeeld, let op dat je wel de juiste versie van php én WordPress instelt, anders werkt het thema niet. 
 ```css
 /**
- * Theme Name:        M8PROG Child theme
+ * Theme Name:        M8PROG_THEME_NAME
  * Theme URI:         https://ma-web.nl
- * Description:       This is a custom child theme
- * Version:           1.0.0
- * Template:          cue
+ * Description:       This is a custom WordPress theme
+ * Version:           0.0.1
  * Author:            Jasper Heidebrink
  * Author URI:        https://ma-web.nl
  * Tags:              m8prog
- * Text Domain:       m8prog
+ * Text Domain:       M8PROG_THEME_NAME
  * Domain Path:       /languages
- * Tested up to:      6.4
- * Requires at least: 6.2
- * Requires PHP:      7.4
+ * Tested up to:      6.5
+ * Requires at least: 6.4
+ * Requires PHP:      8.2
  * License:           GNU General Public License v2.0 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  */
+
 ```
+Hier kun je zien welke versie van WordPress php je gebruikt:
+[/wp-admin/site-health.php?tab=debug](http://localhost:80/wp-admin/site-health.php?tab=debug)
+Het `Domain Path` gaan wij later gebruiken voor de vertalingen.
 
 
 ---
