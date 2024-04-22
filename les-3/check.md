@@ -8,6 +8,8 @@ nav_exclude: true
 ## Activeer en controleer
 {: .text-green-100 .fs-6 }
 
+![themes.png](images%2Fthemes.png)
+
 Je hebt nu een eerste stuk van je custom thema ontwikkeld.  
 Activeer je nieuwe thema in de wp-admin omgeving en controleer het thema aan de voorkant van de website.    
 
