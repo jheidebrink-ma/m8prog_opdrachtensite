@@ -22,14 +22,15 @@ Als je de header van een specifiek post-type anders wilt hebben dan de andere pa
 
 ---
 ### Header
-De header template wordt geladen met het volgende commando: 
+In vorige php projecten gebruikte je `include()`, `require()` of `@import()` functies om een bepaald document in te laden. Binnen WordPress is er voor de header en footer een uitzondering.   
+De header template wordt geladen met het volgende php commando: 
 ```php
 <?php
 get_header();
 ?>
 ```
 
-Binnen de header moet je minimaal deze functie aanroepen in binnen de html `<head>` om diverse functionaliteit uit te voeren zoals het laden van CSS en JavaScripts.  
+Binnen de header moet je minimaal deze php functie aanroepen in binnen de html `<head>` om diverse functies uit te voeren zoals het laden van CSS en JavaScripts.  
 ```php
 <?php
 wp_head();
@@ -46,12 +47,25 @@ Binnen de header voeg je diverse HTML elementen toe:
 
 ---
 ### Footer
-Het idee van de footer is hetzelfde, alleen sluit je nu de footer af.  
+Het idee van de footer is hetzelfde, alleen sluit je nu de footer af.
+De footer template wordt geladen met het volgende commando:
+```php
+<?php
+get_footer();
+?>
+```
 
+Binnen de footer moet je minimaal deze php functie aanroepen net voor je de `body` tag afsluit.  
+Deze php functie zorgt ervoor dat er diverse acties uitgevoerd worden zoals het laden van JavaScripts en extra toevoegingen aan de HTML pagina.  
+```php
+<?php
+wp_footer();
+?>
+```
+  
 ---
 ### Body data
-Alle andere informatie wordt straks geladen in onder andere de `index.php`.
-
+Alle andere informatie zoals een titel, intro, omschrijving worden straks geladen in onder andere de `index.php`.
 
 ---
 In de volgende opdracht ga je zelf een `header.php` en `footer.php` maken.
