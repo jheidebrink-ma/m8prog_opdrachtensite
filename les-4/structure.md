@@ -10,6 +10,8 @@ nav_exclude: true
 
 **Zorg dat je deze introductie even rustig doorleest zodat je snapt hoe WordPress omgaat met de header en footer.**
 
+![voorbeeld.png](images%2Fvoorbeeld.png)
+
 ---
 Binnen een WordPress thema vind je vaak een `header.php` én een `footer.php` document.  
 Twee voorbeeld bestanden kun je hier downloaden:  
