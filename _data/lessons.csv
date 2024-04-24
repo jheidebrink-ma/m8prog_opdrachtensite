@@ -1,15 +1,15 @@
 "number","week","datum","title","description",
-1,"2","29-2-2024","WordPress installatie","Je begint met het installeren en configureren van een nieuw WordPress project voor je website. Hiervoor gebruiken wij een standaard Docker setup met een paar aanpassingen zodat er een custom thema kan staan.",
-2,"3","29-2-2024","Child theme","Je leert hoe je binnen WordPress een bestaand thema kunt uitbreiden zonder het originele thema aan te passen."
-3,"4","14-3-2024","Custom thema","Je leert om een custom thema te maken met een eigen vormgeving specifiek voor deze website. ",
-4,"5","21-3-2024","Header en Footer","Je maakt de structuur van je website door gebruik te maken van de header en footer functionaliteit. De HTML bevat nu de basis functies, een menu en gegevens uit de pagina.",
-5,"6","22-3-2025","Loops en Single page templates","",
-6,"7","28-3-2025","De WordPress header en footer","",
-7,"8","4-4-2025","Actions en Filters","",
-8,"9","5-4-2025","Custom post type","",
-9,"10","11-4-2025","Custom admin pagina met options","",
-10,"11","18-4-2025","Localization","",
+1,"1","8-5-2023","WordPress installatie","Je begint met het installeren en configureren van een nieuw WordPress project voor je website. Hiervoor gebruiken wij een standaard Docker setup met een paar aanpassingen zodat er een custom thema kan staan.",
+2,"2","8-5-2023","Child theme","Je leert hoe je binnen WordPress een bestaand thema kunt uitbreiden zonder het originele thema aan te passen."
+3,"3","14-5-2023","Custom thema","Je leert om een custom thema te maken met een eigen vormgeving specifiek voor deze website. ",
+4,"4","14-5-2023","Header en Footer","Je maakt de structuur van je website door gebruik te maken van de header en footer functionaliteit. De HTML bevat nu de basis functies, een menu en gegevens uit de pagina.",
+5,"5","20-5-2023","Dynamische date in page templates","In deze les gaan wij de content uit de database weergeven op de pagina. Na deze les is de website dynamisch.",
+6,"6","28-3-2025","De WordPress header en footer","",
+7,"7","4-4-2025","Actions en Filters","",
+8,"8","5-4-2025","Custom post type","",
+9,"9","11-4-2025","Custom admin pagina met options","",
+10,"10","18-4-2025","Localization","",
 10,"11","18-4-2025","Upload via FTP","",
-10,"11","18-4-2025","Deployment via GIT","",
+10,"12","18-4-2025","Deployment via GIT","",
 
 
