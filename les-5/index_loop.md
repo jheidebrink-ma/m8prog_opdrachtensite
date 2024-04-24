@@ -36,7 +36,7 @@ have_posts()
 Als de pagina posts heeft voer je de loop uit, anders geef je een melding dat er geen data is gevonden.  
 Dat kun je uitproberen door een pagina aan te roepen die niet bestaat zoals: [/ik_ben_er_niet](http://localhost/ik_ben_er_niet)
 
-Nu moet je een **while loop** maken binnen deze **if statement**, voer deze loop uit zolang `have_posts()` `true` is.
+Nu moet je een **while loop** maken binnen deze **if statement**, voer deze loop uit zolang `have_posts()` **true** terug geeft.
 
 Zodra je de while loop opent is het belangrijk om eerst de post informatie op te halen zodat je verderop de juiste data weergeeft.  
 Hiervoor gebruik je dit commando: 
@@ -70,13 +70,18 @@ endif;
 
 
 ---
-### Links
-- [Meer informatie over de hiërarchie](https://developer.wordpress.org/themes/basics/template-hierarchy/)
+### 3- Controleer
+Bekijk je website nu in de browser.  
+Als het goed is zie je nu de content die je ingesteld hebt in het wp-admin gedeelte.
+
+---
+
+{% include commit_push.md %}
 
 ---
 ### Volgende stap:
 {: .text-green-100 .fs-4 }  
 In de volgende opdracht ga je zelf een `loop` maken.  
-[WordPress Loop uin de index](index_loop)
+[Single page en blog implementatie](single_page)
 
 

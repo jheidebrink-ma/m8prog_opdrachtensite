@@ -109,8 +109,7 @@ Zo kun je bijvoorbeeld ook een zoekformulier toevoegen aan de 404 pagina om bezo
 
 ---
 ### Volgende stap:
-{: .text-green-100 .fs-4 }  
-In de volgende opdracht ga je zelf een `loop` maken.  
-[WordPress Loop uin de index](index_loop)
+{: .text-green-100 .fs-4 }   
+[WordPress loop implementeren in de index](index_loop)
 
 
