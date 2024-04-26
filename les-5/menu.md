@@ -12,7 +12,7 @@ Binnen WordPress heb je een uitgebreid menu systeem, dat gaan wij nu implementer
 Zo kan de beheerder zelf het menu beheren.
 
 ---
-## 1- Aanmaken ondersteuning toevoegen
+## 1- Menu ondersteuning toevoegen
 In de `functions.php` moet je even aangeven jouw thema menu functionaliteit ondersteunt. 
 Dit doe je door in te haken op de `init` action van WordPress, in een latere les gaan wij verder in op _actions_ en _hooks_. 
 ```php
@@ -108,7 +108,7 @@ Dit is de code om een `header` menu op te halen in de bootstrap stijl.
 ```
 
 ---
-### 5- Controleer
+## 5- Controleer
 Bekijk je website nu in de browser en zie dat je een mooi menu hebt.
 
 ---
@@ -117,8 +117,5 @@ Bekijk je website nu in de browser en zie dat je een mooi menu hebt.
 
 ---
 ### Volgende stap:
-{: .text-green-100 .fs-4 }  
-In de volgende opdracht ga je zelf een `loop` maken.  
-[WordPress Loop uin de index](index_loop)
-
-
+{: .text-green-100 .fs-4 }
+[Widgets implementeren](widgets)
