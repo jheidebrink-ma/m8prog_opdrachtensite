@@ -5,85 +5,95 @@ permalink: :path/:basename
 nav_exclude: true
 ---
 
-## Weergave van één project
+## Webpack integreren met WordPress
 {: .text-green-100 .fs-6 }
 
-Je hebt een overzicht van de projecten gemaakt, nu gaan wij aan de slag om één project op te halen.
+Deze les iets minder verschillende stappen, dus heb je meer tijd om een mooie website te maken.  
+Om onze data dynamisch te laden maak ik gebruik van `npm` in combinatie met `webpack` om de assets te renderen.  
 
 
 ---
-### 1- Route aanmaken
-Wij beginnen met het aanmaken van een route met daarin een referentie naar het project Model.
+### 1- Structuur
+Eerst heb je een structuur nodig.  
+In je thema folder een aantal folders en bestanden die je als basis nodig hebt:
+- src/js _( dit is de locatie voor je javascripts die niet minified zijn )_
+- src/scss _( hierin staat je vormgeving )_
+- package.json _( hier staat in welke pagages er nodig zijn zoals een sass compiler  )_
+- webpack.config.js _( hier zijn de functies gedefinieerd voor het compilen van de sass )_)
+Je kunt een voorbeeld van dit pakket bestanden ook hier downloaden: [example](data%2Fexample.zip)
 
-Open `/routes/web.php` en voeg daar een nieuwe route toe waarbij je in het `url` gedeelte _op de laatste plek_ aangeeft dat er een verplichte variabele is.    
-Dat doe je door de model naam tussen brackets te plaatsen:  
-```php
-Route::get('URL/{variabele}', [Controller::class, 'functie'])->name('routenaam');
+---
+### 2- package.json
+In de [package.json](data%2Fpackage.json) kun je aangeven hoe je project heet en wat de `webpack.config.js` is.  
+Je vind ook diverse dependencies die nodig zijn voor het compilen van dit project.  
+Daarnaast zie je ook welke scripts er zijn en welke actie die uitvoeren, bijvoorbeeld `dev`
+
+---
+### 3- webpack.config.js
+In de [webpack.config.js](data%2Fwebpack.config.js) vind je de acties die uitgevoerd worden tijdens het compilen.  
+
+---
+### 4- Packages installeren
+Het installeren van de packages doe je via npm.  
+Navigeer daarvoor in de terminal naar je thema folder en voer het volgende commando uit:  
+```shell
+npm i
 ```
-Voorbeeld:
-```php
-Route::get('/project/{project}', [ProjectController::class, 'show'])->name('project.show');
+_( npm install )_
+Je ziet nu een `nod_modules` folder in je thema folder.  
+### **Note:** Zorg ervoor dat je de node_modules in je `.gitignore` hebt staan zodat deze niet gepushed wordt naar je repo.
+{: .text-red-100 .fs-4 }
+  
+---
+### 5- Packages compilen
+Om de sass en de javascripts te compilen en in een `dist` folder te plaatsen kun je het volgende commando uitvieren:  
+```shell
+npm run dev
 ```
 
 ---
-### 2- Functie in de controller maken
-Nu kun je deze route opvangen in de controller, je hebt aangegeven dat hij naar de `show` functie verwijst. Die maken wij nu aan.  
-Let hierbij op dat je een parameter aanmaakt met dezelfde naam als de variabele in de route.  
-In ons geval `project`.  
-Maak ook gebruik van **type-casting** waarbij je forceert dat de variabele een Project is.  
+### 6- Scripts toevoegen aan de website 
+Voor het laden van de javascripts en styles maak je binnen WordPress gebruik van een enqueue functie.  
+Zie voor de scripts:: [https://developer.wordpress.org/reference/functions/wp_enqueue_script/](https://developer.wordpress.org/reference/functions/wp_enqueue_script/)  
+En voor de styles: [https://developer.wordpress.org/reference/functions/wp_enqueue_style/](https://developer.wordpress.org/reference/functions/wp_enqueue_style/)
+Hierdoor worden ook eventuele dependencies geladen en worden de scripts op de juiste plek geladen.  
+Let even goed op welke parameters er zijn.  
+Plaats daarvoor deze code in je `functions.php`:
 ```php
-public function show(Project $project): string
-{
+
+function add_style_and_js() {
+	wp_enqueue_script(
+		'm8prog',
+		get_template_directory_uri() . '/dist/js/main.js',
+		[ 'jquery' ],
+		'1.0.0',
+		[
+			'strategy'  => 'defer',
+			'in_footer' => true,
+		]
+	);
+
+	wp_register_style(
+		'm8prog_styles',
+		get_template_directory_uri() . '/dist/css/main.min.css',
+		[],
+		'1.0.0'
+	);
+	wp_enqueue_style( 'm8prog_styles' );
 }
+
+add_action( 'wp_enqueue_scripts', 'add_style_and_js' );
 ```
-Plaats in deze functie nu om te testen een debug call: `dump($project);`   
-Hierdoor zie je in ieder geval wat informatie als je naar de url gaat.
 
 ---
-### 3- View
-Kopieer nu de project index view en noem die show.blade.php
-Verwijder de loop en laat bijvoorbeeld de titel zien van het project:
-{% raw %}
-```php
-<h2>{{$project->title}}</h2>
-```
-{% endraw %}
-
+### 7- Thema opruimen 
+Omdat je nu gebruik maakt van de `wp_enqueue_script` en `wp_enqueue_style` hoef je de style en scripts niet meer los te laden in je header en footer.  
+Mocht je dat nog wel doen dan mag je die regels verwijderen.
 
 ---
-### 4- stuur de project Model door naar de view
-Ga nu weer terug naar de **show** functie in de **ProjectController**.  
-Geef daar nu het model door aan de view zoals in dit voorbeeld met een model.  _Dit zal voor jullie waarschijnlijk een project zijn._  
-```php
-    /**
-     * Show a single item
-     * 
-     * @param Model $model
-     * @return string
-     */
-    public function show(Model $model): string
-    {
-        return view('model.show', ['model'=>$model]);
-    }
-```
-
-
---- 
-### 5- Link naar de show pagina
-Nu heb je de single pagina gemaakt en moeten wij alleen nog een link via de `<a href` tag maken naar deze pagina.  
-Ga naar het **index.blade.php** document waar je het overzicht hebt gemaakt voor de projecten.  
-In de foreach loop kun je nu bij elk item een link maken naar deze nieuwe view. Daarbij geef je het project mee aan de route.  
-Bijvoorbeeld op deze manier wanneer je route de naam `model.show` heeft:
-{% raw %}
-```php
-        <a href="{{route('model.show', $model)}}">Bekijk dit item</a>
-```
-{% endraw %}
-
-
----
-## Testen
-Bekijk nu je site en zie dat je van het overzicht naar het project kunt navigeren. 
+### 8- Controleer en customize
+Bekijk je website nu in de browser.  
+Pas nu de scss aan zodat je website voldoet aan jouw eisen.  
 
 ---
 

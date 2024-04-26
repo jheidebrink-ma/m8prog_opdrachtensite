@@ -12,7 +12,7 @@ Wij gaan nu de dynamische content in de pagina plaatsen.
 In het wp-admin gedeelte heb je al wat data toegevoegd, deze gaan wij nu aan de voorkant laten zien.
 
 ---
-## 1- De header
+### 1- De header
 Het is wel zo netjes als in de titel van de pagina ook de naam van de pagina en de site titel staat.  
 Pas daarom de `<title>` tag aan in de `header.php`
 De titel van de pagina laat je zien door deze code te gebruiken:
@@ -25,7 +25,7 @@ De titel van de site haal je op deze manier op:
 ```
 
 ---
-## 2- De index.php
+### 2- De index.php
 In de `index.php` zie je straks mogelijk meerdere berichten onder elkaar staan.  
 Daarom is het belangrijk om in de `index.php` pagina een loop te plaatsen.  
 Wij gaan gebruik maken van een `while loop`.  

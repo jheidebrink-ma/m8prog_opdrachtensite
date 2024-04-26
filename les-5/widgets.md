@@ -58,7 +58,6 @@ Dit is de code om een widget weer te geven, waarbij de ID gelijk is aan `footer-
 Je kunt natuurlijk ook meerdere gebieden aanmaken waarin je widgets verschijnen.  
 Zo kun je eenvoudig de footer van je project beheren vanuit de wp-admin omgeving.
 
-
 ---
 ## 4- Controleer
 Bekijk je website nu in de browser en zie dat je extra data in de content hebt.
@@ -72,5 +71,3 @@ Bekijk je website nu in de browser en zie dat je extra data in de content hebt.
 {: .text-green-100 .fs-4 }  
 In de volgende opdracht ga je zelf een `loop` maken.  
 [WordPress Loop uin de index](index_loop)
-
-
