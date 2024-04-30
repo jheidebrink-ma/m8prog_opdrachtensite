@@ -11,10 +11,10 @@ nav_exclude: true
 Uiteindelijk is het doel om deze items weer te geven aan de voorkant van je website.  
 In het wp-admin gedeelte heb je alvast een paar items toegevoegd, deze kunnen wij nu gaan weergeven.  
 Dit gaan wij op verschillende manieren doen:  
-1- via het menu
-2- via een widget
-3- via de categorie
-4- de pagina zelf
+1. via het menu
+2. via een widget
+3. via de categorie
+4. de pagina zelf
 
 ---
 ### 1- De post type toevoegen aan het menu 
