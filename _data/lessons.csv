@@ -1,15 +1,15 @@
 "number","week","datum","title","description",
-1,"1","8-5-2023","WordPress installatie","Je begint met het installeren en configureren van een nieuw WordPress project voor je website. Hiervoor gebruiken wij een standaard Docker setup met een paar aanpassingen zodat er een custom thema kan staan.",
-2,"2","8-5-2023","Child theme","Je leert hoe je binnen WordPress een bestaand thema kunt uitbreiden zonder het originele thema aan te passen."
-3,"3","14-5-2023","Custom thema","Je leert om een custom thema te maken met een eigen vormgeving specifiek voor deze website. ",
-4,"4","14-5-2023","Header en Footer","Je maakt de structuur van je website door gebruik te maken van de header en footer functionaliteit. De HTML bevat nu de basis functies, een menu en gegevens uit de pagina.",
-5,"5","20-5-2023","Dynamische date in page templates","In deze les gaan wij de content uit de database weergeven op de pagina. Na deze les is de website dynamisch.",
-6,"6","28-3-2023","Custom scripts en style","In deze les ga je door gebruik te maken van Webpack de website customizen zodat je een unieke website hebt die past bij jouw project.",
-7,"7","4-4-2025","Actions en Filters","",
-8,"8","5-4-2025","Custom post type","",
-9,"9","11-4-2025","Custom admin pagina met options","",
-10,"10","18-4-2025","Localization","",
-10,"11","18-4-2025","Upload via FTP","",
-10,"12","18-4-2025","Deployment via GIT","",
+1,"1","22-5-2023","WordPress installatie","Je begint met het installeren en configureren van een nieuw WordPress project voor je website. Hiervoor gebruiken wij een standaard Docker setup met een paar aanpassingen zodat er een custom thema kan staan.",
+2,"2","22-5-2023","Child theme","Je leert hoe je binnen WordPress een bestaand thema kunt uitbreiden zonder het originele thema aan te passen."
+3,"3","29-5-2023","Custom thema","Je leert om een custom thema te maken met een eigen vormgeving specifiek voor deze website. ",
+4,"4","29-5-2023","Header en Footer","Je maakt de structuur van je website door gebruik te maken van de header en footer functionaliteit. De HTML bevat nu de basis functies, een menu en gegevens uit de pagina.",
+5,"5","5-6-2023","Dynamische date in page templates","In deze les gaan wij de content uit de database weergeven op de pagina. Na deze les is de website dynamisch.",
+6,"6","5-6-2023","Custom scripts en style","In deze les ga je door gebruik te maken van Webpack de website customizen zodat je een unieke website hebt die past bij jouw project.",
+7,"7","12-6-2023","Custom post type","Een les over custom post types, een toevoeging in WordPress waarmee je elk systeem kunt bouwen dat je wilt. In deze les een uitleg over wat zijn dit, hoe maak je ze en hoe gebruik je ze.",
+8,"8","19-6-2025","Actions en Filters","",
+9,"9","26-6-2025","Custom admin pagina met options","",
+10,"10","26-6-2025","Localization","",
+11,"11","3-7-2025","Upload via FTP","",
+12,"12","10-7-2025","Deployment via GIT","",
 
 

@@ -1,7 +1,7 @@
 ### Maak de opdrachten voor deze les
 {: .text-green-200 .fs-5 }
 
-1. [Overview: Forms en validatie](form-validation-overview)
-2. [Route groep maken voor admin routes - dashboard layout](admin-dashboard)
-3. [List view maken met dashboard layout](list-view)
-4. [Formulier maken en de gegevens opsturen](create-view)
+1. [Wat is een custom post type?](about)
+2. [Registreren van een post type](register)
+3. [Registreren van een taxonomie](taxonomy)
+4. [Weergeven van een Custom post type](view)

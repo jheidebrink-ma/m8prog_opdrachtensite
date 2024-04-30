@@ -45,6 +45,10 @@ function m8prog_enqueue_styles() {
 	);
 }
 ```
+Voeg ook alvast de `featured image` functionaliteit toe zodat je straks eenvoudig afbeeldingen kunt toevoegen:
+```php
+add_theme_support( 'post-thumbnails' );
+```
 
 ---
 ### 4- index.php
