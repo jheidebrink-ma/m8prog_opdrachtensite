@@ -22,8 +22,7 @@ In Laravel hadden wij `php artisan`, daar is dit mee te vergelijken.
 ### 2- Wat heb je nodig om WP-CLI te kunnen gebruiken?
 Om WP-CLI te kunnen gebruiken zal WP-CLI ook op je server geïnstalleerd moeten worden. 
 Omdat wij lokaal Docker gebruiken hebben wij de mogelijkheid om dit te installeren binnen de Docker omgeving.  
-Op een server van jouw hosting organisatie is dat niet altijd mogelijk.  
-
+Op een server van jouw hosting organisatie is dat niet altijd mogelijk.
 
 ### Links
 - [wordpress cli](https://make.wordpress.org/cli/)

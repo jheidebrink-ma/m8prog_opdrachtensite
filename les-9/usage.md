@@ -24,15 +24,15 @@ De structuur van dit commando is:
 wp search-replace <old> <new> <table> --dry-run --all-tables
 ```
 Er zijn verschillende toevoegingen, een paar zijn: 
-**<old>**
-Dit is de string die je zoekt in de database
-<new>
-Dit is de nieuwe string in de database
-[--dry-run]
-Als je dit toevoegd wordt de database niet aangepast, zo kun je eene commando testen
-[--all-tables-with-prefix]
-Wil je alleen speciale tabellen aanpassen?
-[--all-tables]
+`<old>`  
+Dit is de string die je zoekt in de database  
+`<new>`  
+Dit is de nieuwe string in de database  
+`[--dry-run]`  
+Als je dit toevoegd wordt de database niet aangepast, zo kun je een commando testen  
+`[--all-tables-with-prefix]`  
+Wil je alleen speciale tabellen aanpassen?  
+`[--all-tables]`  
 Hiermee geef je aan dat alle tabellen binnen de database aangepast moeten worden.  
 
 Als ik bijvoorbeeld mijn website live wil zetten dan verandert mijn domein naam van `localhost` naar `m8prog.nl`  
@@ -51,26 +51,19 @@ De structuur van dit commando is:
   wp i18n make-pot path/to/your-plugin-directory
 ```
 ## Let op, je moet wel de correcte folder opgeven.
+{: .text-red-100 .fs-5 }
 Dit kan ongeveer jouw commando zijn _( THEMA_NAAM is dan jouw eigen thema )_:
 ```shell
 wp i18n make-pot wp-content/themes/THEMA_NAAM --allow-root
 ```
-![make-pot.png](make-pot.png)
+![make-pot.png](images%2Fmake-pot.png)  
 Je ziet nun in de thema folder een `languages` folder met daarin een *.pot file.  
 Deze kunt je weer vertalen via PoeEdit of een online tool als:  
 [Po editor](https://localise.biz/free/poeditor)
 
 
 
-
 ### Links
 - [wordpress cli handbook](https://make.wordpress.org/cli/handbook/guides/)
 - [Search and replace](https://developer.wordpress.org/cli/commands/search-replace/)
-
----
-### Volgende stap:
-{: .text-green-100 .fs-4 }
-[Gebruik van WP CLI](usage)
-
-
 
