@@ -6,9 +6,9 @@
 5,"5","5-6-2023","Dynamische date in page templates","In deze les gaan wij de content uit de database weergeven op de pagina. Na deze les is de website dynamisch.",
 6,"6","5-6-2023","Custom scripts en style","In deze les ga je door gebruik te maken van Webpack de website customizen zodat je een unieke website hebt die past bij jouw project.",
 7,"7","12-6-2023","Custom post type","Een les over custom post types, een toevoeging in WordPress waarmee je elk systeem kunt bouwen dat je wilt. In deze les een uitleg over wat zijn dit, hoe maak je ze en hoe gebruik je ze.",
-8,"8","19-6-2025","Localization","Tijdens deze les ga je gebruik maken van de localisatie functionaliteit van WordPress.",
-9,"9","26-6-2025","Actions en Filters","",
-10,"10","26-6-2025","Upload via FTP","",
+8,"8","19-6-2023","Localization","Tijdens deze les ga je gebruik maken van de lokalisatie functionaliteit van WordPress.",
+9,"9","26-6-2023","WP CLI","Je leert om WP-CLI te gebruiken, zodat je WordPress core, plugins, gebruikers en berichten kunt beheren. Daarnaast zul je verschillende ondersteunende commando's gaan gebruiken.",
+10,"10","26-6-2025","Upload via FTP","Nu is het tijd om jouw project online te plaatsen.",
 11,"11","3-7-2025","Custom admin pagina met options","",
 12,"12","10-7-2025","Deployment via GIT","",
 

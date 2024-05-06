@@ -32,26 +32,47 @@ Of als je direct iets wilt weergeven _( `echo` )_
 ```
 
 ---
-### 2- Thema beschikbaar maken voor een vertaling
-Dit kun je met de hand doen, of gebruik maken van WP CLI.  
-Ik kies voor WP CLI omdat dan diverse onderdelen direct ingesteld worden.  
-Voer dit commando uit:  
-```shell
-  wp i18n make-pot path/to/your-plugin-directory
-```
-## Let op, je moet wel de correcte folder opgeven.
+### 2- Thema vertalen
+![poedit.jpg](images%2Fpoedit.jpg)  
+Er zijn verschillende tools om een thema of plugin te vertalen.  
+In mijn voorbeeld maak ik gebruik van [Poeedit](https://poedit.net/download)  
+Deze tool kan alle bestanden van je thema of plugin laten controleren en zie precies wat je moet vertalen.  
+Nadat je het **\*.pot** bestand vertaald hebt en opgeslagen heb je een **\*.po** én een **\*.mo** bestand.  
+Deze bestanden bevatten jouw echte vertalingen.  
+Maak nu een nederlandse vertaling van je project _(nl_NL)_.  
 
+---
+### 3- Locatie van de vertalingen instellen
+WordPress weet niet standaard waar de vertalingen staan, daarom moeten wij een via een `action-hook` aangeven waar de bestanden staan.  
+Door een nieuwe actie toe te voegen aan de `after_setup_theme` hook zullen de vertalingen geladen worden nadat WordPress het thema heeft geïnitialiseerd.  
+Dat doe je door deze code toe te voegen aan je `functions.php`:  
+```php
+
+/**
+ * Tell WordPress where the localization files are
+ * 
+ * @return void
+ */
+function load_custom_textdomain()
+{
+	load_theme_textdomain( 'm8prog-custom', get_template_directory() . '/languages' );
+}
+add_action('after_setup_theme', 'load_custom_textdomain');
+```
+
+---
+### 4- Vertaling controleren
+In [wp-admin](http://localhost/wp-admin/profile.php) kun je naar jouw profiel gaan door rechtsboven op je naam te klikken.  
+Halverwege deze pagina kun je een taal selecteren, selecteer hier nu `Nederlands` en sla de wijzigingen op.  
+Als je nu in de `wp-admin` omgeving naar het `Widgets` onderdeel gaat dan zie je nu dat de onderdelen in het Nederlands zijn.
+![translated.png](images%2Ftranslated.png)
 
 
 ---
 ### Links
-[https://developer.wordpress.org/apis/internationalization/localization/](https://developer.wordpress.org/apis/internationalization/localization/)
+- [developer.wordpress.org localization](https://developer.wordpress.org/apis/internationalization/localization/)
+- [Poeedit](https://poedit.net/download)
 
 ---
 
 {% include commit_push.md %}
-
----
-### Volgende stap:
-{: .text-green-100 .fs-4 }
-[Aanpassen van gegevens met een formulier](form-edit)
