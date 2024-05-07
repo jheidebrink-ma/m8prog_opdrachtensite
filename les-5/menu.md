@@ -67,6 +67,10 @@ add_filter('nav_menu_css_class', 'add_additional_class_on_li', 1, 3);
  * /
  */
 function add_additional_class_on_a($attributes, $item, $args) {
+    if ( empty( $attributes['class'] ) ) {
+		$attributes['class'] = '';
+	}
+	
 	if(isset($args->add_a_class)) {
 		$attributes['class'] .= ' ' . $args->add_a_class;
 	}
