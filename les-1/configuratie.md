@@ -22,7 +22,6 @@ Let op dat je wel je username en wachtwoord onthoud.
 
 Na deze setup moet je misschien een paar updates uitvoeren, dat zie je in het menu item **updates**.  
 
-
 ---
 ### 2- Demo data
 Maak nu minimaal 3 verschillende pagina's zodat je straks goed je site kunt testen.  
@@ -69,7 +68,6 @@ In het settings menu zijn er een paar elementen die wij nog even moeten na lopen
 Als het goed is heb je nu ook complete website, bekijk hem maar even in je browser.
 
 ---
-
 {% include commit_push.md %}
 
 

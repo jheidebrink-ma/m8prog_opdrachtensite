@@ -41,9 +41,7 @@ Als het goed is heb je nu een nieuw WordPress project waar je in kunt gaan werke
 Waarschijnlijk is de link naar jouw project: [http://localhost:80](http://localhost:80)  
 Behalve als je dit zelf aangepast hebt in het `docker-compose.yml` bestand
 
-
 ---
-
 {% include commit_push.md %}
 
 ---
