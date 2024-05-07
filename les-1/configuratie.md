@@ -38,10 +38,10 @@ De voorbeeld pagina kun je verwijderen of aanpassen.
 ### 3- Nieuwe plugins
 De huidige plugins kun je verwijderen omdat dat voorbeeld plugins zijn. ( _Akismet Anti-spam_ en _Hello Dolly_)
 Installeer de volgende plugins:
-#### 1- better-wp-security  
+#### 1- Wordfence  
 Een uitgebreide security plugin die op een simpele manier je WordPress project beveiligd.
-[better-wp-security](https://wordpress.org/plugins/better-wp-security/)
-[ download ](_data/better-wp-security.9.3.1.zip)
+[wordfence](https://www.wordfence.com/)
+[ download ](_data/wordfence.zip)
 
 #### 2- WPForms
 Een plugin om een formulier mee te maken. Als je zelf een alternatief hebt is dat ook goed.
