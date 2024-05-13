@@ -23,17 +23,18 @@ Er zijn een aantal vereisten aan dit project:
 
 ---
 ### 1- Docker container initialiseren
-1- Maak een nieuwe repository aan in [GitHub](http://github.com/) voor **m8prog-wordpress**, zorg dat de repository _private_ is.
-2- Navigeer op je computer naar de folder waar je project straks komt te staan, _niet een nieuwe folder aanmaken_. 
-3- [Clone je github project](https://git-scm.com/docs/git-clone) zodat je een nieuwe folder hebt die gekoppeld is aan git en waar straks je bestanden in komen.
+1- Maak een nieuwe repository aan in [GitHub](http://github.com/) voor **m8prog-wordpress**, zorg dat de repository _private_ is.  
+2- Navigeer op je computer naar de folder waar je project straks komt te staan, _niet een nieuwe folder aanmaken_.   
+3- [Clone je github project](https://git-scm.com/docs/git-clone) zodat je een nieuwe folder hebt die gekoppeld is aan git en waar straks je bestanden in komen.  
 4- Start eerst [Docker Desktop](https://www.docker.com/products/docker-desktop/)  
-5- Plaats de docker-compose.yml in de root van deze folder. [download](_data/docker-compose.yml)
-6- Plaats het `.env.example` bestand in de root van deze folder. [download](_data/.env.example)
-7- Kopieer de `.env.example` naar `.env` en vul in dit nieuwe bestand de database gegevens in die je zelf verzint. 
-8- Start de docker containers en detach docker uit je terminal _( geef de terminal vrij na het opstarten )_.
+5- Plaats de docker-compose.yml in de root van deze folder. [download](_data/docker-compose.yml)  
+6- Plaats het `.env.example` bestand in de root van deze folder. [download](_data/.env.example)  
+7- Kopieer het `.env.example` bestand naar `.env` en vul in dit nieuwe bestand de database gegevens in die je zelf verzint.   
+8- Start de docker containers.  
 ```shell
-docker-compose up -d
+docker-compose up
 ```
+_Voeg eventueel `-d` toe om de terminal vrij te geven na het opstarten (docker detach)_
 
 ---
 ### 2- Controle

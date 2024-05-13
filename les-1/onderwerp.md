@@ -12,9 +12,10 @@ In deze periode gaan een WordPress website maken waarmee je een complete website
 ---
 ### 1- Kies het onderwerp voor jouw website
 - Lees eerst de [algemene functionele eisen](../project_requirements) door zodat je weet wat er van je verwacht wordt.
-- Bedenk het onderwerp en doel van jouw nieuwe website, bijvoorbeeld een portfolio website.
+- Kies een onderwerp voor jouw WordPress website, selecteer een project uit de lijst in Teams.
 - Bedenk aan de hand van de eisen, functionaliteiten die voor jouw website gemaakt kunnen worden.
-- Maak een keuze welk css framework je gaat gebruiken: [Bekijk hier een overzicht](frameworks)
+- Maak een keuze welk css framework je gaat gebruiken: [Bekijk hier verschillende frameworks](frameworks)  
+_In mijn voorbeeld gebruik in Bootstrap._
 
 ---
 ### 2- Beschrijf jouw website en de functionaliteiten
