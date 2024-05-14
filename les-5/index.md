@@ -2,7 +2,7 @@
 title: Les 5
 layout: page
 permalink: :path/:basename
-nav_order: 6
+nav_order: 7
 nav_exclude: false
 ---
 
