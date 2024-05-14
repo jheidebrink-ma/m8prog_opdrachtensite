@@ -12,7 +12,7 @@ Activeer je child thema in de admin omgeving en controleer het thema aan de voor
 
 ---
 ### 1- Activeer
-Ga nu weer naar het admin gedeelte van je website en selecteer jouw nieuwe thema op dezelfde manier als de vorige keer bij het selecteren van een thema.
+Ga nu weer naar het `wp-admin` gedeelte van je website en selecteer jouw nieuwe thema op dezelfde manier als de vorige keer bij het selecteren van een thema.
 
 ---
 ### 2- Controleer

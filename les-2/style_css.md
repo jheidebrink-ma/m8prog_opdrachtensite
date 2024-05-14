@@ -14,18 +14,25 @@ In het style.css bestand kun je aangeven hoe het thema heet en wie hem gemaakt h
 ### 1- style.css
 In dit bestand geef je aan hoe je thema heet en wat de parent is.  
 In dit voorbeeld heb ik een nieuw thema gemaakt met de naam `M8PROG`  
-Zie voor alle opties: [https://developer.wordpress.org/themes/core-concepts/main-stylesheet/](https://developer.wordpress.org/themes/core-concepts/main-stylesheet/)
-Dit zijn de minimale instellingen 
+Zie voor alle opties: [https://developer.wordpress.org/themes/core-concepts/main-stylesheet/](https://developer.wordpress.org/themes/core-concepts/main-stylesheet/)  
+Dit zijn de minimale instellingen voor een **gewoon** thema
 ```css
 /*
 Theme Name: M8PROG
 Author: Jasper
 */
-
+```
+Dit zijn de minimale instellingen voor een gewoon **child** thema
+```css
+/*
+Theme Name: M8PROG
+Author: Jasper
+Template: cue
+*/
 ```
 
-Een overzicht van wat meer instellingen:  
-Bekijk de instellingen maar eens om te zien wat je zelf wilt gebruiken.  
+
+Hierbij een uitgebreide lijst met instellingen, bekijk deze maar eens om te zien wat je zelf wilt gebruiken.  
 ```css
 /**
  * Theme Name:        M8PROG Child theme

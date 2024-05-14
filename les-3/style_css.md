@@ -14,7 +14,7 @@ In het style.css bestand geef je nu wat informatie over dit thema weer.
 ### 1- style.css
 In dit bestand geef je aan hoe je thema heet en wat de parent is.  
 In dit voorbeeld heb ik een nieuw thema gemaakt met de naam `M8PROG_THEME_NAME`  
-Zie voor alle opties: [https://developer.wordpress.org/themes/core-concepts/main-stylesheet/](https://developer.wordpress.org/themes/core-concepts/main-stylesheet/)
+Zie voor alle opties: [https://developer.wordpress.org/themes/core-concepts/main-stylesheet/](https://developer.wordpress.org/themes/core-concepts/main-stylesheet/)  
 Dit is een voorbeeld, let op dat je wel de juiste versie van php én WordPress instelt, anders werkt het thema niet. 
 ```css
 /**
@@ -36,8 +36,8 @@ Dit is een voorbeeld, let op dat je wel de juiste versie van php én WordPress i
 
 ```
 Hier kun je zien welke versie van WordPress php je gebruikt:
-[/wp-admin/site-health.php?tab=debug](http://localhost:80/wp-admin/site-health.php?tab=debug)
-Het `Domain Path` gaan wij later gebruiken voor de vertalingen.
+[/wp-admin/site-health.php?tab=debug](http://localhost:80/wp-admin/site-health.php?tab=debug)  
+De items `Text Domain` en `Domain Path` gaan wij later gebruiken voor de vertalingen.
 
 
 ---

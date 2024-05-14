@@ -18,8 +18,9 @@ Twee voorbeeld bestanden kun je hier downloaden:
 [header.php](data/header.php)  
 [footer.php](data/footer.php)  
 
-Door deze bestanden overal te gebruiken kun je ervoor zorgen dat alle pagina's dezelfde stijl hebben.  
-Als je de header van een specifiek post-type anders wilt hebben dan de andere pagina's dan maak je een bestand met een andere naam, bijvoorbeeld: `header-customposttype.php`.  
+Door deze bestanden te gebruiken kun je ervoor zorgen dat alle pagina's dezelfde stijl hebben.  
+Als je de header van een specifiek post-type anders wilt hebben dan de andere pagina's dan maak je een bestand met een andere naam.  
+Bijvoorbeeld: `header-customposttype.php`.  
 
 
 ---
@@ -27,12 +28,11 @@ Als je de header van een specifiek post-type anders wilt hebben dan de andere pa
 In vorige php projecten gebruikte je `include()`, `require()` of `@import()` functies om een bepaald document in te laden. Binnen WordPress is er voor de header en footer een uitzondering.   
 De header template wordt geladen met het volgende php commando: 
 ```php
-<?php
 get_header();
-?>
 ```
 
-Binnen de header moet je minimaal deze php functie aanroepen in binnen de html `<head>` om diverse functies uit te voeren zoals het laden van CSS en JavaScripts.  
+Binnen de header.php moet je minimaal de onderstaande php functie aanroepen.  
+Deze moet je laden binnen de html `<head>` om diverse functies uit te voeren zoals het laden van CSS en JavaScripts.  
 ```php
 <?php
 wp_head();
@@ -49,12 +49,10 @@ Binnen de header voeg je diverse HTML elementen toe:
 
 ---
 ### Footer
-Het idee van de footer is hetzelfde, alleen sluit je nu de footer af.
-De footer template wordt geladen met het volgende commando:
+Het idee van de footer is hetzelfde als de titel, alleen sluit je nu de html af.  
+De footer template wordt geladen met de volgende php functie:
 ```php
-<?php
 get_footer();
-?>
 ```
 
 Binnen de footer moet je minimaal deze php functie aanroepen net voor je de `body` tag afsluit.  
@@ -64,7 +62,12 @@ Deze php functie zorgt ervoor dat er diverse acties uitgevoerd worden zoals het 
 wp_footer();
 ?>
 ```
-  
+
+Binnen de footer voeg je diverse HTML elementen toe:
+- Voer net voor het afsluiten van de body de php functie `wp_footer()` uit
+- Sluit de `body` tag
+- Sluit de `html` tag
+
 ---
 ### Body data
 Alle andere informatie zoals een titel, intro, omschrijving worden straks geladen in onder andere de `index.php`.

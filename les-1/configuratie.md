@@ -8,7 +8,7 @@ nav_exclude: true
 ## Configuratie van WordPress
 {: .text-green-100 .fs-6 }
 
-Voordat wij aan de slag kunnen moeten wij een aantal stappen doorlopen via de installatie schermen van WordPress.
+Voordat wij aan de slag kunnen moeten wij een aantal stappen doorlopen via de installatie schermen van WordPress.  
 Na de installatie maak je wat demo data aan zodat je goed je configuratie kunt testen.  
 
 ---
@@ -22,7 +22,7 @@ Doorloop vervolgens de verschillende stappen.
 Let op dat je wel je **username** en **wachtwoord** onthoud.  
 ![setup](img/Setup.png)  
 
-Na deze setup moet je misschien een paar updates uitvoeren, dat zie je in het menu item **updates**.  
+Na deze setup kun je `inloggen` en moet je misschien een paar updates uitvoeren, dat zie je in het menu item **updates**.  
 
 ---
 ### 2- Demo data
@@ -34,21 +34,20 @@ Denk hierbij aan:
 
 Het aanmaken van een pagina doe je onder het kopje `pages`.  
 Plaats onder het kopje `media` 3 voorbeeld afbeeldingen die je later ergens op de site kunt gebruiken.  
-De voorbeeld pagina kun je verwijderen of aanpassen.  
+De `voorbeeld pagina` kun je verwijderen of aanpassen.  
 
 ---
 ### 3- Nieuwe plugins
-De huidige plugins kun je verwijderen omdat dat voorbeeld plugins zijn. ( _Akismet Anti-spam_ en _Hello Dolly_)  
+De huidige plugins kun je verwijderen omdat dat voorbeeld plugins zijn.  
+( _Akismet Anti-spam_ en _Hello Dolly_)  
 Installeer de volgende plugins door deze in de `/plugins/` folder te plaatsen:
 #### 1- Wordfence  
 Een uitgebreide security plugin die op een simpele manier je WordPress project beveiligd.  
-[wordfence](https://www.wordfence.com/)  
-[ download ](_data/wordfence.zip)
+[wordfence](https://www.wordfence.com/) _([ download ](_data/wordfence.zip))_
 
 #### 2- WPForms
 Een plugin om een formulier mee te maken. Als je zelf een alternatief hebt is dat ook goed.  
-[wpforms-lite](https://wordpress.org/plugins/wpforms-lite/)  
-[ download ](_data/wpforms-lite.1.8.7.2.zip)
+[wpforms-lite](https://wordpress.org/plugins/wpforms-lite/) _([ download ](_data/wpforms-lite.1.8.7.2.zip))_
 
 ---
 ### 4- Contact formulier
@@ -60,8 +59,8 @@ Vergeet niet op te slaan.
 
 ---
 ### 5- Instellingen
-In het `settings` menu zijn er een paar elementen die wij nog even moeten na lopen:
-- General*, geef hier een tagline op ( sub titel )*
+In het `settings menu` zijn er een paar elementen die wij nog even moeten na lopen:
+- General*, geef hier een site titel en description op*
 - Reading*, selecteer hier je home pagina, **blog** pagina kun je leeg laten*
 - Permalinks*, stel in dat je permalinks op basis van **Post name** wilt gebruiken* 
 

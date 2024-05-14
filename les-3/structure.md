@@ -30,22 +30,23 @@ Meer informatie over thema's: [https://codex.wordpress.org/Theme_Development](ht
 
 ---
 ### 2- screenshot.png
-Dit bestand is een screenshot of het design van jouw eigen thema zodat je straks makkelijker het thema kunt kiezen.
+Dit bestand is een screenshot of het design van jouw eigen thema zodat je straks makkelijker het thema kunt kiezen.  
+Plaats hierin een afbeelding.
 
 ---
 ### 3- functions.php
-Hier komt diverse functies voor dit thema, bijvoorbeeld om je css te laden:
+Hier komt diverse functies voor dit thema net zoals bij het child thema.  
+Begin met het laden van de style.  
 ```php
-add_action( 'wp_enqueue_scripts', 'm8prog_enqueue_styles' );
-
 function m8prog_enqueue_styles() {
 	wp_enqueue_style(
 		'm8prog-style',
 		get_stylesheet_uri()
 	);
 }
+add_action( 'wp_enqueue_scripts', 'm8prog_enqueue_styles' );
 ```
-Voeg ook alvast de `featured image` functionaliteit toe zodat je straks eenvoudig afbeeldingen kunt toevoegen:
+Voeg ook alvast de `featured image` functionaliteit toe zodat je straks eenvoudig afbeeldingen kunt toevoegen aan posts:
 ```php
 add_theme_support( 'post-thumbnails' );
 ```
@@ -53,11 +54,11 @@ add_theme_support( 'post-thumbnails' );
 ---
 ### 4- index.php
 Hier komen straks de codes in die je pagina's weergeven.  
-Plaats nu tijdelijk even een voorbeeld tekst in dit document, geen opmaak, alleen een dump.   
+Plaats nu tijdelijk even een voorbeeld tekst in dit document, geen opmaak, alleen een test.   
 _Als je niets kunt verzinnen gebruik dan deze dump:_   
 ```php
 <?php
-echo '<pre style="background:#0f0; padding: 2rem; width:100%; z-index:9999">';
+echo '<pre style="background:#0f0; padding: 2rem; width:100%;">';
 print_r( 'dit is mijn index pagina' );
 echo '</pre>';
 die(__FILE__.':'.__LINE__);
