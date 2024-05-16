@@ -43,11 +43,11 @@ De huidige plugins kun je verwijderen omdat dat voorbeeld plugins zijn.
 Installeer de volgende plugins door deze in de `/plugins/` folder te plaatsen:
 #### 1- Wordfence  
 Een uitgebreide security plugin die op een simpele manier je WordPress project beveiligd.  
-[wordfence](https://www.wordfence.com/) _([ download ](_data/wordfence.zip))_
+[wordfence](https://www.wordfence.com/) _([ download ](data/wordfence.zip))_
 
 #### 2- WPForms
 Een plugin om een formulier mee te maken. Als je zelf een alternatief hebt is dat ook goed.  
-[wpforms-lite](https://wordpress.org/plugins/wpforms-lite/) _([ download ](_data/wpforms-lite.1.8.7.2.zip))_
+[wpforms-lite](https://wordpress.org/plugins/wpforms-lite/) _([ download ](data/wpforms-lite.1.8.7.2.zip))_
 
 ---
 ### 4- Contact formulier
