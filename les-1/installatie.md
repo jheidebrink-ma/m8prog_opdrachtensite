@@ -28,7 +28,7 @@ Er zijn een aantal vereisten aan dit project:
 3- [Clone je github project](https://git-scm.com/docs/git-clone) zodat je een nieuwe folder hebt die gekoppeld is aan git en waar straks je bestanden in komen.  
 4- Start eerst [Docker Desktop](https://www.docker.com/products/docker-desktop/)  
 5- Plaats de docker-compose.yml in de root van deze folder. [download](data/docker-compose.yml)  
-6- Plaats het `.env.example` bestand in de root van deze folder. [download](data/.env.example)  
+6- Plaats het `.env.example` bestand in de root van deze folder. [download](data/env.example)  
 7- Kopieer het `.env.example` bestand naar `.env` en vul in dit nieuwe bestand de database gegevens in die je zelf verzint.   
 8- Start de docker containers.  
 ```shell
