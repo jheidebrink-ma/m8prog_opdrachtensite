@@ -1,5 +1,5 @@
 "number","week","datum","title","description",
-1,"1","16-5-2024","WordPress installatie","Je begint met het installeren en configureren van een nieuw WordPress project voor je website. Hiervoor gebruiken wij een standaard WordPress Docker installatie met een paar aanpassingen zodat je goed de thema's, plugins en uploads kunt beheren.",
+1,"1","15-5-2024","WordPress installatie","Je begint met het installeren en configureren van een nieuw WordPress project voor je website. Hiervoor gebruiken wij een standaard WordPress Docker installatie met een paar aanpassingen zodat je goed de thema's, plugins en uploads kunt beheren.",
 2,"2","17-5-2024","Child theme","Je leert hoe je binnen WordPress een bestaand thema kunt uitbreiden zonder het originele thema aan te passen."
 3,"3","23-5-2024","Custom thema","Je leert om een custom thema te maken met een eigen vormgeving specifiek voor deze website. ",
 4,"4","24-5-2024","Header en Footer","Je maakt de structuur van je website door gebruik te maken van de header en footer functionaliteit. De HTML bevat nu de basis functies, een menu en gegevens uit de pagina.",
