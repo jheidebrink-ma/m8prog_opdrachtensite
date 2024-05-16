@@ -61,7 +61,7 @@ Vergeet niet op te slaan.
 ### 5- Instellingen
 In het `settings menu` zijn er een paar elementen die wij nog even moeten na lopen:
 - General*, geef hier een site titel en description op*
-- Reading*, selecteer hier je home pagina, **blog** pagina kun je leeg laten*
+- Reading*, selecteer hier je home pagina, **posts** pagina kun je leeg laten*
 - Permalinks*, stel in dat je permalinks op basis van **Post name** wilt gebruiken* 
 
 ---
