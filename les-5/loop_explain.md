@@ -27,7 +27,7 @@ Dit zijn de verschillenden pagina types:
 
 ![template-cheatsheet.png](images%2Ftemplate-cheatsheet.png)
 
-## 1- Frontpagina
+### 1- Frontpagina
 Je WordPress homepagina is vaak de eerste plek die gebruikers zien als zij je website bezoeken.  
 Voordat de juiste pagina geladen is zal WordPress in de volgende volgorde zoeken naar deze drie templatebestanden:
 1. front-page.php 
@@ -36,7 +36,7 @@ Voordat de juiste pagina geladen is zal WordPress in de volgende volgorde zoeken
 Als je thema geen `front-page.php` templatebestand heeft, gebruikt WordPress standaard de tweede optie, enzovoort.  
 Het `index.php` bestand de laatste stop die WordPress maakt in deze beslissingsboom van templates waardoor dit altijd de default is.
 
-## 2- Single Posts
+### 2- Single Posts
 Individuele WordPress artikelen gebruiken de single post.  
 Voor elk blogbericht zoekt WordPress naar de volgende bestanden:  
 1. single.php 
@@ -45,7 +45,7 @@ Voor elk blogbericht zoekt WordPress naar de volgende bestanden:
 Als je naar het lijstje kijkt over de templates, zal je echter zien dat in sommige gevallen er een complexere hiërarchie is.  
 Dat komt omdat je met WordPress aparte template bestanden kan toewijzen voor de verschillende individuele berichten en single categorieën, en het pas op single.php overstapt als het geen van deze opties vindt.
 
-## 3- Single Pages
+### 3- Single Pages
 Na de index zijn voor de meeste WordPress sites ook single pagina's enorm belangrijk.  
 In de meeste gevallen is dit een andere template dan de homepagina.  
 Zo ziet de hiërarchie van de template van een single page eruit:
@@ -56,7 +56,7 @@ Hoewel de template hiërarchie voor **single berichten** en **pagina's** vergeli
 Je kunt ook de template maken voor specifieke _slugs_ en _ID's_.  
 Als je een `page-{slug}.php` of een `page-{id}.php` bestand hebt zal WordPress deze eerder laden dan de standaard `page.php`.
 
-## 4-  Custom Post Types
+### 4-  Custom Post Types
 Je kan custom post-types maken om een specifiek type content aan te geven.  
 Custom post-types zorgen voor betere organisatie van je content en hebben ook hun eigen template-hiërarchie:
 **Voor de overzicht pagina's:**
@@ -71,14 +71,14 @@ Custom post-types zorgen voor betere organisatie van je content en hebben ook hu
 De template-hiërarchie voor custom berichttypes is minder complex dan volledige pagina’s of berichten.  
 Met WordPress kun je template bestanden maken voor elk custom berichttype, omdat ze niet exact dezelfde lay-outs hoeven te delen.
 
-## 5- Zoekresultaat pagina’s
+### 5- Zoekresultaat pagina’s
 Binnen WordPress is er een standaard pagina die zoekresultaten weergeeft.  
 Zo ziet de hiërarchie van de template van een zoek page eruit:
 1. search.php 
 2. index.php
 Binnen een zoekpagina hoef je waarschijnlijk niet veel elementen op te nemen behalve de resultaten zelf.  
 
-## 6- Categorie-, taxonomie- en tagpagina's  
+### 6- Categorie-, taxonomie- en tagpagina's  
 Hoewel veel websites er niet rechtstreeks naar linken, genereert WordPress collectieve pagina's voor je tags, taxonomies en categorieën.  
 Er zijn ook specifieke subpagina’s voor elk item binnen die taxonomie.
 Doordat de taxonomie erg complex kan worden voor websites met veel content, omvat deze hiërarchie meer ‘stappen’ dan normaal:

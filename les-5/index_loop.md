@@ -14,14 +14,14 @@ In het wp-admin gedeelte heb je al wat data toegevoegd, deze gaan wij nu aan de 
 ---
 ### 1- De header
 Het is wel zo netjes als in de titel van de pagina ook de naam van de pagina en de site titel staat.  
-Pas daarom de `<title>` tag aan in de `header.php`
-De titel van de pagina laat je zien door deze code te gebruiken:
+Pas daarom de `<title>` tag aan in de `header.php`  
+De titel van de **pagina** laat je zien door deze code te gebruiken:
 ```php
 <?php the_title() ?>
 ```
-De titel van de site haal je op deze manier op:
+De titel van de **site** haal je op deze manier op:
 ```php
-<?php bloginfo('title')?>
+<?php bloginfo('title') ?>
 ```
 
 ---
@@ -33,7 +33,7 @@ Eerst controleren wij of er wel een post is door te controleren op de volgende w
 ```php
 have_posts()
 ```
-Als de pagina posts heeft voer je de loop uit, anders geef je een melding dat er geen data is gevonden.  
+Als de pagina minimaal **één** heeft voer je de **loop** uit, anders geef je een melding dat er geen data is gevonden.  
 Dat kun je uitproberen door een pagina aan te roepen die niet bestaat zoals: [/ik_ben_er_niet](http://localhost/ik_ben_er_niet)
 
 Nu moet je een **while loop** maken binnen deze **if statement**, voer deze loop uit zolang `have_posts()` **true** terug geeft.
@@ -44,20 +44,22 @@ Hiervoor gebruik je dit commando:
 the_post();
 ```
 
+Daarna kun je verschillende onderdelen van de post ophalen én weergeven met commando's zoals: `the_title()`, `the_excerpt()` en `the_content()` 
+
 Alles bij elkaar zal je code er ongeveer zo uit zien.  
 ```php
-// Start the loop.
+// Start with a if statement
 if ( have_posts() ) :
 
-	// Load posts loop.
+	// Loop trough the posts
 	while ( have_posts() ) :
-	    // load the data
+	    // Load the data post data
 		the_post();
 		?>
         <main class="container my-5">
             <h1 class="mt-5"><?php the_title() ?></h1>
             <div class="col-lg-8 px-0">
-                <?php the_content() ?>
+                <?php the_excerpt() ?>
             </div>
         </main>
 	    <?php
@@ -72,7 +74,7 @@ endif;
 ---
 ### 3- Controleer
 Bekijk je website nu in de browser.  
-Als het goed is zie je nu de content die je ingesteld hebt in het wp-admin gedeelte.
+Als het goed is zie je nu de content die je vorige les hebt ingesteld hebt in het **wp-admin** gedeelte.
 
 ---
 
@@ -81,7 +83,7 @@ Als het goed is zie je nu de content die je ingesteld hebt in het wp-admin gedee
 ---
 ### Volgende stap:
 {: .text-green-100 .fs-4 }  
-In de volgende opdracht ga je zelf een `loop` maken.  
+In de volgende pagina ga je één enkele pagina of blog item weergeven.  
 [Single page en blog implementatie](single_page)
 
 

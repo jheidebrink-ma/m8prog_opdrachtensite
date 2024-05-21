@@ -25,12 +25,12 @@ Selecteer nu een thema dat je wilt gebruiken.
 ![themes.png](images%2Fthemes.png)
 
 ---
-### 4- Pas het thema aan
+### 3- Pas het thema aan
 Via de `customizer` optie uit het menu kun je het thema zo aanpassen dat je een unieke website hebt.  
 Speelt maar even **15 minuten** met deze customizer en alle instellingen om te zien wat er mogelijk is.  
 
 ---
-### 3- Controleer
+### 4- Controleer
 Bekijk de website in je browser en zie dat het nieuwe thema actief is.  
 Controleer ook even in een **privé-venster** waarbij je niet bent ingelogd.
 
