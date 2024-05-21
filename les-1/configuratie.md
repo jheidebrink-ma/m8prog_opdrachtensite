@@ -18,8 +18,11 @@ Je ziet nu dit scherm:
 ![language chooser](img/language-chooser.png)  
 
 ---
-Doorloop vervolgens de verschillende stappen.  
-Let op dat je wel je **username** en **wachtwoord** onthoud.  
+Doorloop vervolgens de verschillende stappen.
+{: .mb-0 }
+## Let op dat je wel je **username** en **wachtwoord** onthoud.  
+{: .text-red-100 .fs-4 .mt-2 .mb-4 }
+
 ![setup](img/Setup.png)  
 
 Na deze setup kun je `inloggen` en moet je misschien een paar updates uitvoeren, dat zie je in het menu item **updates**.  

@@ -23,7 +23,10 @@ Dit bestand moet je natuurlijk wel laden, dat doe je door deze via de php `requi
 ### 2- Labels
 Voordat wij gaan registreren definiëer ik de labels van dit post-type zodat straks dit element goed terug kan vinden.
 Dit doe ik door in mijn `PostType.php` document de volgende code te plaatsen.  
-Let op dat je de juiste **term** en **text-domein** gebruikt!  
+{: .mb-0 }
+## Let op dat je de juiste **term** en **text-domein** gebruikt!  
+{: .text-red-100 .fs-4 .mt-2 .mb-4 }
+
 ```php
 $labels = [
 	'name'               => __( 'Woods', 'Text_Domain' ),

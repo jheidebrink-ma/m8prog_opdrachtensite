@@ -18,7 +18,9 @@ Om een widget aan je site toe te voegen, moet je deze koppelen aan een widget-ge
 Widget-gebieden kun je definiëren in het thema als je hier gebruik van wilt maken.  
 In de `functions.php` ga ik aangeven dat mijn thema een widget gebied heeft zodat ik deze in het `wp-admin` gedeelte kan beheren.  
 Dit doe je door in te haken op de `widgets_init` action van WordPress.  
-Let op dat je bij de `id` een duidelijke 'key' aanmaakt, bijvoorbeeld 'footer-widget-area'.   
+{: .mb-0 }
+## Let op dat je bij de `id` een duidelijke 'key' aanmaakt, bijvoorbeeld 'footer-widget-area'.   
+{: .text-red-100 .fs-4 .mt-2 .mb-4 }
 ```php
 /**
  * Initialize the widget area

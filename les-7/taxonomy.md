@@ -13,8 +13,10 @@ Nu ga je een taxonomy registreren zodat je custom post type onderverdeeld kan wo
 ---
 ### 1- Labels
 Voordat wij gaan registreren definiëer ik de labels van deze taxonomy.
-Dit doe ik door in mijn `PostType.php` document de volgende code te plaatsen.  
-Let op dat je de juiste **term** en **text-domein** gebruikt!
+Dit doe ik door in mijn `PostType.php` document de volgende code te plaatsen.
+{: .mb-0 }
+## Let op dat je de juiste **term** en **text-domein** gebruikt!  
+{: .text-red-100 .fs-4 .mt-2 .mb-4 }
 ```php
 $labels = [
 	'name'              => _x( 'Origins', 'taxonomy general name', 'Text_Domain' ),

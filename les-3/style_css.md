@@ -15,7 +15,10 @@ In het style.css bestand geef je nu wat informatie over dit thema weer.
 In dit bestand geef je aan hoe je thema heet en wat de parent is.  
 In dit voorbeeld heb ik een nieuw thema gemaakt met de naam `M8PROG_THEME_NAME`  
 Zie voor alle opties: [https://developer.wordpress.org/themes/core-concepts/main-stylesheet/](https://developer.wordpress.org/themes/core-concepts/main-stylesheet/)  
-Dit is een voorbeeld, let op dat je wel de juiste versie van php én WordPress instelt, anders werkt het thema niet. 
+{: .mb-0 }
+## Dit is een voorbeeld, let op dat je wel de juiste versie van php én WordPress instelt, anders werkt het thema niet.
+{: .text-red-100 .fs-4 .mt-2 .mb-4 }
+
 ```css
 /**
  * Theme Name:        M8PROG_THEME_NAME

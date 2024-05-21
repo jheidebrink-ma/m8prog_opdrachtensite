@@ -11,8 +11,8 @@ nav_exclude: true
 Nu je WP CLI geïnstalleerd hebt is het tijd om het te gaan gebruiken.  
 ### Lees deze hele pagina, maar voer alleen stap 1 en 2 uit.
 {: .text-red-100 .fs-4 }
-Stap 4 is voor de volgende les.
-{: .text-red-100 .fs-4 }
+Stap 4 is een voorbereiding voor de volgende les.
+{: .text-grey-dk-000 .fs-4 }
 
 --- 
 ### Note
@@ -105,8 +105,10 @@ De structuur van dit commando is:
 ```shell
   wp i18n make-pot path/to/your-plugin-directory
 ```
+{: .mb-0 }
 ## Let op, je moet wel de correcte folder opgeven.
-{: .text-red-100 .fs-5 }
+{: .text-red-100 .fs-4 .mt-2 .mb-4 }
+
 Dit kan ongeveer jouw commando zijn _( THEMA_NAAM is dan jouw eigen thema )_:
 ```shell
 wp i18n make-pot wp-content/themes/THEMA_NAAM --allow-root

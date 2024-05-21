@@ -1,6 +1,7 @@
 # M8PROG — Backend Programming (BAP)
 
 Deze site maakt gebruik van het Jekyll Theme: [Just the Docs](https://pmarsceill.github.io/just-the-docs/)
+Referentie: [just-the-docs.com](https://just-the-docs.com/docs/utilities/)  
 
 Om dit op je lokale computer te draaien is [Jekyll](https://jekyllrb.com/) nodig (een static site generator in Ruby)
 Na [installatie](https://jekyllrb.com/docs/installation/) kan de Jekyll server en generator worden gestart met:
