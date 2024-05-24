@@ -14,19 +14,20 @@ nav_exclude: true
 
 ---
 Binnen een WordPress thema vind je vaak een `header.php` én een `footer.php` document.  
-Twee voorbeeld bestanden kun je hier downloaden:  
+Twee **voorbeeld** bestanden kun je hier downloaden:  
 [header.php](data/header.php)  
 [footer.php](data/footer.php)  
+_Dit zijn voorbeeld bestanden ter inspiratie._  
+Maak zelf een `header.php` én een `footer.php` bestand aan in je thema folder, hiermee zorg je dat alle pagina's dezelfde stijl hebben.  
 
-Door deze bestanden te gebruiken kun je ervoor zorgen dat alle pagina's dezelfde stijl hebben.  
-Als je de header van een specifiek post-type anders wilt hebben dan de andere pagina's dan maak je een bestand met een andere naam.  
+Als je de _header_ van een specifiek _post-type_ anders wilt hebben dan de andere pagina's dan maak je een bestand met een andere naam.  
 Bijvoorbeeld: `header-customposttype.php`.  
 
 
 ---
 ### Header
 In vorige php projecten gebruikte je `include()`, `require()` of `@import()` functies om een bepaald document in te laden. Binnen WordPress is er voor de header en footer een uitzondering.   
-De header template wordt geladen met het volgende php commando: 
+De header template kun je laden met het volgende php commando: 
 ```php
 get_header();
 ```
