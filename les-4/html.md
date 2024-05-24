@@ -1,5 +1,5 @@
 ---
-title: Les 2
+title: Les 4
 layout: page
 permalink: :path/:basename
 nav_exclude: true
@@ -49,6 +49,7 @@ Deze code plaats ik in de `head` om **bootstrap css** te laden via een CDN:
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 ```
+
 Daarnaast is een voorbeeld menu ook wel fijn, dat doe je door deze code te plaatsen:
 ```html
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -95,7 +96,8 @@ Daarnaast is een voorbeeld menu ook wel fijn, dat doe je door deze code te plaat
 
 ---
 ### 3- HTML in de footer
-In de **footer.php** moet een **javascript** vanaf de CDN geladen gaat worden zodat bijvoorbeeld de dropdown gaat werken:  
+In de **footer.php** moet een **javascript** vanaf de CDN geladen gaat worden zodat bijvoorbeeld de dropdown gaat werken.  
+Plaats deze onderaan in je footer, boven het afsluiten van de body en html.
 ```html
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
@@ -110,6 +112,8 @@ Om een footer element aan te maken plaats ik deze code in mijn footer:
     </div>
 </footer>
 ```
+Vergeet niet om ook de `html` en `body` tag die je in de header hebt geopend af te sluiten in de footer.
+
 
 ---
 ### 4- Controleer
