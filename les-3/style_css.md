@@ -1,5 +1,5 @@
 ---
-title: Les 2
+title: Les 3
 layout: page
 permalink: :path/:basename
 nav_exclude: true
