@@ -11,6 +11,28 @@ nav_exclude: true
 Wij gaan nu de dynamische content in de pagina plaatsen.  
 In het wp-admin gedeelte heb je al wat data toegevoegd, deze gaan wij nu aan de voorkant laten zien.
 
+
+### Voorbereiding
+{: .text-red-500 .fs-6 }
+Voordat voordat je de informatie kunt weergeven moet je eerst twee extra blog posts aanmaken, dit heb je nodig om straks te kunnen testen.  
+### 1- Posts aanmaken
+{: .text-green-500 .fs-6 }
+Ga in het **wp-admin** gedeelte naar `posts` toe, en voeg een nieuwe post toe.   
+_Vergeet niet om op `publish` te klikken._  
+_Maak minimaal 2 posts aan._  
+### 2- Posts aanmaken
+{: .text-green-500 .fs-6 }
+Vervolgens maak je een **page** _( pagina )_ die je gebruikt om de posts / je blog te kunnen zien.  
+Voer in deze pagina alleen een titel toe, bijvoorbeeld **blog**, verder mag hij leeg zijn.  
+Doe dit door onder **pages** te klikken op **new**  
+### 3- Posts pagina selecteren
+{: .text-green-500 .fs-6 }
+Ga naar de instellingen / settings  
+Selecteer hier `reading`  
+Selecteer onder de optie `Posts page` jouw net aangemaakte **blog pagina**  
+Als je nu in je nu in je browser naar deze blog pagina toe gaat dan zie je een overzicht van de berichten.  
+Je bent nu klaar om aan deze les te beginnen.  
+
 ---
 ### 1- De header
 Het is wel zo netjes als in de titel van de pagina ook de naam van de pagina en de site titel staat.  
@@ -74,7 +96,8 @@ endif;
 ---
 ### 3- Controleer
 Bekijk je website nu in de browser.  
-Als het goed is zie je nu de content die je vorige les hebt ingesteld hebt in het **wp-admin** gedeelte.
+Als het goed is zie je nu de content / data die je een vorige les hebt ingevoerd in het **wp-admin** gedeelte.  
+Dit was toen waarschijnlijk een pagina of een blog post.
 
 ---
 
