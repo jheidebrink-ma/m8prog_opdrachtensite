@@ -20,7 +20,9 @@ Om onze SASS en JavaScipt te compilen maak ik gebruik van `npm` in combinatie me
 Eerst heb je een structuur nodig.  
 Maak in je thema map een aantal folders en bestanden die je als basis nodig hebt:
 - src/js _( dit is de locatie van je javascripts die niet minified zijn )_
+- src/js/main.js _( dit is je js bestand met minimaal een console.log() functie erin )_
 - src/scss _( hierin staan je SASS bestanden )_
+- src/scss/main.scss _( je scss bestand met bijvoorbeeld je sass code )_
 - package.json _( hier staat in welke packages er nodig zijn zoals een sass compiler  )_
 - webpack.config.js _( hier zijn de functies gedefinieerd voor het compilen van de sass )_  
 Je kunt een voorbeeld van dit pakket bestanden ook hier downloaden: [example](data%2Fexample.zip)
