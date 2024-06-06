@@ -7,7 +7,7 @@
   "main": "webpack.config.js",
   "scripts": {
     "dev": "webpack build --mode=development",
-    "build": "webpack build --mode=production",
+    "build": "webpack build --mode=production"
   },
   "author": "My Name",
   "license": "ISC",

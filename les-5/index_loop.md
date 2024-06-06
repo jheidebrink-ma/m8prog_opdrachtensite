@@ -55,7 +55,7 @@ Eerst controleren wij of er wel een post is door te controleren op de volgende w
 ```php
 have_posts()
 ```
-Als de pagina minimaal **één** heeft voer je de **loop** uit, anders geef je een melding dat er geen data is gevonden.  
+Als de pagina minimaal **één** post heeft voer je de **loop** uit, anders geef je een melding dat er geen data is gevonden.  
 Dat kun je uitproberen door een pagina aan te roepen die niet bestaat zoals: [/ik_ben_er_niet](http://localhost/ik_ben_er_niet)
 
 Nu moet je een **while loop** maken binnen deze **if statement**, voer deze loop uit zolang `have_posts()` **true** terug geeft.
