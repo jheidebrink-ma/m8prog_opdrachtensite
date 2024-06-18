@@ -1,10 +1,13 @@
 ---
-title: Les 8
+title: Les 10
 layout: page
 permalink: :path/:basename
 nav_exclude: true
 ---
 
+----
+# Extra opdracht
+----
 ## Wat is lokalisatie binnen WordPress?
 {: .text-green-100 .fs-6 }
 
