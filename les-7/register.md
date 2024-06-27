@@ -83,7 +83,14 @@ register_post_type( 'wood', $args );
 ```
 
 ---
-### 3- Controleer
+### 5- Flush de permalinks`
+Zorg ervoor dat de permalinks opnieuw opgebouwd worden.  
+Ga naar `instellingen` en dan `permalinks`  
+Je hoeft niets te doen op deze pagina, door de pagina op te roepen worden de permalinks opnieuw aangemaakt.
+![permalinks.png](images%2Fpermalinks.png)
+
+---
+### 6- Controleer
 Ga nu naar je admin omgeving en zie dat in het menu een nieuw item is toegevoegd.  
 ### Voeg nu **minimaal 2 custom post types** toe aan je website.
 {: .text-red-100 .fs-4 }

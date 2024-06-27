@@ -68,7 +68,14 @@ register_taxonomy( 'origin', 'wood', $args );
 ```
 
 ---
-### 3- Controleer
+### 4- Flush de permalinks`
+Zorg ervoor dat de permalinks opnieuw opgebouwd worden.  
+Ga naar `instellingen` en dan `permalinks`  
+Je hoeft niets te doen op deze pagina, door de pagina op te roepen worden de permalinks opnieuw aangemaakt.
+![permalinks.png](images%2Fpermalinks.png)
+
+---
+### 4- Controleer
 Ga nu naar je admin omgeving en zie dat in het menu een nieuw item is toegevoegd.  
 En dat je bij het bewerken van een custom post type item een categorie kunt selecteren of aanmaken.  
 ### Voeg nu **minimaal 2 taxonomies** toe en koppel deze aan een of meerdere custom post types.  

@@ -78,11 +78,11 @@ Als voorbeeld is mijn nieuwe domein: `m8prog.nl`. _Dit is niet jouw domein naam 
 Het commando om te testen:  
 ```shell
 wp search-replace "http://locahost" "https://m8prog.nl" --dry-run --allow-root
-```
+```  
 Voer dit nu uit door de `--dry-run` te verwijderen.  
 3- Exporteer weer de database, deze dump ga je straks uploaden naar productie.  
-4- **Verwijder** alle tabellen uit de locale database
-5- **Importeer** de eerste database dump.
+4- **Verwijder** alle tabellen uit de locale database  
+5- **Importeer** de eerste database dump.  
 
 ---
 ### Volgende stap:
