@@ -1,7 +1,7 @@
 services:
     # Wordpress, nginx and php
     wordpress:
-        image: wordpress:php8.3
+        image: wordpress:php8.4
         ports:
             - 80:80
         environment:

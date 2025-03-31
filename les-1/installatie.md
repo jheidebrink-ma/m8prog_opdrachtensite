@@ -29,8 +29,8 @@ Er zijn een aantal vereisten aan dit project:
 4- Start eerst [Docker Desktop](https://www.docker.com/products/docker-desktop/)  
 5- Plaats de docker-compose.yml in de root van deze folder. [download](data/docker-compose.yml)  
 6- Plaats het `.env.example` bestand in de root van deze folder. [download](data/env.example)  
-7- Kopieer het `.env.example` bestand naar `.env` en vul in dit nieuwe bestand de database gegevens in die je zelf verzint.   
-8- Start de docker containers.  
+7- **Kopieer** het `.env.example` bestand naar `.env` en vul in dit nieuwe bestand de database gegevens in die je zelf verzint.   
+8- Start **nu pas** de docker containers.  
 ```shell
 docker-compose up
 ```
