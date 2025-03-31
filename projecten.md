@@ -13,29 +13,20 @@ Mocht jij zelf een goed idee hebben dan kan dat waarschijnlijk ook, maar overleg
 1. jongerenwerk Heemskerk 
    - Informatie website voor jongeren in Heemskerk
    - voorbeeld: https://www.metheemskerk.nl/
-2. LV energy
-   - Product informatie website
-   - https://www.lvenergy.io/
-3. MA International!
+2. MA International!
    - Een sub website voor het Mediacollege Amsterdam
-4. Bee project
+3. Bee project
    - Product informatie website voor een video game ontwikkeld door developers in Servië
-5. SD Crew
+4. SD Crew
    - Informatie website over SD events, wie wat en waar
-6. Made by SD 
+5. Made by SD 
    - Informatie website met een aantal cases over wat SD voor een toffe projecten doet.
-7. STUDENT markt klusjes
+6. STUDENT markt klusjes
    - Informatie website over toekomstig een platform 
    - Beschrijving van verschillende expertises binnen MA ( redactie, SD, game, AV, etc. )
-8. Private dining!
-   - Informatie website over een Chef kok die je kunt inhuren bij jou thuis
-9. Puzzle cafe! 
+7. Puzzle cafe! 
    - Informatie website over socializing café met bordspelen in Utrecht
    - voorbeeld: https://www.loufoque.fr/
-10. Edulock
-   - Product informatie website
-11. Social impact facilitating!
-    - Informatie website met portfolio's van startups
 
 ### Vrijdag 24 mei komen opdrachtgevers langs om een briefing te geven.
 {: .text-red-300 .fs-4}
