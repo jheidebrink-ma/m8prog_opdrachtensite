@@ -12,11 +12,10 @@ In deze periode gaan een WordPress website maken waarmee je een complete website
 ---
 ### 1- Kies het onderwerp voor jouw website
 - Lees eerst de [algemene functionele eisen](../project_requirements) door zodat je weet wat er van je verwacht wordt.  
-_In mijn voorbeeld maak ik een website voor **hout** waarbij elk element een eigen pagina heeft._
+_In mijn voorbeeld maak ik een website voor **taart recepten** waarbij elk element een eigen pagina heeft._
 - Kies een onderwerp voor jouw WordPress website, selecteer een [project](../projecten) en lever dit in via Simulise.
 - Bedenk aan de hand van de eisen, functionaliteiten die voor jouw website gemaakt moeten worden.
-- Maak een keuze welk css framework je gaat gebruiken: [Bekijk hier verschillende frameworks](frameworks)  
-_In mijn voorbeeld gebruik in Bootstrap._
+- Maak een keuze welk frontend framework je gaat gebruiken: [Bekijk hier verschillende frameworks](frameworks)
 
 ---
 ### 2- Beschrijf jouw website en de functionaliteiten
@@ -27,7 +26,10 @@ Maak in je (nog lege) repository een `website.md` markdown document en beschrijf
 4. Hoe ga je de functionele eisen verwerken in jouw website. 
 5. Wat voor stijl / look & feel je voor ogen hebt.
 6. Maak een wireframe van de structuur van de website.
-7. Maak een flowchart van de structuur van de website.
+7. Maak een flowchart van de structuur van de website.  
+Gebruik **Figma** of **AdobeXD** om een wireframe te maken van de website.
+  - [Figma](https://www.figma.com/) is een online tool waarmee je wireframes en prototypes kunt maken.
+  - [Adobe XD](https://www.adobe.com/nl/products/xd.html) is een desktop applicatie waarmee je wireframes en prototypes kunt maken.
 
 Dit mag nog best grof en ongepolijst zijn.  
 Het belangrijkste is dat je weet **wat** je wilt gaan maken, daarna duik je in **hoe** je dit gaat doen.

@@ -10,23 +10,24 @@ Je bouwt je WordPress website aan de hand van deze [algemene en functionele eise
 ## Onderwerp 
 Voor jullie hebben wij een aantal projecten waaruit je kunt kiezen.  
 Mocht jij zelf een goed idee hebben dan kan dat waarschijnlijk ook, maar overleg dit wel even.   
-1. jongerenwerk Heemskerk 
-   - Informatie website voor jongeren in Heemskerk
-   - voorbeeld: https://www.metheemskerk.nl/
-2. MA International!
-   - Een sub website voor het Mediacollege Amsterdam
-3. Bee project
-   - Product informatie website voor een video game ontwikkeld door developers in Servië
-4. SD Crew
-   - Informatie website over SD events, wie wat en waar
-5. Made by SD 
+1. MA International!
+   - Informatie over mogelijke internationale stages of uitwisseling projecten zoals het Zweden project.
+   - Een subdomein voor [ma-web](https://www.ma-web.nl), de website van het Mediacollege Amsterdam
+2. Amsterdamse reddingsbrigade
+   - Informatie website over de Amsterdamse reddingsbrigade
+   - Voorbeeld: [ijrb](https://www.ijrb.nl/)
+3. SD Crew
+  - Informatie website over SD events, wie wat en waar
+  - Agenda website met evenementen zoals een opendag of workshops
+4. Made by SD
    - Informatie website met een aantal cases over wat SD voor een toffe projecten doet.
-6. STUDENT markt klusjes
-   - Informatie website over toekomstig een platform 
+   - Presentatie site met meerdere projecten.
+5. Studenten markt
+   - Begin van een platform waar studenten hun diensten kunnen aanbieden aan andere studenten.
    - Beschrijving van verschillende expertises binnen MA ( redactie, SD, game, AV, etc. )
-7. Puzzle cafe! 
-   - Informatie website over socializing café met bordspelen in Utrecht
-   - voorbeeld: https://www.loufoque.fr/
+6. Recepten website
+   - Een kookboek website waar verschillende recepten op staan
+   - Voorbeeld: [eefkooktzo](https://www.eefkooktzo.nl/recepten/) of [leukerecepten](https://www.leukerecepten.nl/recepten-index/)
 
-### Vrijdag 24 mei komen opdrachtgevers langs om een briefing te geven.
+[//]: # (### Vrijdag 24 mei komen opdrachtgevers langs om een briefing te geven.)
 {: .text-red-300 .fs-4}
