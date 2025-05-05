@@ -1,6 +1,6 @@
 "number","week","datum","title","description",
 1,"1","1-4-2025","WordPress installatie","Je begint met het installeren en configureren van een nieuw WordPress project voor je website. Hiervoor gebruiken wij een standaard WordPress Docker installatie met een paar aanpassingen zodat je goed de thema's, plugins en uploads kunt beheren.",
-2,"2","1-5-2025","Generated thema","Door gebruik te maken van AI maak je een custom thema aan dat zo goed mogelijk voldoet aan de eisen van jouw project."
+2,"2","1-5-2024","Generated thema","Door gebruik te maken van AI maak je een custom thema aan dat zo goed mogelijk voldoet aan de eisen van jouw project."
 2,"2","15-5-2024","Child theme","Je leert hoe je binnen WordPress een bestaand thema kunt uitbreiden zonder het originele thema aan te passen."
 3,"3","16-5-2024","Custom thema","Je leert om een custom thema te maken met een eigen vormgeving specifiek voor deze website. ",
 4,"4","16-5-2024","Header en Footer","Je maakt de structuur van je website door gebruik te maken van de header en footer functionaliteit. De HTML bevat nu de basis functies, een menu en gegevens uit de pagina.",
