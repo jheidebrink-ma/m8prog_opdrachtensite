@@ -43,6 +43,17 @@ Waarschijnlijk is de link naar jouw project: [http://localhost:80](http://localh
 Behalve als je dit zelf aangepast hebt in het `docker-compose.yml` bestand
 
 ---
+### 3- Git ignore
+Zorg ervoor dat je de volgende bestanden negeert in je git repository:
+- .env
+- node_modules
+- vendor
+- .DS_Store
+- .idea
+- .vscode
+- en andere bestanden die daar niet thuis horen.
+
+---
 {% include commit_push.md %}
 
 ---

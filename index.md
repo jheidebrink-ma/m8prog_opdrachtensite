@@ -15,7 +15,8 @@ Op deze website vind je de opdrachten voor de unit M8PROG waarbij wij een custom
 Hier kun je de planning van deze periode vinden.
 ![Planning_M8.png](Planning_M8.png)
 Download de PDF versie van de planning:
-[Planning_M8.pdf](Planning_M8.pdf)
+[Planning_M8.pdf](Planning_M8.pdf)  
+
 ---
 
 ## Opdrachten en uitleg
