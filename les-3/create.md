@@ -33,8 +33,8 @@ Probeer te doen alsof je tegen iemand praat en een uitleg geeft over wat je wilt
 
 ---
 ### 3- Bewaar je prompt
-Zorg ervoor dat ej een prompt.md toevoegt in je repository en sla daar de pompt op die je hebt gemaakt om tot dit resultaat te komen.
-
+Zorg ervoor dat ej een prompt.md toevoegt in je repository en sla daar de pompt op die je hebt gemaakt om tot dit resultaat te komen.  
+Sla niet alleen de `share link` op, maar ook de prompt die je hebt gebruikt.
 
 ---
 
