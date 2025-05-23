@@ -13,6 +13,7 @@ Mocht jij zelf een goed idee hebben dan kan dat waarschijnlijk ook, maar overleg
 1. MA International!
    - Informatie over mogelijke internationale stages of uitwisseling projecten zoals het Zweden project.
    - Een subdomein voor [ma-web](https://www.ma-web.nl), de website van het Mediacollege Amsterdam
+   - Uiteindelijk een kaart met verschillende projecten per land.
 2. Amsterdamse reddingsbrigade
    - Informatie website over de Amsterdamse reddingsbrigade
    - Voorbeeld: [ijrb](https://www.ijrb.nl/)
@@ -28,6 +29,9 @@ Mocht jij zelf een goed idee hebben dan kan dat waarschijnlijk ook, maar overleg
 6. Recepten website
    - Een kookboek website waar verschillende recepten op staan
    - Voorbeeld: [eefkooktzo](https://www.eefkooktzo.nl/recepten/) of [leukerecepten](https://www.leukerecepten.nl/recepten-index/)
+7. Landingspagina opdrachten
+   - Site waar alle SD opdrachten overzichtelijk weergegeven zijn.
+   - Voorbeeld [MA V](https://mamv.nl/)
 
 [//]: # (### Vrijdag 24 mei komen opdrachtgevers langs om een briefing te geven.)
 {: .text-red-300 .fs-4}
