@@ -6,7 +6,7 @@ nav_exclude: true
 ---
 
 ## Het WordPress menu
-{: .text-green-100 .fs-6 }
+{: .text-green-100 .fs-6 }gl
 
 Binnen WordPress is er een uitgebreid menu systeem, dat gaan wij nu implementeren in onze template.  
 Zo kan de beheerder zelf het menu beheren en hoef jij niet na te denken over welk item actief is.
